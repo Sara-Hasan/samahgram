@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CountryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +20,18 @@ use App\Http\Controllers\CommentController;
 Route::get('/', function () {
     return view('home');
 })->middleware('auth');
+//Route::get('/', static function () {return view('feed');})->middleware('auth');
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
+/*search*/
+Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');;
+
+/*countries*/
+Route::get('/', [CountryController::class, 'index'])->middleware('auth');;
 
 
 Route::get('/chat', function () {
@@ -41,3 +52,9 @@ Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);
 
+Route::get('/', static function () {
+        return view('profile');
+    })->middleware('auth');;
+    Route::get('/chat', static function () {
+        return view('chat');
+    })->middleware('auth');;
