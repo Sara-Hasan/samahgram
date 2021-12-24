@@ -1,11 +1,5 @@
-
-@extends('layout.head')
-@section('content')
-
-
-
+<x-layout>
         <div class="main_content">
-
             <div class="container m-auto pt-5">
 
                 <h1 class="font-semibold lg:mb-6 mb-3 text-2xl"> Messages</h1>
@@ -225,4 +219,4 @@
 
         </div>
 
-    @endsection
+</x-layout>
