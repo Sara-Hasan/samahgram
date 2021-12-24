@@ -38,6 +38,6 @@ class HomeController extends Controller
             ->get();
 //dd($users);
         // Return the search view with the resluts compacted
-        return view('layout/head', compact('users'));
+        return view('profile', compact('users'));
     }
 }

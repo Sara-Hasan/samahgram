@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 /*search*/
-Route::get('/search/', 'HomeController@search')->name('search');
+Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search');
 
 Route::get('/', static function () {
         return view('profile');
