@@ -1,3 +1,5 @@
+@extends('layouts.app')
+    @section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
         ================================================== -->
     <link rel="stylesheet" href="assets/css/icons.css">
 
-    <!-- CSS 
+    <!-- CSS
         ================================================== -->
     <link rel="stylesheet" href="assets/css/uikit.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -36,7 +38,7 @@
     <div id="wrapper">
 
         <div class="sidebar">
-            <div class="sidebar_header border-b border-gray-200 from-gray-100 to-gray-50 bg-gradient-to-t  uk-visible@s"> 
+            <div class="sidebar_header border-b border-gray-200 from-gray-100 to-gray-50 bg-gradient-to-t  uk-visible@s">
                 <a href="#">
                     <img src="assets/images/logo.png">
                     <img src="assets/images/logo-light.png" class="logo_inverse">
@@ -199,17 +201,17 @@
                         </a>
                          <!-- upload dropdown box -->
                         <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
-    
+
                             <!-- notivication header -->
                             <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                                 <h4>Upload Video</h4>
                             </div>
-    
+
                             <!-- notification contents -->
                             <div class="flex justify-center flex-center text-center dark:text-gray-300">
-    
+
                                 <div class="flex flex-col choose-upload text-center">
-                                   
+
                                     <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg dark:bg-gray-800 dark:border-gray-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
                                             <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
@@ -223,12 +225,12 @@
                                         <input type="file">
                                         <a href="#" class="button soft-warning small"> Choose file</a>
                                     </div>
-    
+
                                     <a href="#" class="uk-text-muted mt-3 uk-link"
                                         uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
                                         Or Import Video </a>
                                 </div>
-    
+
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
                                     <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
@@ -247,13 +249,13 @@
                                         uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
                                         Or Upload Video </a>
                                 </div>
-    
+
                             </div>
                             <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm dark:border-gray-500 dark:text-gray-500">
                                 Your Video size Must be Maxmium 999MB
                             </div>
                         </div>
-                        
+
                          <!-- Notification -->
 
                         <a href="#" class="header-links-item">
@@ -443,12 +445,12 @@
 
                         <!-- post 1-->
                         <div class="bg-white shadow rounded-md dark:bg-gray-900 -mx-2 lg:mx-0">
-    
+
                             <!-- post header-->
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="#">
-                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
+                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
                                             <img src="assets/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
@@ -457,51 +459,51 @@
                               <div>
                                 <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
                                 <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700" uk-drop="mode: hover;pos: top-right">
-                              
+
                                     <ul class="space-y-1">
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-share-alt mr-1"></i> Share
-                                          </a> 
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-edit-alt mr-1"></i>  Edit Post 
-                                          </a> 
+                                           <i class="uil-edit-alt mr-1"></i>  Edit Post
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-comment-slash mr-1"></i>   Disable comments
-                                          </a> 
-                                      </li> 
-                                      <li> 
+                                          </a>
+                                      </li>
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-favorite mr-1"></i>  Add favorites 
-                                          </a> 
+                                           <i class="uil-favorite mr-1"></i>  Add favorites
+                                          </a>
                                       </li>
                                       <li>
                                         <hr class="-mx-2 my-2 dark:border-gray-800">
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
                                            <i class="uil-trash-alt mr-1"></i>  Delete
-                                          </a> 
+                                          </a>
                                       </li>
                                     </ul>
-                                
+
                                 </div>
                               </div>
                             </div>
-    
+
                             <div uk-lightbox>
-                                <a href="assets/images/post/img4.jpg">  
+                                <a href="assets/images/post/img4.jpg">
                                     <img src="assets/images/post/img4.jpg" alt="">
                                 </a>
                             </div>
-                            
-    
-                            <div class="py-3 px-4 space-y-3"> 
-                               
+
+
+                            <div class="py-3 px-4 space-y-3">
+
                                 <div class="flex space-x-4 lg:font-bold">
                                     <a href="#" class="flex items-center space-x-2">
                                         <div class="p-2 rounded-full text-black">
@@ -526,7 +528,7 @@
                                         <div> Share</div>
                                     </a>
                                 </div>
-                                <div class="flex items-center space-x-3"> 
+                                <div class="flex items-center space-x-3">
                                     <div class="flex items-center">
                                         <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900">
                                         <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
@@ -567,20 +569,20 @@
                                         <a href="#"> <i class="uil-video"></i></a>
                                     </div>
                                 </div>
-    
+
                             </div>
-    
+
                         </div>
-    
-                        <!-- post 2-->                       
-                    
+
+                        <!-- post 2-->
+
                         <div class="bg-white shadow rounded-md dark:bg-gray-900 -mx-2 lg:mx-0">
-    
+
                             <!-- post header-->
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="#">
-                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
+                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
                                             <img src="assets/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
@@ -589,52 +591,52 @@
                               <div>
                                 <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
                                 <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700" uk-drop="mode: hover;pos: top-right">
-                              
+
                                     <ul class="space-y-1">
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-share-alt mr-1"></i> Share
-                                          </a> 
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-edit-alt mr-1"></i>  Edit Post 
-                                          </a> 
+                                           <i class="uil-edit-alt mr-1"></i>  Edit Post
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-comment-slash mr-1"></i>   Disable comments
-                                          </a> 
-                                      </li> 
-                                      <li> 
+                                          </a>
+                                      </li>
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-favorite mr-1"></i>  Add favorites 
-                                          </a> 
+                                           <i class="uil-favorite mr-1"></i>  Add favorites
+                                          </a>
                                       </li>
                                       <li>
                                         <hr class="-mx-2 my-2 dark:border-gray-800">
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
                                            <i class="uil-trash-alt mr-1"></i>  Delete
-                                          </a> 
+                                          </a>
                                       </li>
                                     </ul>
-                                
+
                                 </div>
                               </div>
                             </div>
-    
+
                             <div uk-lightbox>
                                 <div class="grid grid-cols-2 gap-2 p-2">
 
-                                    <a href="assets/images/post/img9.jpg" class="col-span-2">  
+                                    <a href="assets/images/post/img9.jpg" class="col-span-2">
                                         <img src="assets/images/post/img9.jpg" alt="" class="rounded-md w-full lg:h-76 object-cover">
                                     </a>
-                                    <a href="assets/images/post/img10.jpg">  
+                                    <a href="assets/images/post/img10.jpg">
                                         <img src="assets/images/post/img10.jpg" alt="" class="rounded-md w-full h-full">
                                     </a>
-                                    <a href="assets/images/post/img11.jpg" class="relative">  
+                                    <a href="assets/images/post/img11.jpg" class="relative">
                                         <img src="assets/images/post/img11.jpg" alt="" class="rounded-md w-full h-full">
                                         <div class="absolute bg-gray-900 bg-opacity-30 flex justify-center items-center text-white rounded-md inset-0 text-2xl"> + 15 more </div>
                                     </a>
@@ -642,8 +644,8 @@
                                 </div>
                             </div>
 
-                            <div class="py-3 px-4 space-y-3"> 
-                               
+                            <div class="py-3 px-4 space-y-3">
+
                                 <div class="flex space-x-4 lg:font-bold">
                                     <a href="#" class="flex items-center space-x-2">
                                         <div class="p-2 rounded-full text-black">
@@ -668,7 +670,7 @@
                                         <div> Share</div>
                                     </a>
                                 </div>
-                                <div class="flex items-center space-x-3"> 
+                                <div class="flex items-center space-x-3">
                                     <div class="flex items-center">
                                         <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900">
                                         <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
@@ -709,9 +711,9 @@
                                         <a href="#"> <i class="uil-video"></i></a>
                                     </div>
                                 </div>
-    
+
                             </div>
-    
+
                         </div>
 
                         <!-- Load more-->
@@ -720,15 +722,15 @@
                                 class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white">
                                 Load more ..</a>
                         </div>
- 
+
                         <!-- post 3-->
                         <div class="bg-white shadow rounded-md dark:bg-gray-900 -mx-2 lg:mx-0" id="toggle" hidden>
-    
+
                             <!-- post header-->
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="#">
-                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
+                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
                                             <img src="assets/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
@@ -737,51 +739,51 @@
                               <div>
                                 <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
                                 <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700" uk-drop="mode: hover;pos: top-right">
-                              
+
                                     <ul class="space-y-1">
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-share-alt mr-1"></i> Share
-                                          </a> 
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-edit-alt mr-1"></i>  Edit Post 
-                                          </a> 
+                                           <i class="uil-edit-alt mr-1"></i>  Edit Post
+                                          </a>
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                            <i class="uil-comment-slash mr-1"></i>   Disable comments
-                                          </a> 
-                                      </li> 
-                                      <li> 
+                                          </a>
+                                      </li>
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                           <i class="uil-favorite mr-1"></i>  Add favorites 
-                                          </a> 
+                                           <i class="uil-favorite mr-1"></i>  Add favorites
+                                          </a>
                                       </li>
                                       <li>
                                         <hr class="-mx-2 my-2 dark:border-gray-800">
                                       </li>
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
                                            <i class="uil-trash-alt mr-1"></i>  Delete
-                                          </a> 
+                                          </a>
                                       </li>
                                     </ul>
-                                
+
                                 </div>
                               </div>
                             </div>
-    
+
                             <div class="p-3 border-b dark:border-gray-700">
 
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim laoreet dolore magna aliquam erat volutpat
 
                             </div>
-                            
-    
-                            <div class="py-3 px-4 space-y-3"> 
-                               
+
+
+                            <div class="py-3 px-4 space-y-3">
+
                                 <div class="flex space-x-4 lg:font-bold">
                                     <a href="#" class="flex items-center space-x-2">
                                         <div class="p-2 rounded-full text-black">
@@ -806,7 +808,7 @@
                                         <div> Share</div>
                                     </a>
                                 </div>
-                                <div class="flex items-center space-x-3"> 
+                                <div class="flex items-center space-x-3">
                                     <div class="flex items-center">
                                         <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900">
                                         <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
@@ -847,19 +849,19 @@
                                         <a href="#"> <i class="uil-video"></i></a>
                                     </div>
                                 </div>
-    
+
                             </div>
-    
+
                         </div>
-                        
+
                         <!-- post 4-->
                         <div class="bg-white shadow rounded-md dark:bg-gray-900 -mx-2 lg:mx-0" id="toggle" hidden>
-  
+
                           <!-- post header-->
                           <div class="flex justify-between items-center px-4 py-3">
                               <div class="flex flex-1 items-center space-x-4">
                                   <a href="#">
-                                      <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
+                                      <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
                                           <img src="assets/images/avatars/avatar-2.jpg" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                       </div>
                                   </a>
@@ -868,51 +870,51 @@
                             <div>
                               <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
                               <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700" uk-drop="mode: hover;pos: top-right">
-                            
+
                                   <ul class="space-y-1">
-                                    <li> 
+                                    <li>
                                         <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                          <i class="uil-share-alt mr-1"></i> Share
-                                        </a> 
+                                        </a>
                                     </li>
-                                    <li> 
+                                    <li>
                                         <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                         <i class="uil-edit-alt mr-1"></i>  Edit Post 
-                                        </a> 
+                                         <i class="uil-edit-alt mr-1"></i>  Edit Post
+                                        </a>
                                     </li>
-                                    <li> 
+                                    <li>
                                         <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                          <i class="uil-comment-slash mr-1"></i>   Disable comments
-                                        </a> 
-                                    </li> 
-                                    <li> 
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                         <i class="uil-favorite mr-1"></i>  Add favorites 
-                                        </a> 
+                                         <i class="uil-favorite mr-1"></i>  Add favorites
+                                        </a>
                                     </li>
                                     <li>
                                       <hr class="-mx-2 my-2 dark:border-gray-800">
                                     </li>
-                                    <li> 
+                                    <li>
                                         <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
                                          <i class="uil-trash-alt mr-1"></i>  Delete
-                                        </a> 
+                                        </a>
                                     </li>
                                   </ul>
-                              
+
                               </div>
                             </div>
                           </div>
-  
-                         
+
+
                             <div class="w-full h-full">
                                 <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" frameborder="0"
                                     uk-video="automute: true" allowfullscreen uk-responsive class="w-full lg:h-64 h-40"></iframe>
                             </div>
-                           
-  
-                          <div class="py-3 px-4 space-y-3"> 
-                             
+
+
+                          <div class="py-3 px-4 space-y-3">
+
                               <div class="flex space-x-4 lg:font-bold">
                                   <a href="#" class="flex items-center space-x-2">
                                       <div class="p-2 rounded-full text-black">
@@ -937,7 +939,7 @@
                                       <div> Share</div>
                                   </a>
                               </div>
-                              <div class="flex items-center space-x-3"> 
+                              <div class="flex items-center space-x-3">
                                   <div class="flex items-center">
                                       <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900">
                                       <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
@@ -978,11 +980,11 @@
                                       <a href="#"> <i class="uil-video"></i></a>
                                   </div>
                               </div>
-  
+
                           </div>
-  
+
                         </div>
-                        
+
                         <!-- Load more-->
                         <div class="flex justify-center mt-6" id="toggle" hidden>
                             <a href="#"
@@ -1002,7 +1004,7 @@
                                 <h2 class="font-semibold text-lg">Who to follow</h2>
                                 <a href="#"> Refresh</a>
                             </div>
-                           
+
                             <div class="divide-gray-300 divide-gray-50 divide-opacity-50 divide-y px-4 dark:divide-gray-800 dark:text-gray-100">
                                 <div class="flex items-center justify-between py-3">
                                     <div class="flex flex-1 items-center space-x-4">
@@ -1014,7 +1016,7 @@
                                             <span class="block capitalize text-sm"> Australia </span>
                                         </div>
                                     </div>
-                                    
+
                                     <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 dark:border-gray-800"> Follow </a>
                                 </div>
                                 <div class="flex items-center justify-between py-3">
@@ -1051,7 +1053,7 @@
                                             <span class="block capitalize text-sm"> Yeman </span>
                                         </div>
                                     </div>
-                                    
+
                                     <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 dark:border-gray-800"> Follow </a>
                                 </div>
 
@@ -1066,58 +1068,58 @@
                                     <h2 class="font-semibold text-lg">Latest</h2>
                                     <a href="explore.html"> See all</a>
                                 </div>
-    
+
                                 <div class="grid grid-cols-2 gap-2 p-3 uk-link-reset">
-    
-                                    <div class="bg-red-500 max-w-full h-32 rounded-lg relative overflow-hidden uk-transition-toggle"> 
+
+                                    <div class="bg-red-500 max-w-full h-32 rounded-lg relative overflow-hidden uk-transition-toggle">
                                         <a href="#story-modal" uk-toggle>
                                             <img src="assets/images/post/img2.jpg" class="w-full h-full absolute object-cover inset-0">
                                         </a>
-                                        <div class="flex flex-1 justify-around items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">   
+                                        <div class="flex flex-1 justify-around items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">
                                             <a href="#"> <i class="uil-heart"></i> 150 </a>
                                             <a href="#"> <i class="uil-heart"></i> 30 </a>
                                         </div>
                                     </div>
-                                    
-                                    <div class="bg-red-500 max-w-full h-40 rounded-lg relative overflow-hidden uk-transition-toggle"> 
+
+                                    <div class="bg-red-500 max-w-full h-40 rounded-lg relative overflow-hidden uk-transition-toggle">
                                         <a href="#story-modal" uk-toggle>
                                             <img src="assets/images/post/img7.jpg" class="w-full h-full absolute object-cover inset-0">
                                         </a>
-                                        <div class="flex flex-1 justify-around items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">   
+                                        <div class="flex flex-1 justify-around items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">
                                             <a href="#"> <i class="uil-heart"></i> 150 </a>
                                             <a href="#"> <i class="uil-heart"></i> 30 </a>
                                         </div>
-                                    </div>                             
-                                    
-                                    <div class="bg-red-500 max-w-full h-40 -mt-8 rounded-lg relative overflow-hidden uk-transition-toggle"> 
+                                    </div>
+
+                                    <div class="bg-red-500 max-w-full h-40 -mt-8 rounded-lg relative overflow-hidden uk-transition-toggle">
                                         <a href="#story-modal" uk-toggle>
                                             <img src="assets/images/post/img5.jpg" class="w-full h-full absolute object-cover inset-0">
                                         </a>
-                                        <div class="flex flex-1 justify-around  items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">   
+                                        <div class="flex flex-1 justify-around  items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">
                                             <a href="#"> <i class="uil-heart"></i> 150 </a>
                                             <a href="#"> <i class="uil-heart"></i> 30 </a>
                                         </div>
                                     </div>
-    
-                                    <div class="bg-red-500 max-w-full h-32 rounded-lg relative overflow-hidden uk-transition-toggle"> 
+
+                                    <div class="bg-red-500 max-w-full h-32 rounded-lg relative overflow-hidden uk-transition-toggle">
                                         <a href="#story-modal" uk-toggle>
                                             <img src="assets/images/post/img3.jpg" class="w-full h-full absolute object-cover inset-0">
                                         </a>
-                                        <div class="flex flex-1 justify-around  items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">   
+                                        <div class="flex flex-1 justify-around  items-center absolute bottom-0 w-full p-2 text-white custom-overly1 uk-transition-slide-bottom-medium">
                                             <a href="#"> <i class="uil-heart"></i> 150 </a>
                                             <a href="#"> <i class="uil-heart"></i> 30 </a>
                                         </div>
                                     </div>
-    
+
                                 </div>
-    
+
                             </div>
                         </div>
 
                     </div>
 
-                </div>               
-          
+                </div>
+
 
             </div>
 
@@ -1136,7 +1138,7 @@
                     <img src="assets/images/post/img4.jpg" alt=""  class="inset-0 h-full w-full object-cover">
                 </div>
                 <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
-                
+
                     <!-- post header-->
                     <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
                         <div class="flex flex-1 items-center space-x-4">
@@ -1148,14 +1150,14 @@
                             </a>
                             <span class="block text-lg font-semibold"> Johnson smith </span>
                         </div>
-                        <a href="#"> 
+                        <a href="#">
                             <i  class="icon-feather-more-horizontal text-2xl rounded-full p-2 transition -mr-1"></i>
                         </a>
                     </div>
                     <div class="story-content p-4" data-simplebar>
 
                         <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-                        
+
                         <div class="py-4 ">
                             <div class="flex justify-around">
                                 <a href="#" class="flex items-center space-x-3">
@@ -1169,7 +1171,7 @@
                                 </a>
                             </div>
                             <hr class="-mx-4 my-3">
-                            <div class="flex items-center space-x-3"> 
+                            <div class="flex items-center space-x-3">
                                 <div class="flex items-center">
                                     <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white">
                                     <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
@@ -1218,7 +1220,7 @@
 
 
     <script>
-        
+
         (function (window, document, undefined) {
             'use strict';
             if (!('localStorage' in window)) return;
@@ -1227,19 +1229,19 @@
                 document.documentElement.className += ' dark';
             }
         })(window, document);
-    
-    
+
+
         (function (window, document, undefined) {
-    
+
             'use strict';
-    
+
             // Feature test
             if (!('localStorage' in window)) return;
-    
+
             // Get our newly insert toggle
             var nightMode = document.querySelector('#night-mode');
             if (!nightMode) return;
-    
+
             // When clicked, toggle night mode on or off
             nightMode.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -1250,13 +1252,13 @@
                 }
                 localStorage.removeItem('gmtNightMode');
             }, false);
-    
+
         })(window, document);
     </script>
 
  <!-- Scripts
     ================================================== -->
-    <script src="assets/js/tippy.all.min.js"></script>  
+    <script src="assets/js/tippy.all.min.js"></script>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/uikit.js"></script>
     <script src="assets/js/simplebar.js"></script>
@@ -1269,3 +1271,4 @@
 
 <!-- Mirrored from demo.foxthemes.net/instellohtml/feed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 07:48:07 GMT -->
 </html>
+@endsection();

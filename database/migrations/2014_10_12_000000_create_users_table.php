@@ -21,14 +21,14 @@ class CreateUsersTable extends Migration
             $table->text('user_img')->default('https://www.shutterstock.com/search/instagram+avatar');
             $table->string('user_gender');
             $table->date('user_dob');
-            $table->boolean('user_active_status')->default(1);
+            $table->boolean('user_active_status')->default(0);
             $table->integer('user_number_of_followers')->default(0);
             $table->integer('user_number_of_following')->default(0);
             $table->text('user_bio')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('user_relationship_status')->nullable();
-            $table->date('user_last_seen_date');
+            $table->date('user_last_seen_date')->nullable();;
             $table->rememberToken();
             $table->timestamps();
         });
