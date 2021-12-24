@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CountryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,12 @@ Route::get('/', static function () {return view('feed');})->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 /*search*/
 Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search');
+
+/*countries*/
+Route::get('/reg', [CountryController::class, 'index']);
 
 Route::get('/', static function () {
         return view('profile');
