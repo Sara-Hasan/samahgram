@@ -21,9 +21,19 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
+Route::get('/profile', function () {
         return view('profile');
-    });
-    Route::get('/chat', function () {
-        return view('chat');
-    });
+})->name('profile');
+
+Route::get('/chat', function () {
+   return view('chat');
+})->name('chat');
+
+
+ Route::get('/trending', function () {
+    return view('trending');
+ })->name('trending');
+
+ Route::get('/setting', function () {
+    return view('setting');
+ })->name('setting');

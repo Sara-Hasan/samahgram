@@ -66,7 +66,7 @@
 
                     <div class="XrOey">
                        <div class="q9xVd">
-                          <a href="#" tabindex="0">
+                          <a href="{{route('home')}}" tabindex="0">
                              <svg aria-label="Home" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
                                 <path d="M9.005 16.545a2.997 2.997 0 012.997-2.997h0A2.997 2.997 0 0115 16.545V22h7V11.543L12 2 2 11.543V22h7.005z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
                              </svg>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="XrOey">
-                       <a aria-label="Direct messaging - 0 new notifications link" class="xWeGp" href="#" tabindex="0">
+                       <a aria-label="Direct messaging - 0 new notifications link" class="xWeGp" href="{{route('chat')}}" tabindex="0">
                           <svg aria-label="Direct" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
                              <line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line>
                              <polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon>
@@ -144,14 +144,8 @@
                            Your Video size Must be Maxmium 999MB
                         </div>
                      </div>
-
-
-
-
-
-
-                    <div class="XrOey">
-                       <a href="#" tabindex="0">
+                     <div class="XrOey">
+                       <a href="{{route('trending')}}" tabindex="0">
                           <svg aria-label="Find People" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
                              <polygon fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
                              <polygon fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon>
@@ -254,9 +248,8 @@
                     </div>
                         <div  uk-drop="pos: top-right; mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
-                              <li><a href="#"> Account setting </a> </li>
-                              <li><a href="#"> Payments </a> </li>
-                              <li><a href="#"> Help </a> </li>
+                              <li><a href="{{route('profile')}}"> Profile </a> </li>
+                              <li><a href="{{route('setting')}}"> Setting </a> </li>
                               <li><a href="form-login.html"> Log Out</a></li>
                            </ul>
                         </div>
@@ -270,7 +263,9 @@
         </div>
 
       </header>
-      @yield('content')
+
+{{$slot}}
+
       <script>
          (function (window, document, undefined) {
              'use strict';

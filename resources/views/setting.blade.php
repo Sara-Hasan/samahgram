@@ -1,150 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from demo.foxthemes.net/instellohtml/setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 07:49:30 GMT -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link href="assets/images/favicon.png" rel="icon" type="image/png">
-    
-    <!-- Basic Page Needs
-    ================================================== -->
-    <title>Instello Sharing Photos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Instello - Sharing Photos platform HTML Template">
-
-    <!-- icons
-    ================================================== -->
-    <link rel="stylesheet" href="assets/css/icons.css">
-
-    <!-- CSS 
-    ================================================== -->
-    <link rel="stylesheet" href="assets/css/uikit.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/tailwind.css">
-
-</head>
-
-<body>
-
-
-    <div id="wrapper">
-
-        <div class="sidebar">
-            <div class="sidebar_header border-b border-gray-200 from-gray-100 to-gray-50 bg-gradient-to-t  uk-visible@s"> 
-                <a href="#">
-                    <img src="assets/images/logo.png">
-                    <img src="assets/images/logo-light.png" class="logo_inverse">
-                </a>
-                <!-- btn night mode -->
-                <a href="#" id="night-mode" class="btn-night-mode" data-tippy-placement="left" title="Switch to dark mode"></a>
-            </div>
-            <div class="border-b border-gray-20 flex justify-between items-center p-3 pl-5 relative uk-hidden@s">
-                <h3 class="text-xl"> Navigation </h3>
-                <span class="btn-mobile" uk-toggle="target: #wrapper ; cls: sidebar-active"></span>
-            </div>
-            <div class="sidebar_inner" data-simplebar>
-                <div class="flex flex-col items-center my-6 uk-visible@s">
-                    <div
-                        class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full transition m-0.5 mr-2  w-24 h-24">
-                        <img src="assets/images/avatars/avatar-2.jpg"
-                            class="bg-gray-200 border-4 border-white rounded-full w-full h-full">
-                    </div>
-                    <a href="profile.html" class="text-xl font-medium capitalize mt-4 uk-link-reset"> Stella Johnson
-                    </a>
-                    <div class="flex justify-around w-full items-center text-center uk-link-reset text-gray-800 mt-6">
-                        <div>
-                            <a href="#">
-                                <strong>Post</strong>
-                                <div> 130</div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <strong>Following</strong>
-                                <div> 1,230</div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <strong>Followers</strong>
-                                <div> 2,430</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr class="-mx-4 -mt-1 uk-visible@s">
-                <ul>
-                    <li>
-                        <a href="feed.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                            </svg> 
-                            <span> Feed </span> </a> 
-                    </li>
-                    <li>
-                        <a href="explore.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                            <span> Explore </span> </a> 
-                    </li>
-                    <li>
-                        <a href="chat.html"> 
-                            <i class="uil-location-arrow"></i>
-                            <span> Messages </span> <span class="nav-tag"> 3</span>  </a> 
-                    </li>
-                    <li>
-                        <a href="trending.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                            </svg>
-                            <span> Trending </span> </a> 
-                    </li>
-                    <li>
-                        <a href="market.html"> 
-                            <i class="uil-store"></i>
-                            <span> Marketplace </span> </a> 
-                    </li>
-                    <li class="active">
-                        <a href="setting.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span> Settings </span> 
-                        </a> 
-                        <ul>
-                            <li><a href="setting.html">General </a></li>
-                            <li><a href="setting.html"> Account setting </a></li>
-                            <li><a href="setting.html">Billing  <span class="nav-tag">3</span> </a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="profile.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                            <span> My Profile </span> </a> 
-                    </li>
-                    <li>
-                        <hr class="my-2">
-                    </li>
-                    <li>
-                        <a href="form-login.html"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                            </svg>
-                           <span> Logout </span> </a> 
-                    </li>
-                </ul>
-            </div>
-        </div>
+@extends('layout.head')
+@section('content')
 
         <div class="main_content">
 
@@ -184,17 +39,17 @@
                         </a>
                          <!-- upload dropdown box -->
                         <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
-    
+
                             <!-- notivication header -->
                             <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                                 <h4>Upload Video</h4>
                             </div>
-    
+
                             <!-- notification contents -->
                             <div class="flex justify-center flex-center text-center dark:text-gray-300">
-    
+
                                 <div class="flex flex-col choose-upload text-center">
-                                   
+
                                     <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg dark:bg-gray-800 dark:border-gray-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
                                             <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
@@ -208,12 +63,12 @@
                                         <input type="file">
                                         <a href="#" class="button soft-warning small"> Choose file</a>
                                     </div>
-    
+
                                     <a href="#" class="uk-text-muted mt-3 uk-link"
                                         uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
                                         Or Import Video </a>
                                 </div>
-    
+
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
                                     <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
@@ -232,13 +87,13 @@
                                         uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
                                         Or Upload Video </a>
                                 </div>
-    
+
                             </div>
                             <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm dark:border-gray-500 dark:text-gray-500">
                                 Your Video size Must be Maxmium 999MB
                             </div>
                         </div>
-                        
+
                          <!-- Notification -->
 
                         <a href="#" class="header-links-item">
@@ -417,7 +272,7 @@
                 </div>
             </header>
 
-            <div class="container m-auto"> 
+            <div class="container m-auto">
 
                 <h1 class="text-2xl leading-none text-gray-900 tracking-tight mt-3"> Account Setting </h1>
                 <ul class="mt-5 -mr-3 flex-nowrap lg:overflow-hidden overflow-x-scroll uk-tab">
@@ -436,7 +291,7 @@
                         <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
                     </div>
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
-    
+
                        <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                            <div>
                                <label for=""> First name</label>
@@ -451,9 +306,9 @@
                                 <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
                             </div>
                             <div class="col-span-2">
-                                <label for="about">About me</label>  
+                                <label for="about">About me</label>
                                 <textarea id="about" name="about" rows="3"  class="shadow-none bg-gray-100"></textarea>
-                            </div> 
+                            </div>
                             <div class="col-span-2">
                                 <label for=""> Location</label>
                                 <input type="text" placeholder="" class="shadow-none bg-gray-100">
@@ -461,7 +316,7 @@
                             <div>
                                <label for=""> Working at</label>
                                <input type="text" placeholder="" class="shadow-none bg-gray-100">
-                            </div> 
+                            </div>
                             <div>
                                <label for=""> Relationship </label>
                                <select id="relationship" name="relationship"  class="shadow-none bg-gray-100">
@@ -472,13 +327,13 @@
                                 <option value="4">Engaged</option>
                               </select>
                             </div>
-                       </div> 
-    
+                       </div>
+
                        <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
                            <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button>
                            <button type="button" class="button bg-blue-700"> Save </button>
                        </div>
-    
+
                     </div>
 
                     <div>
@@ -536,67 +391,15 @@
                             </div>
                         </div>
                     </div>
-    
+
                     </div>
 
                 </div>
 
             </div>
-            
+
         </div>
 
-    </div>
 
-
-    <script>
-        
-        (function (window, document, undefined) {
-            'use strict';
-            if (!('localStorage' in window)) return;
-            var nightMode = localStorage.getItem('gmtNightMode');
-            if (nightMode) {
-                document.documentElement.className += ' dark';
-            }
-        })(window, document);
-    
-    
-        (function (window, document, undefined) {
-    
-            'use strict';
-    
-            // Feature test
-            if (!('localStorage' in window)) return;
-    
-            // Get our newly insert toggle
-            var nightMode = document.querySelector('#night-mode');
-            if (!nightMode) return;
-    
-            // When clicked, toggle night mode on or off
-            nightMode.addEventListener('click', function (event) {
-                event.preventDefault();
-                document.documentElement.classList.toggle('dark');
-                if (document.documentElement.classList.contains('dark')) {
-                    localStorage.setItem('gmtNightMode', true);
-                    return;
-                }
-                localStorage.removeItem('gmtNightMode');
-            }, false);
-    
-        })(window, document);
-    </script>
-
- <!-- Scripts
-    ================================================== -->
-    <script src="assets/js/tippy.all.min.js"></script>  
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/uikit.js"></script>
-    <script src="assets/js/simplebar.js"></script>
-    <script src="assets/js/custom.js"></script>
-
-
-    <script src="../../unpkg.com/ionicons%405.2.3/dist/ionicons.js"></script>
-</body>
-
-
-<!-- Mirrored from demo.foxthemes.net/instellohtml/setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 07:49:30 GMT -->
-</html>
+    <x-Story/>
+    @endsection

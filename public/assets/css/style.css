@@ -2993,7 +2993,7 @@ header .uk-dropdown {
 .like._8-yf5 {
     top: 1px;
 }
-.comment_component
+.comment_component,.date
 {
 color: #8e8e8e;
 background: 0 0;
@@ -3012,3 +3012,4 @@ padding: 0;
     cursor: pointer;
     margin: 0px;
 }
+
