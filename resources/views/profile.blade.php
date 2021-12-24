@@ -59,5 +59,7 @@
 </div>
 </div>
 <!-- Story modal -->
-<x-Story/>
+{{-- <x-Story/> --}}
+
+@extends('layout.story')
 @endsection
