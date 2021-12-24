@@ -4697,7 +4697,7 @@
                 if (this.align === 'justify') {
                     var prop = this.getAxis() === 'y' ? 'width' : 'height';
                     css(this.$el, prop, alignTo[prop]);
-                } else if (this.$el.offsetWidth > Math.max(boundary.right - alignTo.left, alignTo.right - boundary.left)) {
+                } else if (this.$el.offsetWidth > Math.max(boundary.left - alignTo.right, alignTo.left - boundary.right)) {
                     addClass(this.$el, ((this.clsDrop) + "-stack"));
                 }
 
