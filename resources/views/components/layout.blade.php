@@ -168,7 +168,7 @@
                         <ul class="dropdown_scrollbar" data-simplebar>
                            <li>
                               <a href="#">
-                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
+                                 <div class="drop_avatar"> <img src={{asset('assets/images/avatars/avatar-1.jpg')}} alt="">
                                  </div>
                                  <div class="drop_content">
                                     <p> <strong>Adrian Mohani</strong>  Lorem ipsum dolor cursus
@@ -180,7 +180,7 @@
                            </li>
                            <li>
                               <a href="#">
-                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
+                                 <div class="drop_avatar"> <img src={{asset('assets/images/avatars/avatar-2.jpg')}} alt="">
                                  </div>
                                  <div class="drop_content">
                                     <p>
@@ -193,7 +193,7 @@
                            </li>
                            <li>
                               <a href="#">
-                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
+                                 <div class="drop_avatar"> <img src={{asset('assets/images/avatars/avatar-3.jpg')}} alt="">
                                  </div>
                                  <div class="drop_content">
                                     <p>
@@ -206,7 +206,7 @@
                            </li>
                            <li>
                               <a href="#">
-                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
+                                 <div class="drop_avatar"> <img src={{asset('assets/images/avatars/avatar-1.jpg')}} alt="">
                                  </div>
                                  <div class="drop_content">
                                     <p>
@@ -219,7 +219,7 @@
                            </li>
                            <li>
                               <a href="#">
-                                 <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
+                                 <div class="drop_avatar"> <img src={{asset('assets/images/avatars/avatar-3.jpg')}} alt="">
                                  </div>
                                  <div class="drop_content">
                                     <p>
@@ -240,15 +240,30 @@
                      <div class="XrOey">
                        <div class="wWGrn"></div>
                        <span class="_2dbep qNELH" role="link" tabindex="0" style="width: 24px; height: 24px;">
-                        <img alt="" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src="assets/images/avatars/avatar-2.jpg">
+                        <img alt="" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src={{asset('assets/images/avatars/avatar-2.jpg')}}>
                     </span>
                        <div class="poA5q" style="margin-left: -180px;"></div>
                     </div>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
-                              <li><a href="{{route('profile')}}"> Profile </a> </li>
+                              <li><a href="profile/{{Auth::user()->id}}"> Profile </a> </li>
                               <li><a href="{{route('setting')}}"> Setting </a> </li>
-                              <li><a href="form-login.html"> Log Out</a></li>
+                              <li>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                                       {{ __('Logout') }}
+                                    </a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                             @csrf
+                                      </form>
+                               </div>
+
+
+
+                        </li>
                            </ul>
                         </div>
 
