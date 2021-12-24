@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,17 +13,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', static function () {return view('feed');})->middleware('auth');
+Route::get('/home', function () {
+    return view('home');
+})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-/*search*/
-Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search');
-
-Route::get('/', static function () {
-        return view('profile');
-    });
-    Route::get('/chat', static function () {
-        return view('chat');
-    });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
+Route::resource('/posts', 'App\Http\Controllers\PostController');

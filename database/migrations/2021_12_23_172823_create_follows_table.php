@@ -19,9 +19,7 @@ class CreateFollowsTable extends Migration
             $table->integer('second_user_id')->unique();
             $table->string('follow_type');
             $table->boolean('follow_status')->default(0);
-            $table->integer('comment_likes-number');
             $table->timestamps();
-            $table->unique(['user_id']);
         });
     }
 

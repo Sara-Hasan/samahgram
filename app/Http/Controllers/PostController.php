@@ -35,7 +35,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input= $request->validate([
+            // 'post_img'=>'mimes:jpeg,png',
+            'post_img'=>'file',
+        ]);
+
+        if (request('post_img')) {
+            $input['post_img']= request('post_img')->store('images');
+        }
+        auth()->user()->posts()->create($input);
+        // Session::flash('post_create_massage','post was created');
+        session()->flash('post_create_massage','post was created');
+
+        return redirect('home');
     }
 
     /**

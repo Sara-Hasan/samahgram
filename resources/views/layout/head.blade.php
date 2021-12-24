@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -14,14 +13,12 @@
       <meta name="description" content="Instello - Sharing Photos platform HTML Template">
       <!-- icons
          ================================================== -->
-      <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
       <link rel="stylesheet" href={{asset('assets/css/icons.css')}}>
       <!-- CSS
          ================================================== -->
       <link rel="stylesheet" href={{asset('assets/css/uikit.css')}}>
       <link rel="stylesheet" href={{asset('assets/css/style.css')}}>
       <link rel="stylesheet" href={{asset('assets/css/tailwind.css')}}>
-
       <style>
          @media (min-width: 1024px) {
          header .header_inner {
@@ -46,29 +43,18 @@
             </a>
             </div>
             <div class="left-side">
-             <div>
-                <form action="{{ route('search') }}" method="GET" class="header_search">
-                    <input type="text" name="search" required/>
-                    <button type="submit" ><i class="bi bi-search"></i></button>
-                </form>
-              </div>
-                @isset($users)
-               @if($users->isNotEmpty())
-                        <ul>
-                    @foreach ($users as $user)
-                   <li>
-                            <a href="/{{$user->id}}">{{ $user->name}}</a>
-                   </li>
-                    @endforeach
-                        </ul>
-                @else
-                    <div>
-                        <h2>No users found</h2>
-                    </div>
-                @endif
-                @endisset
-             </div>
 
+            <div class="header_search">
+                <input type="text" placeholder="Search..">
+                <div class="icon-search">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                   </svg>
+                </div>
+             </div>
+            </div>
 
             <div class="right-side">
 
@@ -108,7 +94,7 @@
                     </div>
 
 
-                    <div uk-drop="pos: top-right; mode: click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
+                    <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
                         <!-- notivication header -->
                         <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                            <h4>Upload Video</h4>
@@ -180,7 +166,7 @@
                        </a>
                        <div class="poA5q" style="margin-left: -423px;"></div>
                     </div>
-                    <div uk-dropdown="pos: top-right;mode:click ; offset: 4" class="header_dropdown">
+                    <div uk-drop="mode: click;offset: 4" class="header_dropdown">
                         <h4
                            class="-mt-5 -mx-5 bg-gradient-to-t from-gray-100 to-gray-50 border-b font-bold px-6 py-3">
                            Notification
@@ -264,7 +250,7 @@
                     </span>
                        <div class="poA5q" style="margin-left: -180px;"></div>
                     </div>
-                        <div  uk-drop="pos: top-right; mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
                               <li><a href="#"> Account setting </a> </li>
                               <li><a href="#"> Payments </a> </li>
@@ -282,9 +268,7 @@
         </div>
 
       </header>
-      </div>
       @yield('content')
-
       <script>
          (function (window, document, undefined) {
              'use strict';
@@ -328,6 +312,5 @@
       <script src={{asset('assets/js/simplebar.js')}}></script>
       <script src={{asset('assets/js/custom.js')}}></script>
       <script src="https://unpkg.com/ionicons@6.0.0/dist/ionicons.js"></script>
-
    </body>
 </html>
