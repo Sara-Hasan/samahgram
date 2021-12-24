@@ -54,12 +54,13 @@
                 </form>
                 @isset($users)
                @if($users->isNotEmpty())
+                        <label for="user-serach"><i class="bi bi-search"></i></label><select name="user-serach" id="">
                     @foreach ($users as $user)
-                        <div class="post-list">
-                            <h1>{{ $user->name}}</h1>
-                            <img src="{{ $user->user_img}}" alt="samahgram">
-                        </div>
+                                <option value="{{ $user->id}}">
+                                     {{ $user->name}}
+                                </option>
                     @endforeach
+                        </select>
                 @else
                     <div>
                         <h2>No users found</h2>
