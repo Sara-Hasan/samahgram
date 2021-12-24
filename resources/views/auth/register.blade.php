@@ -52,7 +52,6 @@
 
                                 <div class="col-md-4">
                                 <input id="phone" type="text" class="bg-gray-200 mb-2 shadow-none  px-2 dark:bg-gray-800 @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="mobile number">
-
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -85,11 +84,11 @@
                         </div>
 
                             <div class="flex lg:flex-row flex-col lg:space-x-2" style="margin-left:310px;">
-                                <select name="user_gender" id="user_gender"  class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800" required autocomplete="user_gender" style="border: 1px solid #d3d5d8 !important;width: 150px;padding-left: 5px;" >
-                                    <option value="male" {{ old('user_gender') === 'male' ? 'selected' : '' }}>Male</option>
-                                    <option value="female" {{ old('user_gender') === 'female' ? 'selected' : '' }}>Female</option>
+                                <select name="user_gender" id="user_gender"  class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800" required autocomplete="user_gender" style="border: 1px solid #d3d5d8 !important;width: 150px;padding-left: 5px;">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
-                                <input id="user_dob" type="date" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800" name="user_dob"  required autocomplete="user_gender" style="border: 1px solid #d3d5d8 !important;width: 288px;padding-left: 5px;" value="{{old('user_dob')}}">
+                                <input id="user_dob" type="date" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800" name="user_dob"  required autocomplete="user_gender" style="border: 1px solid #d3d5d8 !important;width: 288px;padding-left: 5px;">
                             </div>
 
                         <div class="row mb-0">

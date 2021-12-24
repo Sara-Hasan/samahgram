@@ -17,8 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->bigInteger('phone')->unique();
-            $table->text('user_img')->default('https://www.shutterstock.com/search/instagram+avatar');
+            $table->integer('phone')->unique();
+            $table->text('user_img')->default('images/a04d849cf591c2f980548b982f461401.jpg');
             $table->string('user_gender');
             $table->date('user_dob');
             $table->boolean('user_active_status')->default(0);
