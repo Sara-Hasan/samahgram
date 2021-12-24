@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {return view('feed');})->middleware('auth');
+Route::get('/home', function () {
+    return view('home');
+})->middleware('auth');
 
 Auth::routes();
 
@@ -37,3 +38,6 @@ Route::get('/chat', function () {
  Route::get('/setting', function () {
     return view('setting');
  })->name('setting');
+
+Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
+Route::resource('/posts', 'App\Http\Controllers\PostController');

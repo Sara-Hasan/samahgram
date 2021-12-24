@@ -13,14 +13,12 @@
       <meta name="description" content="Instello - Sharing Photos platform HTML Template">
       <!-- icons
          ================================================== -->
-      <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
       <link rel="stylesheet" href={{asset('assets/css/icons.css')}}>
       <!-- CSS
          ================================================== -->
       <link rel="stylesheet" href={{asset('assets/css/uikit.css')}}>
       <link rel="stylesheet" href={{asset('assets/css/style.css')}}>
       <link rel="stylesheet" href={{asset('assets/css/tailwind.css')}}>
-
       <style>
          @media (min-width: 1024px) {
          header .header_inner {
@@ -96,7 +94,7 @@
                     </div>
 
 
-                    <div uk-drop="pos: top-right; mode: click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
+                    <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
                         <!-- notivication header -->
                         <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                            <h4>Upload Video</h4>
@@ -162,7 +160,7 @@
                        </a>
                        <div class="poA5q" style="margin-left: -423px;"></div>
                     </div>
-                    <div uk-dropdown="pos: top-right;mode:click ; offset: 4" class="header_dropdown">
+                    <div uk-drop="mode: click;offset: 4" class="header_dropdown">
                         <h4
                            class="-mt-5 -mx-5 bg-gradient-to-t from-gray-100 to-gray-50 border-b font-bold px-6 py-3">
                            Notification
@@ -246,7 +244,7 @@
                     </span>
                        <div class="poA5q" style="margin-left: -180px;"></div>
                     </div>
-                        <div  uk-drop="pos: top-right; mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
                               <li><a href="{{route('profile')}}"> Profile </a> </li>
                               <li><a href="{{route('setting')}}"> Setting </a> </li>
