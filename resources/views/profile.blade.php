@@ -1,3 +1,4 @@
+{{--@extends('layouts.app')--}}
 @extends('layout.head')
 @section('content')
 <div class="main_content">

@@ -46,21 +46,21 @@
             </a>
             </div>
             <div class="left-side">
-
-            <div class="header_search">
-                <form action="{{ route('search') }}" method="GET">
+             <div>
+                <form action="{{ route('search') }}" method="GET" class="header_search">
                     <input type="text" name="search" required/>
                     <button type="submit" ><i class="bi bi-search"></i></button>
                 </form>
+              </div>
                 @isset($users)
                @if($users->isNotEmpty())
-                        <label for="user-serach"><i class="bi bi-search"></i></label><select name="user-serach" id="">
+                        <ul>
                     @foreach ($users as $user)
-                                <option value="{{ $user->id}}">
-                                     {{ $user->name}}
-                                </option>
+                   <li>
+                            <a href="/{{$user->id}}">{{ $user->name}}</a>
+                   </li>
                     @endforeach
-                        </select>
+                        </ul>
                 @else
                     <div>
                         <h2>No users found</h2>
@@ -68,7 +68,7 @@
                 @endif
                 @endisset
              </div>
-            </div>
+
 
             <div class="right-side">
 
