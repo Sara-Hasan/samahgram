@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {return view('feed');})->middleware('auth');
+Route::get('/', static function () {return view('feed');})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+/*search*/
+Route::get('/search/', 'HomeController@search')->name('search');
 
-Route::get('/', function () {
+Route::get('/', static function () {
         return view('profile');
     });
-    Route::get('/chat', function () {
+    Route::get('/chat', static function () {
         return view('chat');
     });
