@@ -46,11 +46,13 @@ Route::get('/trending', function () {
     return view('trending');
 })->name('trending');
 
-Route::get('/setting', function () {
-    return view('setting');
-})->name('setting');
+// Route::get('/setting', function () {
+//     return view('setting');
+// })->name('setting');
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
+Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
+Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);

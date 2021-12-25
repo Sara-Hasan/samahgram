@@ -18,7 +18,7 @@
 
                <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
                   <h2 class="title_header mb-2"> {{$user->name}}</h2>
-                  <a href="#" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
+                  <a href="profile/setting/{{$user->id}}" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
                   <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
                </div>
 
