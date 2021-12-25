@@ -30,7 +30,7 @@ class HomeController extends Controller
         $followers = auth()->user()->following()->where('follow_type', 'followers')->get('second_user_id');
 
         // return count($user);
-
+        $x=[];
         $login_user = auth()->user();
         foreach ($following as $key) {
             $x[] = $key->second_user_id;
