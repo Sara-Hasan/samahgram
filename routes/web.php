@@ -66,12 +66,6 @@ Route::resource('comments', CommentController::class);
 /*countries*/
 Route::get('/reg', [CountryController::class, 'index']);
 
-/*countries*/
-Route::get('/reg', [CountryController::class, 'index']);
 
-// Route::get('/', static function () {
-//     return view('profile');
-// })->middleware('auth');
-// Route::get('/chat', static function () {
-//     return view('chat');
-// })->middleware('auth');
+
+
