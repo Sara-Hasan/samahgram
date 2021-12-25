@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,4 +43,6 @@ Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show']
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);
+Route::post('/like-post/{id}',[PostController::class,'likePost'])->name('like.post');
+Route::post('/unlike-post/{id}',[PostController::class,'unlikePost'])->name('unlike.post');
 
