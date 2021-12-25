@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\PostController;
-
-
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
@@ -37,7 +34,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');
 
 /*countries*/
-Route::get('/reg', [CountryController::class, 'index'])->name('register');
+Route::get('/reg', [CountryController::class, 'index'])->middleware('auth')->name('register');
 
 
 Route::get('/chat', function () {
@@ -49,13 +46,9 @@ Route::get('/trending', function () {
     return view('trending');
 })->name('trending');
 
-Route::get('/setting', function () {
-    return view('setting');
-})->name('setting');
-/*admin*/
-Route::get('/admoon', function () {
-    return view('admin/index');
-})->name('admin');
+// Route::get('/setting', function () {
+//     return view('setting');
+// })->name('setting');
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
@@ -63,5 +56,10 @@ Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class,
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);
-Route::post('/like-post/{id}', [PostController::class, 'likePost'])->name('like.post');
-Route::post('/unlike-post/{id}', [PostController::class, 'unlikePost'])->name('unlike.post');
+
+/*countries*/
+Route::get('/reg', [CountryController::class, 'index']);
+
+
+
+

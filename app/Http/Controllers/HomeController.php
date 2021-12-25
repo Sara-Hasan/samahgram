@@ -30,7 +30,7 @@ class HomeController extends Controller
         $followers = auth()->user()->following()->where('follow_type', 'followers')->get('second_user_id');
 
         // return count($user);
-        $x = [];
+        $x[] = '';
         $login_user = auth()->user();
         foreach ($following as $key) {
             $x[] = $key->second_user_id;
@@ -70,11 +70,11 @@ class HomeController extends Controller
         $login_user = auth()->user();
         // return $login_user;
         // return $user->posts ;
-        $user_relationship_status = ['Single', 'In a relationship', 'Married', 'Engaged'];
-
+        $user_relationship_status=['Single','In a relationship','Married','Engaged'];
+         
         if ($login_user->id == $user->id) {
-            return view('setting', compact('user', 'user_relationship_status'));
-        }
+            return view('setting', compact('user','user_relationship_status'));
+        } 
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));
@@ -82,11 +82,11 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $input = $request;
+        $user= User::find($id);
+        $input= $request;
         // return $input;
         if (request('user_img')) {
-            $input['user_img'] = request('user_img')->store('images');
+            $input['user_img']= request('user_img')->store('images');
             return $input['user_img'];
             // $user->user_img = $input['user_img'];
         }

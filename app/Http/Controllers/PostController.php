@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\JsonResponse;
+
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -15,27 +15,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts= Post::all();
-        return view('home',compact($posts));
-
-    }
-    public function likePost($id)
-    {
-        $post = Post::find($id);
-        $post->like();
-        $post->save();
-
-        return redirect()->route('home');
     }
 
-    public function unlikePost($id)
-    {
-        $post = Post::find($id);
-        $post->unlike();
-        $post->save();
-        
-        return redirect()->route('home');
-    }
     /**
      * Show the form for creating a new resource.
      *
