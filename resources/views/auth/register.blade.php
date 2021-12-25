@@ -1,3 +1,4 @@
+{{-- @dd($Getcountrylist) --}}
 @extends('layouts.app')
 
 @section('content')
@@ -40,10 +41,17 @@
                         </div>
                         <div class="row mb-3">
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
+                            <div class="col-md-2">
+                                <select name="phone1" id="phone" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800 px-2 " >
+                                    @foreach ($Getcountrylist as $key => $Country)
+                                        <option value="{{ $key }}" {{($Country==='JO') ? 'selected' : ""}}>{{ $Country }} - {{ $key }}</option>
+                                    @endforeach
+                                </select>
+{{--                                <input id="phone" type="text" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800 " name="phone1" value="00962" required autocomplete="phone" placeholder="00962" disabled>--}}
+                            </div>
 
-                            <div class="col-md-6">
-                                <input id="phone" type="number" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800 @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="77/79/78-0000000">
-
+                                <div class="col-md-4">
+                                <input id="phone" type="text" class="bg-gray-200 mb-2 shadow-none  px-2 dark:bg-gray-800 @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="mobile number">
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
