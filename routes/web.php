@@ -54,6 +54,12 @@ Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show']
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
+// Route::resource('/follows', 'App\Http\Controllers\FollowController');
+// Route::post('/follows/{id}', [App\Http\Controllers\FollowController::class, 'store'])->name('follow');
+// Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
+Route::resource('/follows', 'App\Http\Controllers\FollowController');
+
+
 
 Route::resource('comments', CommentController::class);
 
