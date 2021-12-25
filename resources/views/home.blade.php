@@ -176,6 +176,23 @@
                                             </svg>
                                         </div>
                                         <div> Like</div>
+
+                                        <form action="{{ route('like.post', $post->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button
+                                                                class="{{ $post->liked() ? 'bg-blue-600' : '' }} px-4 py-2 text-black bg-gray-600">
+                                                                like {{ $post->likeCount }}
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('unlike.post', $post->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button
+                                                                class="{{ $post->liked() ? 'block' : 'hidden'  }} px-4 py-2 text-black bg-red-600">
+                                                                unlike
+                                                            </button>
+                                                        </form>
                                     </a>
                                     <a href="#" class="flex items-center space-x-2">
                                         <div class="p-2 rounded-full text-black">
@@ -489,6 +506,7 @@
                                         <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
                                         <img src="assets/images/avatars/avatar-2.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white dark:border-gray-900 -ml-2">
                                     </div>
+
                                     <div class="dark:text-gray-100">
                                         Liked <strong> Johnson</strong> and <strong> 209 Others </strong>
                                     </div>
@@ -795,6 +813,5 @@
             </div>
 
         </div>
-
-    <x-Story/>
-</x-layout>
+        <x-Story />
+    </x-layout>

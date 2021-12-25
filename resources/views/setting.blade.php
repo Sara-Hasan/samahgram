@@ -11,47 +11,58 @@
                     </div>
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
 
-                       <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
-                           <div>
-                               <label for=""> First name</label>
-                               <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
-                           </div>
-                           <div>
-                               <label for=""> Last name</label>
-                               <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
-                            </div>
-                            <div class="col-span-2">
-                                <label for=""> Email</label>
-                                <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
-                            </div>
-                            <div class="col-span-2">
-                                <label for="about">About me</label>
-                                <textarea id="about" name="about" rows="3"  class="shadow-none bg-gray-100"></textarea>
-                            </div>
-                            <div class="col-span-2">
-                                <label for=""> Location</label>
-                                <input type="text" placeholder="" class="shadow-none bg-gray-100">
-                            </div>
-                            <div>
-                               <label for=""> Working at</label>
-                               <input type="text" placeholder="" class="shadow-none bg-gray-100">
-                            </div>
-                            <div>
-                               <label for=""> Relationship </label>
-                               <select id="relationship" name="relationship"  class="shadow-none bg-gray-100">
-                                <option value="0">None</option>
-                                <option value="1">Single</option>
-                                <option value="2">In a relationship</option>
-                                <option value="3">Married</option>
-                                <option value="4">Engaged</option>
-                              </select>
-                            </div>
-                       </div>
+                        <form action="{{route('profile',$user->id)}}" method="post" enctype="multipart/form-data">
+                           <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
+                           <div class="form-group">
+                               <label for="pwd">User Image:</label>
+                               <img width="100" height="100" src="{{$user->user_img}}" alt="" style="margin-bottom: 20px;">
+                               <label for="pwd">Change user Image</label>
 
-                       <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                           <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button>
-                           <button type="button" class="button bg-blue-700"> Save </button>
-                       </div>
+                            <input type="file" class="form-control-file" id="pwd" placeholder="Enter password" name="user_img">
+                            </div>
+                                     <div class="col-span-2">
+                                        <label for=""> User name</label>
+                                        <input type="text" name="name" placeholder="Your name.." class="shadow-none bg-gray-100" value="{{$user->name}}">
+                                    </div>
+                                    
+                                        <div class="col-span-2">
+                                            <label for=""> Email</label>
+                                            <input type="text" name="email" placeholder="Your name.." class="shadow-none bg-gray-100" value="{{$user->email}}">
+                                        </div>
+                                        <div class="col-span-2">
+                                            <label for=""> Phone Number</label>
+                                            <input type="text" name="phone" placeholder="Your name.." class="shadow-none bg-gray-100" value="{{$user->phone}}">
+                                        </div>
+                                        <div class="col-span-2">
+                                            <label for="">Bio</label>
+                                            <textarea id="" name="user_bio" rows="3"  class="shadow-none bg-gray-100">{{$user->user_bio}}</textarea>
+                                        </div>
+                                        <div>
+                                        <label for=""> Relationship </label>
+                                        <select id="relationship" name="user_relationship_status"  class="shadow-none bg-gray-100">
+                                            
+                                            <option value="{{$user->user_relationship_status}}">{{$user->user_relationship_status}}</option>
+                                            <option value="0">None</option>
+                                            @foreach ($user_relationship_status as $status)
+                                                @if ($status == $user->user_relationship_status)
+                                                    @continue
+                                                    @endif 
+                                            <option value="{{$status}}">{{$status}}</option>
+                                           
+                                            @endforeach 
+                                        </select>
+                                        </div>
+                        @csrf
+                            @method('PUT')      
+                         
+                    </div>
+                    <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
+                        <a href=""><button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button></a>
+                        <input type="submit" class="button bg-blue-700" value="Save" > 
+                    </div>
+                            </form>
+                          
+
 
                     </div>
 

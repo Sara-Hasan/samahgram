@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-
 
 class CommentController extends Controller
 {
@@ -38,22 +36,19 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'comment_text' => ['required', 'string'],
-        ]);
-
-        $post = Post::findOrFail($request->post_id);
-
-        $user_id = auth()->user()->id;
-
-        $post->comments()->create(
+       $data= request()->validate([
+           'post_id' => ['required', 'integer'],
+           'comment_text' => ['required', 'text'],
+           ] );
+           $post= Post::findOrFail($request->post_id);
+           $user_id = auth()->user()->id ;
+           $post->comments()->create(
             [
-                'user_id' => $user_id,
-                'comment_text' => $data['comment_text'],
-            ]
-            );
+             'user_id' => $user_id,
+             'comment_text' => $data['comment_text'],
+          ]);
+          return back();
 
-        return back();
     }
 
     /**
@@ -64,8 +59,7 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-                abort(404);
-
+        //
     }
 
     /**
@@ -76,8 +70,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        abort(404);
-
+        //
     }
 
     /**
@@ -89,8 +82,7 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        abort(404);
-
+        //
     }
 
     /**
@@ -101,12 +93,6 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        if($comment == null)
-        {
-            abort(404);
-        }
-        // $this->authorize('delete', $comment );
-        $comment->delete();
-        return back();
+        //
     }
 }
