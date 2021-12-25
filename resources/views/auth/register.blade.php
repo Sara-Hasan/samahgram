@@ -1,4 +1,4 @@
-
+{{-- @dd($Getcountrylist) --}}
 @extends('layouts.app')
 
 @section('content')

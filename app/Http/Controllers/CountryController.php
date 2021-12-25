@@ -9,7 +9,7 @@ class CountryController extends Controller
 {
     public function index()
     {
-        $Getcountrylist = Country::pluck('iso','phonecode')->all();
-        return view('auth/register',compact('Getcountrylist'));
+        $Getcountrylist = Country::pluck('iso', 'phonecode')->all();
+        return view('auth/register', compact('Getcountrylist'));
     }
 }
