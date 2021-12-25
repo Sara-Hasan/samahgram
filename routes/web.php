@@ -34,7 +34,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');
 
 /*countries*/
-Route::get('/reg', [CountryController::class, 'index'])->middleware('auth')->name('register');
+Route::get('/reg', [CountryController::class, 'index'])->name('register');
 
 
 Route::get('/chat', function () {
@@ -49,21 +49,13 @@ Route::get('/trending', function () {
 Route::get('/setting', function () {
     return view('setting');
 })->name('setting');
+/*admin*/
+Route::get('/admoon', function () {
+    return view('admin/index');
+})->name('admin');
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);
 
-/*countries*/
-Route::get('/reg', [CountryController::class, 'index']);
-
-/*countries*/
-Route::get('/reg', [CountryController::class, 'index']);
-
-// Route::get('/', static function () {
-//     return view('profile');
-// })->middleware('auth');
-// Route::get('/chat', static function () {
-//     return view('chat');
-// })->middleware('auth');
