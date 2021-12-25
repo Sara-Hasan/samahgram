@@ -11,6 +11,8 @@
          <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Instello - Sharing Photos platform HTML Template">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+
       <!-- icons
          ================================================== -->
       <link rel="stylesheet" href={{asset('assets/css/icons.css')}}>
@@ -287,7 +289,7 @@
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
                               <li><a href="profile/{{Auth::user()->id}}"> Profile </a> </li>
-                              <li><a href="{{route('setting')}}"> Setting </a> </li>
+                              <li><a href="profile/setting/{{Auth::user()->id}}"> Setting </a> </li>
                               <li>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -317,7 +319,7 @@
 
       </header>
 
-{{$slot}}
+@yield('content')
 
       <script>
          (function (window, document, undefined) {
@@ -362,5 +364,6 @@
       <script src={{asset('assets/js/simplebar.js')}}></script>
       <script src={{asset('assets/js/custom.js')}}></script>
       <script src="https://unpkg.com/ionicons@6.0.0/dist/ionicons.js"></script>
+
    </body>
 </html>

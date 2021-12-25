@@ -1,40 +1,51 @@
 <x-layout>
 
-   <div class="main_content">
-      <div class="container pro-container m-auto">
-         <!-- profile-cover-->
-         <div class="flex lg:flex-row flex-col items-center pb-7 pt-4 lg:space-x-8">
-            <div class="img_header">
-               <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full m-0.5 mr-2  w-50 h-50 relative overflow-hidden uk-transition-toggle">
-                  <img src="{{$user->user_img}}" class="bg-gray-200 border-4 border-white rounded-full w-full h-full dark:border-gray-900">
-                  <div class="absolute -bottom-3 custom-overly1 flex justify-center pt-4 pb-7 space-x-3 text-2xl text-white uk-transition-slide-bottom-medium w-full">
-                     <a href="#" class="hover:text-white">
-                        <i class="uil-camera"></i>
-                     </a>
-                  </div>
+<div class="main_content">
+   <div class="container pro-container m-auto">
+      <!-- profile-cover-->
+      <div class="flex lg:flex-row flex-col items-center pb-7 pt-4 lg:space-x-8">
+         <div class="img_header">
+            <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full m-0.5 mr-2  w-50 h-50 relative overflow-hidden uk-transition-toggle">
+               <img src="{{$user->user_img}}" class="bg-gray-200 border-4 border-white rounded-full w-full h-full dark:border-gray-900">
+               <div class="absolute -bottom-3 custom-overly1 flex justify-center pt-4 pb-7 space-x-3 text-2xl text-white uk-transition-slide-bottom-medium w-full">
+                  <a href="#" class="hover:text-white">
+                  <i class="uil-camera"></i>
+                  </a>
                </div>
             </div>
-            <div class="lg:w/8/12 flex-1 flex flex-col lg:items-start items-center">
-
-               <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
-                  <h2 class="title_header mb-2"> {{$user->name}}</h2>
-                  <a href="profile/setting/{{$user->id}}" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
-                  <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
-               </div>
-
-               <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
-                  <div class="flex lg:flex-row flex-col"> {{count($user->posts)}} <strong class="lg:pl-2">Posts</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($followers)}} <strong class="lg:pl-2">Followers</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($following)}} <strong class="lg:pl-2">Following</strong></div>
-               </div>
-            </div>
-            <div class="w-20"></div>
          </div>
-         <h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mt-8"> Posts </h1>
+         <div class="lg:w/8/12 flex-1 flex flex-col lg:items-start items-center">
+          @if (empty($login_user->following[0]))
+            <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
+                <h2 class="title_header mb-2"> {{$user->name}}</h2>
+               <a href="#" class="bg-blue shadow-sm p-21 px-6 rounded">Follow</a>
+               <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
+            </div>
+            @elseif($login_user->following[0]->follow_type == 'following' && $user->id ===$login_user->following[0]->second_user_id )
+            <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
+                <h2 class="title_header mb-2"> {{$user->name}}</h2>
+               <a href="#" class="bg-blue shadow-sm p-21 px-6 rounded">Un Follow </a>
+               <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
+            </div>
+            @else
+            <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
+                <h2 class="title_header mb-2"> {{$user->name}}</h2>
+               <a href="#" class="bg-blue shadow-sm p-21 px-6 rounded">Follow</a>
+               <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
+            </div>
+            @endif
 
-
-
-         <div class="my-6 grid lg:grid-cols-3 grid-cols-2 gap-6 hover:text-yellow-700 uk-link-reset">
+            <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
+               <div class="flex lg:flex-row flex-col"> {{count($user->posts)}} <strong class="lg:pl-2">Posts</strong></div>
+               <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($followers)}} <strong class="lg:pl-2">Followers</strong></div>
+               <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($following)}} <strong class="lg:pl-2">Following</strong></div>
+            </div>
+           
+         </div>
+         <div class="w-20"></div>
+      </div>
+      <h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mt-8"> Posts </h1>
+      <div class="my-6 grid lg:grid-cols-3 grid-cols-2 gap-6 hover:text-yellow-700 uk-link-reset">
             @foreach ($user->posts as $value)
             <div>
                <div class="bg-red-500 max-w-full lg:h-72 h-40 relative overflow-hidden uk-transition-toggle" tabindex="0">
@@ -157,11 +168,10 @@
 
             @endforeach
          </div>
-         <div class="flex justify-center mt-6">
-            <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white"> Load more ..</a>
-         </div>
+      <div class="flex justify-center mt-6">
+         <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white"> Load more ..</a>
       </div>
    </div>
-
-   <x-Story />
+</div>
+<x-Story/>
 </x-layout>

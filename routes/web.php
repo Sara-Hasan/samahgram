@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
+
+
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
@@ -55,7 +58,10 @@ Route::get('/admoon', function () {
 })->name('admin');
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
+Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
+Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 
 Route::resource('comments', CommentController::class);
-
+Route::post('/like-post/{id}', [PostController::class, 'likePost'])->name('like.post');
+Route::post('/unlike-post/{id}', [PostController::class, 'unlikePost'])->name('unlike.post');
