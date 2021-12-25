@@ -61,6 +61,7 @@ class PostController extends Controller
 
         if (request('post_img')) {
             $input['post_img']= request('post_img')->store('images');
+            return $input['post_img'];
         }
         auth()->user()->posts()->create($input);
         // Session::flash('post_create_massage','post was created');
@@ -77,7 +78,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        
     }
 
     /**

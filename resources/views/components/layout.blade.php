@@ -43,19 +43,59 @@
                <a href="trending.html">
                 <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="">
             </a>
-            </div>
-            <div class="left-side">
+
+                <div class="left-side">
+                    <div>
+                        <form action="{{ route('search') }}" method="GET" class="header_search">
+                            <input type="text" name="search" required/>
+                            <button type="submit" ><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+                    @isset($users)
+                        @if($users->isNotEmpty())
+                            <ul>
+                                @foreach ($users as $user)
+                                    <li>
+                                        <a href="/{{$user->id}}">{{ $user->name}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <div>
+                                <h2>No users found</h2>
+                            </div>
+                        @endif
+                    @endisset
+                </div>
+
+                <div class="left-side">
 
             <div class="header_search">
-                <input type="text" placeholder="Search..">
-                <div class="icon-search">
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                   </svg>
-                </div>
-             </div>
+                    <form action="{{ route('search') }}" method="GET" class="header_search">
+                        <input type="text" name="search" required/>
+                        <button type="submit" >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </form>
+                @isset($users)
+                    @if($users->isNotEmpty())
+                        <ul>
+                            @foreach ($users as $user)
+                                <li>
+                                    <a href="/{{$user->id}}">{{ $user->name}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <div>
+                            <h2>No users found</h2>
+                        </div>
+                    @endif
+                @endisset
             </div>
 
             <div class="right-side">
@@ -249,7 +289,7 @@
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
                               <li><a href="profile/{{Auth::user()->id}}"> Profile </a> </li>
-                              <li><a href="{{route('setting')}}"> Setting </a> </li>
+                              <li><a href="profile/setting/{{Auth::user()->id}}"> Setting </a> </li>
                               <li>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

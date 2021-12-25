@@ -58,7 +58,7 @@
                         <a class="py-3 px-4" href="{{ route('login') }}" >{{ __('Login') }}</a>
                                @endif
                      @if (Route::has('register'))
-                         <a class="bg-pink-500 pink-500 px-6 py-3 rounded-md shadow text-white" href="{{ route('register') }}">{{ __('Register') }}</a>{{--                                </li>--}}
+                         <a class="bg-pink-500 pink-500 px-6 py-3 rounded-md shadow text-white" href="/reg">{{ __('Register') }}</a>{{--                                </li>--}}
                                 @endif
                     @else
                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

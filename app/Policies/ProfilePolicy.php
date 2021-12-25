@@ -18,7 +18,7 @@ class ProfilePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->is($user);
+        // return $user->is($user);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProfilePolicy
      */
     public function view(User $user, Profile $profile)
     {
-        // return $user->id === $profile->user_id;
+        return $user->id === $profile->id;
     }
 
     /**
