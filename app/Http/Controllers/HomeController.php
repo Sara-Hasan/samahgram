@@ -52,21 +52,14 @@ class HomeController extends Controller
         $login_user = auth()->user();
         $following = auth()->user()->following()->where('follow_type','following')->get('second_user_id');
         $followers = auth()->user()->following()->where('follow_type','followers')->get('second_user_id');
-        // return $login_user->following ;
-        if ($login_user->following) {
-               foreach ($login_user->following as $value) {
-            //    return $value->follow_type;
-            return 'ali';
-               $follow_type= $value->follow_type;
-               $id= $value->second_user_id;
-           } 
-        }else $follow_type= $login_user->following ->follow_type= 'no';
+        // return $user->posts ;
+     
         
 
             if ($login_user == $user) {
                 return view('profile',compact('user','following','followers'));
             }else
-            return view('users_page',compact('user','following','followers','login_user','follow_type','id'));
+            return view('users_page',compact('user','following','followers','login_user'));
         // $user->posts;
         // return  count($following);
     }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/chat', function () {
+   return view('chat');
+})->name('chat');
+
+
+ Route::get('/trending', function () {
+    return view('trending');
+ })->name('trending');
+
+ Route::get('/setting', function () {
+    return view('setting');
+ })->name('setting');
+
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
+
+Route::resource('comments', CommentController::class);
+

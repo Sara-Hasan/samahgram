@@ -2605,6 +2605,8 @@ header .uk-dropdown {
 .main_content {
   background-color: #f0f2f5;
   margin-bottom: 80px;
+  padding-top: 80px;
+
 }
 
 @media (max-width: 1100px) {
@@ -2905,7 +2907,6 @@ header .uk-dropdown {
     transition: bottom .2s ease-in-out;
     width: 4px;
 }
-
 ._8-yf5 {
     display: block;
     position: relative;
@@ -2954,5 +2955,45 @@ header .uk-dropdown {
 }
 .XrOey:not(:first-child) {
     margin-left: 22px;
+}
+.bg-blue{
+    background-color: rgba(0 149 246);
+    color: #fff;
+  }
+  .bg-blue:hover{
+    background-color: rgba(0 149 246);
+    color: #fff;
+  }
+  .bg-blue:active {
+    opacity: .7;
+}
+.bg-transparent{
+    background-color: transparent;
+    border: 1px solid #dbdbdb;
+  }
+  .bg-transparent:active ,.comment:hover,.like:hover{
+    opacity: .7;
+}
+.like._8-yf5 {
+    top: 6px;
+}
+.comment_component,.date
+{
+color: #8e8e8e;
+background: 0 0;
+border: 0;
+display: inline;
+font-size: 12px;
+line-height: 16px;
+padding: 0;
+}
+.reply {
+    margin-top: -5px;
+    font-weight: 600;
+}
+.comment_lable
+{
+    cursor: pointer;
+    margin: 0px;
 }
 
