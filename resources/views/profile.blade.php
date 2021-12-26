@@ -24,7 +24,7 @@
 
                <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
                   <div class="flex lg:flex-row flex-col"> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif <strong class="lg:pl-2">Posts</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_followers)) {{count($login_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2">Followers</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_followers)) {{count($login_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2"><a href="#followers-modal" uk-toggle>Followers</a> </strong></div>
                   <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2">Following</strong></div>
                </div>
             </div>
@@ -162,6 +162,5 @@
          </div>
       </div>
    </div>
-
-   <x-Story />
+ <x-followers/>
 </x-layout>

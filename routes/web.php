@@ -3,9 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\AdminController;
+>>>>>>> 001f959b4793e84cad0d506eb5e670ef957879c0
 use App\Http\Controllers\TrendingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,15 +46,15 @@ Route::get('/reg', [CountryController::class, 'index'])->middleware('auth')->nam
 
 
 Route::get('/chat', function () {
-   return view('chat');
+    return view('chat');
     return view('chat');
 })->name('chat');
 
 
- Route::get('/trending', function () {
 Route::get('/trending', function () {
-    return view('trending');
- })->name('trending');
+    Route::get('/trending', function () {
+        return view('trending');
+    })->name('trending');
 })->name('trending');
 
 // Route::get('/setting', function () {
@@ -57,6 +63,7 @@ Route::get('/trending', function () {
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
+Route::put('/changePassword', [App\Http\Controllers\HomeController::class, 'changePasswordPost'])->name('changePassword');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 // Route::resource('/follows', 'App\Http\Controllers\FollowController');
@@ -71,6 +78,14 @@ Route::resource('comments', CommentController::class);
 /*countries*/
 Route::get('/reg', [CountryController::class, 'index']);
 
+Route::get('/post/{id}', [PostController::class, 'show'])->name('post');
 
+//* admin*//
 
-
+//Route::get('/admoon', function () {
+//    return view('admin/index');
+//})->name('admin1');
+Route::resource('/admoon', AdminController::class);
+Route::get('/admooon', [AdminController::class, 'index2'])->name('admooon');
+Route::resource('/admooon2', MoviesController::class);
+Route::get('/manageadmoon', [AdminController::class, 'index3'])->name('admoonprofile');

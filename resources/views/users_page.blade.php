@@ -68,8 +68,8 @@
          <div class="w-20"></div>
       </div>
       <h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mt-8"> Posts </h1>
-      @if (!empty($results[0]))
-      @if ($results[0]->follow_type == 'following' && $user->id ===$results[0]->second_user_id )
+     
+      @if (!empty($results[0])&& $results[0]->follow_type == 'following' && $user->id ===$results[0]->second_user_id )
       <div class="my-6 grid lg:grid-cols-3 grid-cols-2 gap-6 hover:text-yellow-700 uk-link-reset">
             @foreach ($user->posts as $value)
             <div>
@@ -192,12 +192,12 @@
             </div>
 
             @endforeach
+            
+            @else
+            <h2>This Profile is Privet</h2>
          </div>
-         @else
-         
-         <h2>This Profile is Privet</h2>
          @endif
-         @endif
+        
       
    </div>
 </div>

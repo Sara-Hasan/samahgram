@@ -15,16 +15,19 @@ class TrendingController extends Controller
      */
     public function index()
 {
-    $data    = Post::inRandomOrder()
-                ->limit(6)
-                ->get();
-    // $data = Post::all();
-    // $users   = User::all();
-    $follows =  Follow::all();
-    $users    = User::inRandomOrder()
-    ->limit(10)
-    ->get();
-    return view ('trending', compact('data','users','follows'));
+    $login_user= auth()->user();
+
+    $users=User::whereNotIn('id', $login_user->following->pluck('second_user_id')) // exclude already followed
+    ->where('id', '<>', $login_user->id)->get();
+  
+    $id[] = '';
+    foreach ($users as $user) {
+        
+        $id[] = $user->id;
+    }
+    $posts = Post::whereIn('user_id', $id)->get();
+    // return $posts ;
+    return view ('trending', compact('users','posts'));
     
 }
 

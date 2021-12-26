@@ -80,22 +80,22 @@
                                     </div>
                                 </div>
                                 {{-- <div class="Enlg5">
-    <div class="_FsHZ">
-<div class="N9UEt HsptU"></div>
-<div class="V4b9z">
-    <div class="hhLES">
-<img alt="Photo for tag placement" class="agsn8"
-    src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE-1200x900.jpg">
-<div class="civB6" role="button" tabindex="0"></div>
-<div style="position: absolute;">
-    <div>
-<div class="MKHZs"></div>
-    </div>
-</div>
-    </div>
-</div>
-    </div>
-</div> --}}
+                    <div class="_FsHZ">
+                <div class="N9UEt HsptU"></div>
+                <div class="V4b9z">
+                    <div class="hhLES">
+                <img alt="Photo for tag placement" class="agsn8"
+                    src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE-1200x900.jpg">
+                <div class="civB6" role="button" tabindex="0"></div>
+                <div style="position: absolute;">
+                    <div>
+                <div class="MKHZs"></div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                    </div>
+                </div> --}}
                             </div>
                             <div class="div_set _83r9B" style="opacity: 1;">
                                 <div class="div_set   qF0y9   Igw0E IwRSH  eGOV_ vwCYk  ">
