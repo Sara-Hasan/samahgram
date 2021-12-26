@@ -795,5 +795,5 @@
             </div>
 
         </div>
-        <x-Story />
+        <x-story/>
     </x-layout>
