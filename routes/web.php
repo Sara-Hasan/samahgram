@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
-
+use App\Http\Controllers\TrendingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
 /*
@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('home');
 })->middleware('auth');
 
-// Route::get('/', function () {
-//     return view('home');
+Route::get('/aboutUs', function () {
+        return view('about');
+})->name('about');
 // })->middleware('auth')->name('home');
 //Route::get('/', static function () {return view('feed');})->middleware('auth');
 

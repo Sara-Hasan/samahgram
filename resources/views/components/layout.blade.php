@@ -252,6 +252,7 @@
                            <ul>
                               <li><a href="{{route('profile',Auth::user()->id)}}"> Profile </a> </li>
                               <li><a href="{{route('setting',Auth::user()->id)}}"> Setting </a> </li>
+                              <li><a href="{{route('about')}}"> About </a> </li>
                               <li>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
