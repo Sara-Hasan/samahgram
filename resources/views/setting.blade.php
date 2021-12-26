@@ -11,21 +11,12 @@
             <div id="tab-contents">
                 <div id="Basic" class="p-4">
 
-<<<<<<< HEAD
-                        <form action="{{route('profile.update',$user->id)}}" method="post" enctype="multipart/form-data">
-                           <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
-                           <div class="form-group">
-                               <label for="pwd">User Image:</label>
-                               <img width="100" height="100" src="{{$user->user_img}}" alt="" style="margin-bottom: 20px;">
-                               <label for="pwd">Change user Image</label>
-=======
                     <div class="grid lg:grid-cols-3 mt-12 gap-8">
                         <div>
                             <h3 class="text-xl mb-2"> Basic</h3>
                             <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
                         </div>
                         <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
->>>>>>> 45298325890e62f2ded0b722830a61d054c2cc26
 
                             <form action="{{ route('profile', $user->id) }}" method="post"
                                 enctype="multipart/form-data">
