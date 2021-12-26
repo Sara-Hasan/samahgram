@@ -244,7 +244,7 @@
                      <div class="XrOey">
                        <div class="wWGrn"></div>
                        <span class="_2dbep qNELH" role="link" tabindex="0" style="width: 24px; height: 24px;">
-                        <img alt="" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src={{asset('assets/images/avatars/avatar-2.jpg')}}>
+                        <img alt="" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src={{Auth::user()->user_img}}>
                     </span>
                        <div class="poA5q" style="margin-left: -180px;"></div>
                     </div>

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Follow;
 use App\Models\User;
 use App\Models\Post;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -36,13 +38,9 @@ class HomeController extends Controller
         foreach ($following as $key) {
             $x[] = $key->second_user_id;
         }
-        // $x= $user[0]->second_user_id;
-        // return $x;
-        // return $login_user->posts;
+     
         $posts = Post::whereIn('user_id', $x)->get();
-        // return $posts;
-
-        // dd ($posts[0]);
+       
 
         return  view('home', compact('posts', 'login_user', 'following', 'followers'));
     }
@@ -74,25 +72,20 @@ class HomeController extends Controller
             return view('profile', compact('user', 'login_following', 'login_followers'));
         } else
             return view('users_page', compact('user', 'user_following', 'user_followers', 'login_user','results'));
-        // $user->posts;
-        // return  count($following);
-        // return view('profile', compact('user', 'following', 'followers'));
+       
     }
 
     public function setting($id)
     {
         $user = User::find($id);
         $login_user = auth()->user();
-        // return $login_user;
-        // return $user->posts ;
+       
         $user_relationship_status=['Single','In a relationship','Married','Engaged'];
          
         if ($login_user->id == $user->id) {
             return view('setting', compact('user','user_relationship_status'));
         } 
-        // $user->posts;
-        // return  count($following);
-        // return view('profile', compact('user', 'following', 'followers'));
+       
     }
 
     public function update(Request $request, $id)
@@ -118,7 +111,7 @@ class HomeController extends Controller
                 'user_bio'=>$input['user_bio'],
                 'user_img'=>  $user->user_img
             ];
-            // $input['user_img'] = $user->user_img;
+           
         }
 
        
@@ -126,6 +119,38 @@ class HomeController extends Controller
         // session()->flash('post_updated_massage','post was updated');
 
         return  back();
+    }
+  
+
+    public function changePasswordPost(Request $request) {
+        $user= auth()->user();
+       
+        if (!(Hash::check($request->get('password'), $user->password))) {
+            // The passwords matches
+            // return "our current password does not matches with the old password.";
+            session()->flash('current_password_error','Your current password does not matches with the old password.');
+            return back();
+        }
+
+        if(strcmp($request->get('password'), $request->get('new_password')) == 0){
+            // Current password and new password same
+            session()->flash('same_password_error','New Password cannot be same as your current password.');
+
+            // return redirect()->back()->with("error","New Password cannot be same as your current password.");
+        }
+        if(strcmp($request->get('password_confirmation'), $request->get('new_password'))){
+            // Current password and new password same
+            session()->flash('not_mach_password_error','New Password dose not mach');
+
+            // return redirect()->back()->with("error","New Password cannot be same as your current password.");
+        }
+
+       
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+        session()->flash('password_updated_massage','password was updated');
+
+        return redirect()->back();
     }
 
     public function search(Request $request)

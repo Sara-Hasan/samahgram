@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
 
+use App\Http\Controllers\TrendingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
 /*
@@ -56,6 +57,7 @@ Route::get('/trending', function () {
 
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
+Route::put('/changePassword', [App\Http\Controllers\HomeController::class, 'changePasswordPost'])->name('changePassword');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 // Route::resource('/follows', 'App\Http\Controllers\FollowController');
