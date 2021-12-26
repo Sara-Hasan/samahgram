@@ -6453,7 +6453,7 @@
 
         data: {
             clsPage: 'uk-modal-page',
-            selPanel: '.uk-modal-dialog',
+            selPanel: '.uk-modal-dialog ,.gpWnf ',
             selClose: '.uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full'
         },
 
@@ -7114,7 +7114,7 @@
 
         data: {
             selContainer: '.uk-modal',
-            selContent: '.uk-modal-dialog'
+            selContent: '.uk-modal-dialog,.gpWnf'
         },
 
         computed: {

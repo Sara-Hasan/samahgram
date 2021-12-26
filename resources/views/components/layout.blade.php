@@ -38,7 +38,7 @@
 
             <div class="Logo">
                <!-- Logo -->
-               <a href="trending.html">
+               <a href="{{route('home')}}">
                 <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="">
             </a>
             </div>
@@ -55,6 +55,60 @@
                 </div>
              </div>
             </div>
+
+            {{-- <div class="left-side">
+                <div>
+                    <form action="{{ route('search') }}" method="GET" class="header_search">
+                        <input type="text" name="search" required/>
+                        <button type="submit" ><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+                @isset($users)
+                    @if($users->isNotEmpty())
+                        <ul>
+                            @foreach ($users as $user)
+                                <li>
+                                    <a href="/{{$user->id}}">{{ $user->name}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <div>
+                            <h2>No users found</h2>
+                        </div>
+                    @endif
+                @endisset
+            </div>
+
+            <div class="left-side"> --}}
+{{--
+        <div class="header_search">
+                <form action="{{ route('search') }}" method="GET" class="header_search">
+                    <input type="text" name="search" required/>
+                    <button type="submit" >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </form>
+            @isset($users)
+                @if($users->isNotEmpty())
+                    <ul>
+                        @foreach ($users as $user)
+                            <li>
+                                <a href="/{{$user->id}}">{{ $user->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @else
+                    <div>
+                        <h2>No users found</h2>
+                    </div>
+                @endif
+            @endisset
+        </div> --}}
 
             <div class="right-side">
 
@@ -82,7 +136,7 @@
                     </div>
 
                     <div class="XrOey">
-                        <a href="#">
+                        <a href="#post-modal"  uk-toggle>
                                 <div class="QBdPU " name="add-circle">
                                     <svg aria-label="New Post" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
                                        <path d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -93,65 +147,6 @@
                          </a>
                     </div>
 
-
-                    <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
-                        <!-- notivication header -->
-                        <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
-                           <h4>Upload Video</h4>
-                        </div>
-                        <!-- notification contents -->
-                        <div class="flex justify-center flex-center text-center dark:text-gray-300">
-                           <div class="flex flex-col choose-upload text-center">
-                              <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg dark:bg-gray-800 dark:border-gray-600">
-                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
-                                    <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
-                                    <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
-                                 </svg>
-                              </div>
-                              <p class="my-3 leading-6"> Do you have a video wants to share us <br> please upload her ..
-                              </p>
-                              <div uk-form-custom>
-                                 <input type="file">
-                                 <a href="#" class="button soft-warning small"> Choose file</a>
-                              </div>
-                              <a href="#" class="uk-text-muted mt-3 uk-link"
-                                 uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
-                              Or Import Video </a>
-                           </div>
-                           <div class="uk-flex uk-flex-column choose-upload" hidden>
-                              <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
-                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
-                                    <path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd" />
-                                 </svg>
-                              </div>
-                              <p class="my-3 leading-6"> Import videos from YouTube <br> Copy / Paste your video link here </p>
-                              <form class="uk-grid-small" uk-grid>
-                                 <div class="uk-width-expand">
-                                    <input type="text" class="uk-input uk-form-small  bg-gray-200 dark:bg-gray-700" style="box-shadow:none" placeholder="Paste link">
-                                 </div>
-                                 <div class="uk-width-auto"> <button type="submit" class="button soft-warning -ml-2">
-                                    Import </button>
-                                 </div>
-                              </form>
-                              <a href="#" class="uk-text-muted mt-3 uk-link"
-                                 uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
-                              Or Upload Video </a>
-                           </div>
-                        </div>
-                        <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm dark:border-gray-500 dark:text-gray-500">
-                           Your Video size Must be Maxmium 999MB
-                        </div>
-                     </div>
-                     <div class="XrOey">
-                       <a href="{{route('trending')}}" tabindex="0">
-                          <svg aria-label="Find People" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
-                             <polygon fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
-                             <polygon fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon>
-                             <circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
-                          </svg>
-                       </a>
-                    </div>
-
                     <div class="XrOey">
                        <a class="_0ZPOP kIKUG " href="#">
                           <svg aria-label="Activity Feed" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -160,7 +155,7 @@
                        </a>
                        <div class="poA5q" style="margin-left: -423px;"></div>
                     </div>
-                    <div uk-drop="mode: click;offset: 4" class="header_dropdown">
+                    <div uk-drop="pos: top-right; mode: click;offset: 4" class="header_dropdown">
                         <h4
                            class="-mt-5 -mx-5 bg-gradient-to-t from-gray-100 to-gray-50 border-b font-bold px-6 py-3">
                            Notification
@@ -278,6 +273,8 @@
       </header>
 
        {{$slot}}
+
+       <x-post/>
 
       <script>
          (function (window, document, undefined) {
