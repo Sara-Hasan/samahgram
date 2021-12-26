@@ -11,7 +11,7 @@
                     </div>
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
 
-                        <form action="{{route('profile',$user->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('profile.update',$user->id)}}" method="post" enctype="multipart/form-data">
                            <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                            <div class="form-group">
                                <label for="pwd">User Image:</label>
