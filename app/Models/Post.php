@@ -21,7 +21,6 @@ class Post extends Model
         }
         return asset('storage/' . $value);
         }
-<<<<<<< HEAD
 
     public function comments(){
     return $this-> hasMany(comment::class);
@@ -29,6 +28,4 @@ class Post extends Model
 
 
 
-=======
->>>>>>> aa22b4919323c4ffb46fd8b2f4f45151913fd92f
 }
