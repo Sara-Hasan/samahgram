@@ -15,7 +15,7 @@
                            <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                            <div class="form-group">
                                <label for="pwd">User Image:</label>
-                               <img width="100" height="100" src="{{$user->user_img}} alt="" style="margin-bottom: 20px;">
+                               <img width="100" height="100" src="{{$user->user_img}}" alt="" style="margin-bottom: 20px;">
                                <label for="pwd">Change user Image</label>
 
                             <input type="file" class="form-control-file" id="pwd" placeholder="Enter password" name="user_img">
@@ -57,7 +57,7 @@
                          
                     </div>
                     <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                        <a href=""><button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button></a>
+                        <a href="{{route('profile',Auth::user()->id)}}"><span class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </span></a>
                         <input type="submit" class="button bg-blue-700" value="Save" > 
                     </div>
                             </form>

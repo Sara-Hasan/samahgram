@@ -59,15 +59,17 @@
             @endif
 
             <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
-               <div class="flex lg:flex-row flex-col"> {{count($user->posts)}} <strong class="lg:pl-2">Posts</strong></div>
-               <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($following)}} <strong class="lg:pl-2">Followers</strong></div>
-               <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($followers)}} <strong class="lg:pl-2">Following</strong></div>
+            <div class="flex lg:flex-row flex-col"> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif <strong class="lg:pl-2">Posts</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($user_followers)) {{count($user_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2">Followers</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($user_following)) {{count($user_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2">Following</strong></div>
             </div>
            
          </div>
          <div class="w-20"></div>
       </div>
       <h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mt-8"> Posts </h1>
+      @if (!empty($results[0]))
+      @if ($results[0]->follow_type == 'following' && $user->id ===$results[0]->second_user_id )
       <div class="my-6 grid lg:grid-cols-3 grid-cols-2 gap-6 hover:text-yellow-700 uk-link-reset">
             @foreach ($user->posts as $value)
             <div>
@@ -191,9 +193,12 @@
 
             @endforeach
          </div>
-      <div class="flex justify-center mt-6">
-         <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white"> Load more ..</a>
-      </div>
+         @else
+         
+         <h2>This Profile is Privet</h2>
+         @endif
+         @endif
+      
    </div>
 </div>
 <x-Story/>
