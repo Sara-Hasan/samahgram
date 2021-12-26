@@ -63,7 +63,7 @@ Route::resource('/posts', 'App\Http\Controllers\PostController');
 // Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
 Route::resource('/follows', 'App\Http\Controllers\FollowController');
 
-
+Route::get('/trending', [TrendingController::class, 'index'])->name('trending');
 
 Route::resource('comments', CommentController::class);
 
