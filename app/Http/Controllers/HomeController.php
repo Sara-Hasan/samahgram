@@ -71,10 +71,10 @@ class HomeController extends Controller
         // return $login_user;
         // return $user->posts ;
         $user_relationship_status=['Single','In a relationship','Married','Engaged'];
-         
+
         if ($login_user->id == $user->id) {
             return view('setting', compact('user','user_relationship_status'));
-        } 
+        }
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));

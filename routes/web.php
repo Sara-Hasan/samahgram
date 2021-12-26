@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
 /*
@@ -61,5 +61,12 @@ Route::resource('comments', CommentController::class);
 Route::get('/reg', [CountryController::class, 'index']);
 
 
+//* admin*//
 
-
+//Route::get('/admoon', function () {
+//    return view('admin/index');
+//})->name('admin1');
+Route::resource('/admoon',AdminController::class);
+Route::get('/admooon',[AdminController::class,'index2'])->name('admooon');
+Route::resource('/admooon2',MoviesController::class);
+Route::get('/manageadmoon',[AdminController::class,'index3'])->name('admoonprofile');
