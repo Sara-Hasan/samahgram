@@ -15,7 +15,7 @@
                            <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                            <div class="form-group">
                                <label for="pwd">User Image:</label>
-                               <img width="100" height="100" src="{{$user->user_img}}" alt="" style="margin-bottom: 20px;">
+                               <img width="100" height="100" src="{{$user->user_img}} alt="" style="margin-bottom: 20px;">
                                <label for="pwd">Change user Image</label>
 
                             <input type="file" class="form-control-file" id="pwd" placeholder="Enter password" name="user_img">

@@ -1,5 +1,9 @@
 <?php
-use App\Http\Controllers\PostController;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CommentController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
 /*
@@ -31,7 +35,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');
 
 /*countries*/
-Route::get('/signup', [CountryController::class, 'index'])->middleware('auth')->name('register');
+Route::get('/reg', [CountryController::class, 'index'])->middleware('auth')->name('register');
 
 
 Route::get('/chat', function () {
@@ -46,9 +50,6 @@ Route::get('/trending', function () {
  })->name('trending');
 })->name('trending');
 
- Route::get('/setting', function () {
-    return view('setting');
- })->name('setting');
 // Route::get('/setting', function () {
 //     return view('setting');
 // })->name('setting');
@@ -57,20 +58,18 @@ Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show']
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
+// Route::resource('/follows', 'App\Http\Controllers\FollowController');
+// Route::post('/follows/{id}', [App\Http\Controllers\FollowController::class, 'store'])->name('follow');
+// Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
+Route::resource('/follows', 'App\Http\Controllers\FollowController');
+
+
 
 Route::resource('comments', CommentController::class);
-Route::post('/like-post/{id}',[PostController::class,'likePost'])->name('like.post');
-Route::post('/unlike-post/{id}',[PostController::class,'unlikePost'])->name('unlike.post');
 
 /*countries*/
-Route::get('/signup', [CountryController::class, 'index']);
+Route::get('/reg', [CountryController::class, 'index']);
 
-/*countries*/
-Route::get('/signup', [CountryController::class, 'index']);
 
-// Route::get('/', static function () {
-//     return view('profile');
-// })->middleware('auth');
-// Route::get('/chat', static function () {
-//     return view('chat');
-// })->middleware('auth');
+
+

@@ -50,6 +50,7 @@ class User extends Authenticatable
             return $this->hasMany(Follow::class);
 
         }
+<<<<<<< HEAD
 
 
     public function posts(){
@@ -62,4 +63,6 @@ class User extends Authenticatable
     }
 
 
+=======
+>>>>>>> aa22b4919323c4ffb46fd8b2f4f45151913fd92f
 }

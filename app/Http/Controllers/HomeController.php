@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\User;
 use App\Models\Post;
 
@@ -30,7 +31,7 @@ class HomeController extends Controller
         $followers = auth()->user()->following()->where('follow_type', 'followers')->get('second_user_id');
 
         // return count($user);
-        $x = [];
+        $x[] = '';
         $login_user = auth()->user();
         foreach ($following as $key) {
             $x[] = $key->second_user_id;
@@ -48,17 +49,21 @@ class HomeController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $user_id= $user->id;
         $login_user = auth()->user();
+        $login_id = $login_user->id;
         $following = auth()->user()->following()->where('follow_type', 'following')->get('second_user_id');
         $followers = auth()->user()->following()->where('follow_type', 'followers')->get('second_user_id');
-        // return $user->posts ;
-
-
+        $results = Follow::where('user_id', '=', $login_id)
+                    ->where('second_user_id', '=', $user_id )
+                    ->get();
+        // $output = Follow::where('second_user_id','=', $user_id ,'&&','c','=',$login_id  )->get();
+        // return $results ;
 
         if ($login_user == $user) {
             return view('profile', compact('user', 'following', 'followers'));
         } else
-            return view('users_page', compact('user', 'following', 'followers', 'login_user'));
+            return view('users_page', compact('user', 'following', 'followers', 'login_user','results'));
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));
@@ -70,11 +75,11 @@ class HomeController extends Controller
         $login_user = auth()->user();
         // return $login_user;
         // return $user->posts ;
-        $user_relationship_status = ['Single', 'In a relationship', 'Married', 'Engaged'];
-
+        $user_relationship_status=['Single','In a relationship','Married','Engaged'];
+         
         if ($login_user->id == $user->id) {
-            return view('setting', compact('user', 'user_relationship_status'));
-        }
+            return view('setting', compact('user','user_relationship_status'));
+        } 
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));
@@ -82,14 +87,30 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $input = $request;
+        $user= User::find($id);
+        $input= $request;
         // return $input;
-        if (request('user_img')) {
-            $input['user_img'] = request('user_img')->store('images');
-            return $input['user_img'];
-            // $user->user_img = $input['user_img'];
+        if ($request->user_img) {
+            $input['user_img']= request('user_img')->store('images');
+            // return $input['user_img'];
+        }else{
+            $input['user_img'] = $user->user_img;
         }
+
+        // if ($request->user_img) {
+        //     $file = $request->File('user_img');
+        //     $ext  = 'images/'.$user->name . "." . $file->clientExtension();
+        //     $file->storeAs('storage/images/', $ext);
+        //     $user->user_img = $ext;
+        // }
+        // if ($image= $request->file('user_img')) {
+        //     $name =$image->getClientOriginalName();
+        //     $image->move('storage.images',$name);
+        //     $input['user_img'] =$name;
+        //  }else{
+        //      User::where('id',$id)->first();
+        //      $input['user_img'] = User::where('id',$id)->first()->user_img;
+        //  }
         // return $request;
         // return $input;
         // return Post::find($post);
@@ -98,7 +119,7 @@ class HomeController extends Controller
         $user->phone = $input['phone'];
         $user->user_relationship_status = $input['user_relationship_status'];
         $user->user_bio = $input['user_bio'];
-        // $user->user_img = $input['user_img'];
+        $user->user_img = $input['user_img'];
 
         $user->save();
         // $user->update($input);
@@ -122,4 +143,6 @@ class HomeController extends Controller
         // Return the search view with the resluts compacted
         return view('components/layout', compact('users'));
     }
+
+   
 }
