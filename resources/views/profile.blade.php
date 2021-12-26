@@ -18,14 +18,14 @@
 
                <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
                   <h2 class="title_header mb-2"> {{$user->name}}</h2>
-                  <a href="profile/setting/{{$user->id}}" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
+                  <a href="{{route('setting',$user->id)}}" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
                   <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
                </div>
 
                <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
-                  <div class="flex lg:flex-row flex-col"> {{count($user->posts)}} <strong class="lg:pl-2">Posts</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($followers)}} <strong class="lg:pl-2">Followers</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col"> {{count($following)}} <strong class="lg:pl-2">Following</strong></div>
+                  <div class="flex lg:flex-row flex-col"> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif <strong class="lg:pl-2">Posts</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_followers)) {{count($login_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2">Followers</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2">Following</strong></div>
                </div>
             </div>
             <div class="w-20"></div>

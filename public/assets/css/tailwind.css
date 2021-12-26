@@ -2230,7 +2230,7 @@ body{  font-family: inter, sans-serif
     display: flex;
   }
 
-  .lg\:flex-row{
+  .flex-row{
     flex-direction: row;
   }
 

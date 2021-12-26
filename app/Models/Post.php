@@ -9,6 +9,7 @@ class Post extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
     public function user(){
         return $this->belongsTo(User::class);
 
@@ -20,4 +21,11 @@ class Post extends Model
         }
         return asset('storage/' . $value);
         }
+
+    public function comments(){
+    return $this-> hasMany(comment::class);
+    }
+
+
+
 }
