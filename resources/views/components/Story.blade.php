@@ -1,11 +1,11 @@
-<!-- <div id="story-modal" class="uk-modal-container" uk-modal>
+
+ <div id="story-modal" class="uk-modal-container" uk-modal>
     <div class="uk-modal-dialog story-modal">
         <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
         <div class="story-modal-media">
             <img src={{asset('assets/images/post/img4.jpg')}} alt="" class="inset-0 h-full w-full object-cover">
         </div>
         <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
-            <!-- post header-->
 <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
     <div class="flex flex-1 items-center space-x-4">
         <a href="#">
@@ -96,4 +96,4 @@
 </div>
 </div>
 </div>
-</div> -->
+</div>

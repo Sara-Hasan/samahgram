@@ -204,41 +204,65 @@
                                 </div>
 
                                 <div class="border-t pt-4 space-y-4 dark:border-gray-600">
-                                    <div class="flex">
-                                        <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                                            <img src="assets/images/avatars/avatar-1.jpg" alt="" class="absolute h-full rounded-full w-full">
+                                    @foreach ($post->comments as $comment)
+                                    <div class="-mt-1 space-y-1">
+                                        <div class="flex flex-1 space-x-2">
+                                            <img src={{asset('assets/images/avatars/avatar-4.jpg')}} class="rounded-full w-8 h-8">
+                                            <div class="flex flex-col w-full">
+                                            <div class="flex flex-1 space-x-2 justify-between items-start ">
+                                               <span> <strong> {{ $comment->user->name }}</strong> {{ $comment->comment_text }}</span>
+                                               <button name="comment_like" type="button"> <svg aria-label="Like" class="_8-yf5 like" color="#000" fill="#000" height="12" role="img" viewBox="0 0 24 24" width="12"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg></button>
+                                            </div>
+                                            <div class="comment_component">
+                                                    <span class=" pr-2"> {{$comment->created_at->diffForHumans()}}</span>
+                                                    <button name="comment_like_views" type="button" class="reply pr-2"><span>1 </span> like </button>
+                                                    <button name="reply" type="button" class="reply pr-2"> Reply </button>
+                                                    <form class="inline-block" action="{{ route('comments.destroy',$comment->id) }}" method="POST" >
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="reply"> delete </button>
+
+                                                    </form>
+
+                                            </div>
+                                            </div>
                                         </div>
-                                        <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20  dark:bg-gray-800 dark:text-gray-100">
-                                            <p class="leading-6">In ut odio libero vulputate <urna class="i uil-heart"></urna> <i class="uil-grin-tongue-wink"> </i> </p>
-                                            <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
+                                        <div class="ml-8 mt-2 flex flex-1 space-x-2">
+                                            <img src={{asset('assets/images/avatars/avatar-4.jpg')}} class="rounded-full w-8 h-8">
+                                            <div class="flex flex-col w-full">
+                                            <div class="flex flex-1 mr-3 justify-between items-start">
+                                               <span> <strong> Johnson</strong> consectetuer adipiscing elit</span>
+                                               <button name="comment_like" type="button"> <svg aria-label="Like" class="_8-yf5 like" color="#000" fill="#000" height="12" role="img" viewBox="0 0 24 24" width="12"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg></button>
+                                            </div>
+                                            <div class="comment_component ">
+                                                    <span class=" pr-2"> 15 m</span>
+                                                    <button name="comment_like_views" type="button" class="reply pr-2"><span>1 </span> like </button>
+                                                    <button name="reply" type="button" class="reply"> Reply </button>
+                                            </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex">
-                                        <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                                            <img src="assets/images/avatars/avatar-1.jpg" alt="" class="absolute h-full rounded-full w-full">
-                                        </div>
-                                        <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20  dark:bg-gray-800 dark:text-gray-100">
-                                            <p class="leading-6">Nam liber tempor cum soluta nobis eleifend option <i class="uil-grin-tongue-wink-alt"></i>
-                                            </p>
-                                            <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
 
-                                <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                                    <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
-                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                        <a href="#"> <i class="uil-image"></i></a>
-                                        <a href="#"> <i class="uil-video"></i></a>
+                                <form action="/comments" method="post" autocomplete="off">
+                                    @csrf
+                                    <div class="flex flex-row items-center justify-between">
+                                        <input class="w-full outline-none border-none p-1" type="text"
+                                        id="comment{{$post->id}}" placeholder="{{__('Add Comment')}}" name="comment_text"  autofocus />
+                                        <input type="hidden" name="post_id" value="{{$post->id}}">
+                                        <button class="text-blue-500 font-semibold hover:text-blue-700" type="submit">{{__('Post')}}</button>
                                     </div>
-                                </div>
+                                </form>
+
 
                             </div>
 
                         </div>
                         @endforeach
                         <!-- post 2-->
-
+{{--
                         <div class="bg-white shadow rounded-md dark:bg-gray-900 -mx-2 lg:mx-0">
 
                             <!-- post header-->
@@ -354,16 +378,6 @@
                                             <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
                                         </div>
                                     </div>
-                                    <div class="flex">
-                                        <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                                            <img src="assets/images/avatars/avatar-1.jpg" alt="" class="absolute h-full rounded-full w-full">
-                                        </div>
-                                        <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20  dark:bg-gray-800 dark:text-gray-100">
-                                            <p class="leading-6">Nam liber tempor cum soluta nobis eleifend option <i class="uil-grin-tongue-wink-alt"></i>
-                                            </p>
-                                            <div class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
@@ -376,7 +390,7 @@
 
                             </div>
 
-                        </div>
+                        </div> --}}
 
                         <!-- Load more-->
                         <div class="flex justify-center mt-6" id="toggle" uk-toggle="target: #toggle ;animation: uk-animation-fade">
@@ -781,6 +795,5 @@
             </div>
 
         </div>
-
-    <x-Story/>
-</x-layout>
+        <x-Story />
+    </x-layout>

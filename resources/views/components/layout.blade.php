@@ -41,59 +41,19 @@
                <a href="trending.html">
                 <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="">
             </a>
-
-                <div class="left-side">
-                    <div>
-                        <form action="{{ route('search') }}" method="GET" class="header_search">
-                            <input type="text" name="search" required/>
-                            <button type="submit" ><i class="bi bi-search"></i></button>
-                        </form>
-                    </div>
-                    @isset($users)
-                        @if($users->isNotEmpty())
-                            <ul>
-                                @foreach ($users as $user)
-                                    <li>
-                                        <a href="/{{$user->id}}">{{ $user->name}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @else
-                            <div>
-                                <h2>No users found</h2>
-                            </div>
-                        @endif
-                    @endisset
-                </div>
-
-                <div class="left-side">
+            </div>
+            <div class="left-side">
 
             <div class="header_search">
-                    <form action="{{ route('search') }}" method="GET" class="header_search">
-                        <input type="text" name="search" required/>
-                        <button type="submit" >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
-                    </form>
-                @isset($users)
-                    @if($users->isNotEmpty())
-                        <ul>
-                            @foreach ($users as $user)
-                                <li>
-                                    <a href="/{{$user->id}}">{{ $user->name}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <div>
-                            <h2>No users found</h2>
-                        </div>
-                    @endif
-                @endisset
+                <input type="text" placeholder="Search..">
+                <div class="icon-search">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                   </svg>
+                </div>
+             </div>
             </div>
 
             <div class="right-side">
@@ -317,7 +277,7 @@
 
       </header>
 
-{{$slot}}
+       {{$slot}}
 
       <script>
          (function (window, document, undefined) {
