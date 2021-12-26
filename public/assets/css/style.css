@@ -752,7 +752,7 @@ textarea.with-border:focus {
 
 input[type="submit"] {
   border: none;
-  padding: 11px 18px;
+  padding: 0px 18px;
   width: auto;
 }
 
@@ -3959,6 +3959,32 @@ a:active {
 .uk-modal-dialog.post-modal {
     width: 800px;
 }
+
+.zyHYP {
+    -webkit-appearance: none;
+}
+.JLJ-B {
+    background: 0 0;
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 355px;
+    -ms-flex: 0 1 355px;
+    flex: 0 1 355px;
+    font-size: 16px;
+    height: 32px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+
+
+
 @media (max-width: 875px)
 {
 ._80tAB {

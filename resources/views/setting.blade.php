@@ -33,28 +33,28 @@
                                     <div class="col-span-2">
                                         <label for=""> User name</label>
                                         <input type="text" name="name" placeholder="Your name.."
-                                            class="shadow-none bg-gray-100" value="{{ $user->name }}">
+                                            class="JLJ-B zyHYP" value="{{ $user->name }}">
                                     </div>
 
                                     <div class="col-span-2">
                                         <label for=""> Email</label>
                                         <input type="text" name="email" placeholder="Your name.."
-                                            class="shadow-none bg-gray-100" value="{{ $user->email }}">
+                                            class="JLJ-B zyHYP" value="{{ $user->email }}">
                                     </div>
                                     <div class="col-span-2">
                                         <label for=""> Phone Number</label>
                                         <input type="text" name="phone" placeholder="Your name.."
-                                            class="shadow-none bg-gray-100" value="{{ $user->phone }}">
+                                            class="JLJ-B zyHYP" value="{{ $user->phone }}">
                                     </div>
                                     <div class="col-span-2">
                                         <label for="">Bio</label>
                                         <textarea id="" name="user_bio" rows="3"
-                                            class="shadow-none bg-gray-100">{{ $user->user_bio }}</textarea>
+                                            class="JLJ-B zyHYP">{{ $user->user_bio }}</textarea>
                                     </div>
-                                    <div>
+                                    <div class="col-span-2">
                                         <label for=""> Relationship </label>
                                         <select id="relationship" name="user_relationship_status"
-                                            class="shadow-none bg-gray-100">
+                                            class="JLJ-B zyHYP">
 
                                             <option value="{{ $user->user_relationship_status }}">
                                                 {{ $user->user_relationship_status }}</option>
@@ -74,11 +74,12 @@
 
                                 </div>
                                 <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                                    <a href="{{ route('profile', Auth::user()->id) }}"><span
-                                            class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel
+                                    <a href="{{ route('profile', Auth::user()->id) }}">
+                                        <span
+                                            class="sqdOP L3NKy bg-gray-50 text-black"> Cancel
                                         </span>
                                     </a>
-                                    <input type="submit" class="button bg-blue-700" value="Save">
+                                    <input type="submit" class="sqdOP L3NKy y3zKF" value="Save">
                                 </div>
 
 
@@ -168,15 +169,21 @@
                         <form action="{{ route('profile', $user->id) }}" method="post" enctype="multipart/form-data">
                             <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                                 <div class="col-span-2">
-                                    <label for=""> Password</label>
+                                    <label for=""> Old Password</label>
                                     <input type="Password" name="password" placeholder="Password"
-                                        class="shadow-none bg-gray-100" value="">
+                                        class="JLJ-B zyHYP" value="">
+                                </div>
+
+                                <div class="col-span-2">
+                                    <label for=""> New Password </label>
+                                    <input type="Password" name="new_password" placeholder="Password"
+                                        class="JLJ-B zyHYP" value="">
                                 </div>
 
                                 <div class="col-span-2">
                                     <label for=""> Confirm Password</label>
                                     <input type="Password" name="password_confirmation" placeholder="Confirm Password"
-                                        class="shadow-none bg-gray-100" value="">
+                                        class="JLJ-B zyHYP" value="">
                                 </div>
 
                                 @csrf
@@ -184,11 +191,12 @@
 
                             </div>
                             <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                                <a href="{{ route('profile', Auth::user()->id) }}"><span
-                                        class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel
+                                <a href="{{ route('profile', Auth::user()->id) }}">
+                                    <span
+                                        class="sqdOP L3NKy bg-gray-50 text-black"> Cancel
                                     </span>
                                 </a>
-                                <input type="submit" class="button bg-blue-700" value="Save">
+                                <input type="submit" class="sqdOP L3NKy y3zKF" value="Save">
                             </div>
                         </form>
                     </div>
