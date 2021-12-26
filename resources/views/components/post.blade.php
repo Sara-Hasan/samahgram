@@ -1,6 +1,7 @@
 <div id="post-modal" class="uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog post-modal">
 
-    <div class="div_set RnEpo gpWnf Yx5HN " role="presentation">
+    <div class="div_set RnEpo gpWnf Yx5HN uk-modal-close-default" role="presentation">
         <div class="div_set NOTWr">
             <button class="wpO6b uk-modal-close-default" type="button" >
                 <div class="div_set QBdPU ">
@@ -14,7 +15,9 @@
                 </div>
             </button>
         </div>
-        <div aria-label="Create new post" class="div_set pbNvD  " role="dialog">
+    </div>
+
+    <div class="div_set pbNvD" aria-label="Create new post" role="dialog">
             <div class="div_set _1XyCr HOstH ">
                 <div class="div_set" style="width: 805px; max-width: 1195px; min-width: 688px; min-height: 391px; max-height: 898px;">
                     <div class="div_set   qF0y9   Igw0E IwRSH  eGOV_ vwCYk  i0EQd">
@@ -142,7 +145,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 </div>
 

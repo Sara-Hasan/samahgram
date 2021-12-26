@@ -4684,28 +4684,27 @@ ul.uk-nav-sub {
  * 5. Slide-in transition
  */
 .uk-modal-dialog {
-  /* 1 */
-  position: relative;
-  /* 2 */
-  box-sizing: border-box;
+  /*1*/position: relative;
+  /*2*/box-sizing: border-box;
   margin: 0 auto;
   width: 600px;
-  /* 3 */
-  max-width: calc(100% - 0.01px) !important;
-  /* 4 */
-  background: #fff;
-  /* 5 */
-  opacity: 0;
-  transform: translateY(-100px);
+  /*3*/max-width: calc(100% - 0.01px) !important;
+  /*4*/background: #fff;
+  /*5*/opacity: 0;
+  ;
   transition: 0.3s linear;
   transition-property: opacity, transform;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 }
 /*
  * Open
  */
 .uk-open > .uk-modal-dialog {
   opacity: 1;
-  transform: translateY(0);
+
 }
 /* Size modifier
  ========================================================================== */
