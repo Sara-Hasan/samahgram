@@ -18,7 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Instello - Sharing Photos platform HTML Template">
 
-
     <!-- icons
     ================================================== -->
     <link rel="stylesheet" href="assets/css/icons.css">

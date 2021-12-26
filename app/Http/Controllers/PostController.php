@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\JsonResponse;
+
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -15,9 +15,6 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts= Post::all();
-        return view('home',compact($posts));
-
     }
     public function likePost($id)
     {
@@ -61,7 +58,7 @@ class PostController extends Controller
 
         if (request('post_img')) {
             $input['post_img']= request('post_img')->store('images');
-            return $input['post_img'];
+            // return $input['post_img'];
         }
         auth()->user()->posts()->create($input);
         // Session::flash('post_create_massage','post was created');

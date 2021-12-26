@@ -24,7 +24,7 @@ class FollowController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -33,9 +33,25 @@ class FollowController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $loginUser=  auth()->user()->id;
+        $id = $request->user_id;
+        // return $id;
+        $following = new Follow;
+        $following -> user_id  = $loginUser;
+        $following -> second_user_id = $id;
+        $following -> follow_type = 'following';
+        $following -> follow_status = '1';
+        $following ->save();
+
+        $follower = new Follow;
+        $follower -> user_id  = $id;
+        $follower -> second_user_id = $loginUser;
+        $follower -> follow_type = 'follower';
+        $follower -> follow_status = '1';
+        $follower ->save();
+
+        return back();
     }
 
     /**
@@ -78,8 +94,11 @@ class FollowController extends Controller
      * @param  \App\Models\Follow  $follow
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Follow $follow)
+    public function destroy($id)
     {
-        //
+        // return $id;
+       Follow::find($id)-> delete();
+    //    Session::flash('massage','post was deleted');
+        return back();
     }
 }

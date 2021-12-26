@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
-
-
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
@@ -57,20 +57,28 @@ Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show']
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
+// Route::resource('/follows', 'App\Http\Controllers\FollowController');
+// Route::post('/follows/{id}', [App\Http\Controllers\FollowController::class, 'store'])->name('follow');
+// Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
+Route::resource('/follows', 'App\Http\Controllers\FollowController');
+
+
 
 Route::resource('comments', CommentController::class);
+
+/*countries*/
+Route::get('/reg', [CountryController::class, 'index']);
+
 Route::post('/like-post/{id}',[PostController::class,'likePost'])->name('like.post');
 Route::post('/unlike-post/{id}',[PostController::class,'unlikePost'])->name('unlike.post');
 
-/*countries*/
-Route::get('/reg', [CountryController::class, 'index']);
 
-/*countries*/
-Route::get('/reg', [CountryController::class, 'index']);
+// Admin 
 
-// Route::get('/', static function () {
-//     return view('profile');
-// })->middleware('auth');
-// Route::get('/chat', static function () {
-//     return view('chat');
-// })->middleware('auth');
+    Route::get('admin/login','Auth\AdminAuthController@getLogin')->name('adminLogin');
+    Route::post('admin/login', 'Auth\AdminAuthController@postLogin')->name('adminLoginPost');
+    Route::get('admin/logout', 'Auth\AdminAuthController@logout')->name('adminLogout');
+
+	Route::get('dashboard','AdminController@dashboard')->middleware('admon')->name('dashboard');	
+
+

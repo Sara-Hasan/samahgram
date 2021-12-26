@@ -11,8 +11,6 @@
          <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Instello - Sharing Photos platform HTML Template">
-      <meta name="csrf-token" content="{{ csrf_token() }}">
-
       <!-- icons
          ================================================== -->
       <link rel="stylesheet" href={{asset('assets/css/icons.css')}}>
@@ -319,7 +317,7 @@
 
       </header>
 
-@yield('content')
+{{$slot}}
 
       <script>
          (function (window, document, undefined) {
@@ -364,6 +362,5 @@
       <script src={{asset('assets/js/simplebar.js')}}></script>
       <script src={{asset('assets/js/custom.js')}}></script>
       <script src="https://unpkg.com/ionicons@6.0.0/dist/ionicons.js"></script>
-
    </body>
 </html>
