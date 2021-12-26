@@ -45,8 +45,8 @@ class FollowController extends Controller
         $following ->save();
 
         $follower = new Follow;
-        $follower -> user_id  = $id;
-        $follower -> second_user_id = $loginUser;
+        $follower -> user_id  = $loginUser;
+        $follower -> second_user_id = $id;
         $follower -> follow_type = 'follower';
         $follower -> follow_status = '1';
         $follower ->save();
@@ -98,6 +98,7 @@ class FollowController extends Controller
     {
         // return $id;
        Follow::find($id)-> delete();
+       Follow::find($id+1)-> delete();
     //    Session::flash('massage','post was deleted');
         return back();
     }

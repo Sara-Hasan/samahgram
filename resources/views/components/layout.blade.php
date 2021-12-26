@@ -241,9 +241,8 @@
                     </div>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                            <ul>
-                               <form action="profile/{{Auth::user()->id}}"></form>
-                              <li><a href="profile/{{Auth::user()->id}}"> Profile </a> </li>
-                              <li><a href="profile/setting/{{Auth::user()->id}}"> Setting </a> </li>
+                              <li><a href="{{route('profile',Auth::user()->id)}}"> Profile </a> </li>
+                              <li><a href="{{route('setting',Auth::user()->id)}}"> Setting </a> </li>
                               <li>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

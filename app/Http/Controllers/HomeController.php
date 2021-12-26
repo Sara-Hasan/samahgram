@@ -48,22 +48,32 @@ class HomeController extends Controller
     }
     public function show($id)
     {
+        $results[]='';
         $user = User::find($id);
         $user_id= $user->id;
         $login_user = auth()->user();
         $login_id = $login_user->id;
-        $following = auth()->user()->following()->where('follow_type', 'following')->get('second_user_id');
-        $followers = auth()->user()->following()->where('follow_type', 'followers')->get('second_user_id');
+        // login user page
+        $login_following = auth()->user()->following()->where('follow_type', 'following')
+                                -> where('user_id',$login_id )->get('second_user_id');
+
+        $login_followers = auth()->user()->following()->where('follow_type', 'follower')
+                                ->where('second_user_id',$login_id )->get('second_user_id');
+        // user page
+        $user_following = Follow:: where('follow_type', 'following')
+                                                ->where('user_id',$user_id )->get('second_user_id');
+        $user_followers = Follow:: where('follow_type', 'follower')
+                                                ->where('second_user_id',$user_id )->get('second_user_id');
+
         $results = Follow::where('user_id', '=', $login_id)
                     ->where('second_user_id', '=', $user_id )
                     ->get();
-        // $output = Follow::where('second_user_id','=', $user_id ,'&&','c','=',$login_id  )->get();
-        // return $results ;
+        // return $user_followers ;
 
         if ($login_user == $user) {
-            return view('profile', compact('user', 'following', 'followers'));
+            return view('profile', compact('user', 'login_following', 'login_followers'));
         } else
-            return view('users_page', compact('user', 'following', 'followers', 'login_user','results'));
+            return view('users_page', compact('user', 'user_following', 'user_followers', 'login_user','results'));
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));
@@ -91,38 +101,28 @@ class HomeController extends Controller
         $input= $request;
         // return $input;
         if ($request->user_img) {
-            $input['user_img']= request('user_img')->store('images');
-            // return $input['user_img'];
+            $data=[
+                'name'=>$input['name'],
+                'email'=> $input['email'],
+                'phone'=>$input['phone'],
+                'user_relationship_status'=> $input['user_relationship_status'],
+                'user_bio'=>$input['user_bio'],
+                'user_img'=> request('user_img')->store('images')
+            ];
         }else{
-            $input['user_img'] = $user->user_img;
+            $data=[
+                'name'=>$input['name'],
+                'email'=> $input['email'],
+                'phone'=>$input['phone'],
+                'user_relationship_status'=> $input['user_relationship_status'],
+                'user_bio'=>$input['user_bio'],
+                'user_img'=>  $user->user_img
+            ];
+            // $input['user_img'] = $user->user_img;
         }
 
-        // if ($request->user_img) {
-        //     $file = $request->File('user_img');
-        //     $ext  = 'images/'.$user->name . "." . $file->clientExtension();
-        //     $file->storeAs('storage/images/', $ext);
-        //     $user->user_img = $ext;
-        // }
-        // if ($image= $request->file('user_img')) {
-        //     $name =$image->getClientOriginalName();
-        //     $image->move('storage.images',$name);
-        //     $input['user_img'] =$name;
-        //  }else{
-        //      User::where('id',$id)->first();
-        //      $input['user_img'] = User::where('id',$id)->first()->user_img;
-        //  }
-        // return $request;
-        // return $input;
-        // return Post::find($post);
-        $user->name = $input['name'];
-        $user->email = $input['email'];
-        $user->phone = $input['phone'];
-        $user->user_relationship_status = $input['user_relationship_status'];
-        $user->user_bio = $input['user_bio'];
-        $user->user_img = $input['user_img'];
-
-        $user->save();
-        // $user->update($input);
+       
+        $user->update($data);
         // session()->flash('post_updated_massage','post was updated');
 
         return  back();
