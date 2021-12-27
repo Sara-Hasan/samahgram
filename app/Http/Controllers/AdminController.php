@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
@@ -8,7 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
