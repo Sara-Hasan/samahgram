@@ -8,7 +8,7 @@ use App\Http\Controllers\AdminController;
 
 
 use App\Http\Controllers\TrendingController;
-use App\Http\Controllers\PostController;
+// use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
 /*
@@ -18,9 +18,9 @@ use App\Http\Controllers\CountryController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth');
 
 // Route::get('/', function () {
 //     return view('home');
@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -37,10 +37,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 
 
 /*search*/
-Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');
+Route::get('/search/', [HomeController::class, 'search'])->name('search')->middleware('auth');
 
 /*countries*/
-Route::get('/reg', [CountryController::class, 'index'])->middleware('auth')->name('register');
+Route::get('/signUp', [CountryController::class, 'index'])->middleware('auth')->name('register');
 
 
 Route::get('/chat', function () {
@@ -62,14 +62,15 @@ Route::get('/trending', function () {
 //     return view('setting');
 // })->name('setting');
 
-Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
-Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
-Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
-Route::resource('/posts', 'App\Http\Controllers\PostController');
+Route::get('/profile/{id}', [HomeController::class, 'show'])->name('profile');
+Route::put('/profile/{id}', [HomeController::class, 'update'])->name('profile.update');
+Route::get('/profile/setting/{id}', [HomeController::class, 'setting'])->name('setting');
+// Route::resource('/posts', PostController::class);
 // Route::resource('/follows', 'App\Http\Controllers\FollowController');
 // Route::post('/follows/{id}', [App\Http\Controllers\FollowController::class, 'store'])->name('follow');
 // Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
-Route::resource('/follows', 'App\Http\Controllers\FollowController');
+Route::resource('/follows', FollowController::class);
+Route::resource('/posts', PostController::class);
 
 Route::get('/trending', [TrendingController::class, 'index'])->name('trending');
 
@@ -78,9 +79,9 @@ Route::resource('comments', CommentController::class);
 /*countries*/
 Route::get('/reg', [CountryController::class, 'index']);
 
-Route::post('/like-post/{id}',[PostController::class,'likePost'])->name('like.post');
-Route::post('/unlike-post/{id}',[PostController::class,'unlikePost'])->name('unlike.post');
-Route::get('/post/{id}', [PostController::class, 'show'])->name('post');
+Route::post('/like-post/{id}',[App\Http\Controllers\PostController::class,'likePost'])->name('like.post');
+Route::post('/unlike-post/{id}',[App\Http\Controllers\PostController::class,'unlikePost'])->name('unlike.post');
+// Route::get('/post/{id}', [PostController::class, 'show'])->name('post');
 
 
 // Admin 
