@@ -100,8 +100,6 @@
                                                         </div>
                                                     </button>
                                                 </span>
-
-
                                             </section>
                                             <section class="EDfFK ygqzn">
                                                 <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ ybXk5 vwCYk">
@@ -228,6 +226,10 @@
                         <div class="div_set    tHaIX  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm HVWg4 ">
                             <div style="height: auto; overflow: hidden auto;">
                                 <div style="flex-direction: column; padding-bottom: 0px; padding-top: 0px;">
+
+
+                                    @foreach ($users as $user)
+                                    
                                     <div aria-labelledby="f2b15f2c8ac22dc f12497ab744395 f139da0bb4a3c8c f1cde44ba153cb"
                                         class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm   XfCBB  HVWg4 ">
                                         <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm yC0tu ">
@@ -241,7 +243,7 @@
                                                             alt="saif_ghazawi's profile picture" class="_6q-tv"
                                                             crossorigin="anonymous" data-testid="user-avatar"
                                                             draggable="false"
-                                                            src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/170161161_270578311467317_7016553906757344724_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=105&amp;_nc_ohc=3TssZVNfLm0AX9XT9HL&amp;edm=AHqBGi8BAAAA&amp;ccb=7-4&amp;oh=00_AT_Qg53fkCPUOweKyIYxkY0Qu5EHWzLU7x6NmmQp6C-etQ&amp;oe=61CFB8C7&amp;_nc_sid=a14057"></a>
+                                                            src="{{ $user->user_img }}"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,12 +252,12 @@
                                                 <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
                                                         class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
                                                             title="saif_ghazawi" href="/saif_ghazawi/"
-                                                            tabindex="0">saif_ghazawi</a></span></div>
+                                                            tabindex="0">{{ $user->name }}</a></span></div>
                                             </div>
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f1cde44ba153cb">
+                                            {{-- <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f1cde44ba153cb">
                                                 <div class="div_set _7UhW9  PIoXz   MMzan   _0PwGv fDxYl ">Followed by
                                                     mhmadalnwaiseh + 3 more</div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="div_set  qF0y9  Igw0E  rBNOH  YBx95  ybXk5 _4EzTm  soMvl"
                                             id="f2b15f2c8ac22dc">
@@ -264,151 +266,8 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div aria-labelledby="f2672d50c14e624 f3b139b99b06c08 f2f7e727ef02644 f73fe283c3be4"
-                                        class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm   XfCBB  HVWg4 ">
-                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm yC0tu ">
-                                            <div class="div_set Jv7Aj mArmR   pZp3x">
-                                                <div class="div_set RR-M- " aria-disabled="true" role="button"
-                                                    tabindex="-1">
-                                                    <canvas class="CfWVH" height="42" width="42"
-                                                        style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
-                                                    <a class="_2dbep qNELH kIKUG" href="/jehad_abusukkar/" tabindex="0"
-                                                        style="width: 32px; height: 32px; display: block;"><img
-                                                            alt="jehad_abusukkar's profile picture"
-                                                            class="_6q-tv" crossorigin="anonymous"
-                                                            data-testid="user-avatar" draggable="false"
-                                                            src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/39075478_2262536487107177_1399974745096585216_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=105&amp;_nc_ohc=FUg8SqM5PHMAX9a4GLF&amp;edm=AHqBGi8BAAAA&amp;ccb=7-4&amp;oh=00_AT-wzTPqK8Aeq5FHkQwDKFJo0x70_zYgvMSGTxVzKqGpCA&amp;oe=61CF9B04&amp;_nc_sid=a14057"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E IwRSH YBx95  vwCYk   ">
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  " id="f3b139b99b06c08">
-                                                <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
-                                                        class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
-                                                            title="jehad_abusukkar" href="/jehad_abusukkar/"
-                                                            tabindex="0">jehad_abusukkar</a></span></div>
-                                            </div>
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f73fe283c3be4">
-                                                <div class="div_set _7UhW9  PIoXz   MMzan   _0PwGv fDxYl ">Followed by
-                                                    mohammad_yacoub94 + 4 more</div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E  rBNOH YBx95 ybXk5_4EzTm  soMvl"
-                                            id="f2672d50c14e624">
-                                            <button class="sqdOP yWX7d y3zKF " type="button">
-                                                <div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div aria-labelledby="f3b72dab259e79c fb08872c83106c f2cdc58834c3838 fe8260d2ad5938"
-                                        class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm   XfCBB  HVWg4 ">
-                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm yC0tu ">
-                                            <div class="div_set Jv7Aj mArmR   pZp3x">
-                                                <div class="div_set RR-M- " aria-disabled="true" role="button"
-                                                    tabindex="-1">
-                                                    <canvas class="CfWVH" height="42" width="42"
-                                                        style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
-                                                    <a class="_2dbep qNELH kIKUG" href="/adelghanim/" tabindex="0"
-                                                        style="width: 32px; height: 32px; display: block;"><img
-                                                            alt="adelghanim's profile picture" class="_6q-tv"
-                                                            crossorigin="anonymous" data-testid="user-avatar"
-                                                            draggable="false"
-                                                            src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/241692078_6487056101312349_5578672902179096768_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=109&amp;_nc_ohc=spdMfmxCVeQAX9lIFHa&amp;tn=FbojSNBNcCAVwPep&amp;edm=AHqBGi8BAAAA&amp;ccb=7-4&amp;oh=00_AT8nEFvNlyYazRNmysh4F-hg5HxAFhEeT9JwnMmvpYieQQ&amp;oe=61CE51D8&amp;_nc_sid=a14057"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E IwRSH YBx95  vwCYk   ">
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  " id="fb08872c83106c">
-                                                <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
-                                                        class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
-                                                            title="adelghanim" href="/adelghanim/"
-                                                            tabindex="0">adelghanim</a></span></div>
-                                            </div>
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="fe8260d2ad5938">
-                                                <div class="div_set _7UhW9  PIoXz   MMzan   _0PwGv fDxYl ">Followed by
-                                                    anasyahea + 5 more</div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E   rBNOH  YBx95   ybXk5_4EzTm  soMvl"
-                                            id="f3b72dab259e79c">
-                                            <button class="sqdOP yWX7d y3zKF " type="button">
-                                                <div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div aria-labelledby="f3eed69f2f810f f337e810d1c4334 f1e88e0ad097e3 f191982e9dfeb68"
-                                        class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm   XfCBB  HVWg4 ">
-                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm yC0tu ">
-                                            <div class="div_set Jv7Aj mArmR   pZp3x">
-                                                <div class="div_set RR-M- " aria-disabled="true" role="button"
-                                                    tabindex="-1">
-                                                    <canvas class="CfWVH" height="42" width="42"
-                                                        style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
-                                                    <a class="_2dbep qNELH kIKUG" href="/amro_mansour_1990/"
-                                                        tabindex="0"
-                                                        style="width: 32px; height: 32px; display: block;"><img
-                                                            alt="amro_mansour_1990's profile picture"
-                                                            class="_6q-tv" crossorigin="anonymous"
-                                                            data-testid="user-avatar" draggable="false"
-                                                            src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/122649627_410743886985173_8426521474407641827_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=105&amp;_nc_ohc=tT7l-olvs2kAX9FcGB1&amp;edm=AHqBGi8BAAAA&amp;ccb=7-4&amp;oh=00_AT8yNJWis4snsKDosmThGIpS828nMFNuCZF0yVOP3amnnQ&amp;oe=61CF02FE&amp;_nc_sid=a14057"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E IwRSHYBx95  vwCYk   ">
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  " id="f337e810d1c4334">
-                                                <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
-                                                        class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
-                                                            title="amro_mansour_1990" href="/amro_mansour_1990/"
-                                                            tabindex="0">amro_mansour_1990</a></span></div>
-                                            </div>
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f191982e9dfeb68">
-                                                <div class="div_set _7UhW9  PIoXz   MMzan   _0PwGv fDxYl ">Followed by
-                                                    mhmadalnwaiseh + 4 more</div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E   rBNOH  YBx95   ybXk5_4EzTm  soMvl"
-                                            id="f3eed69f2f810f">
-                                            <button class="sqdOP yWX7d y3zKF " type="button">
-                                                <div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div aria-labelledby="f1ed233d39ee20c f357473a5011694 f263a275b467198 f11277e04d246a8"
-                                        class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm   XfCBB  HVWg4 ">
-                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm yC0tu ">
-                                            <div class="div_set Jv7Aj mArmR   pZp3x">
-                                                <div class="div_set RR-M- " aria-disabled="true" role="button"
-                                                    tabindex="-1">
-                                                    <canvas class="CfWVH" height="42" width="42"
-                                                        style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
-                                                    <a class="_2dbep qNELH kIKUG" href="/islamaljaghbeir/" tabindex="0"
-                                                        style="width: 32px; height: 32px; display: block;"><img
-                                                            alt="islamaljaghbeir's profile picture"
-                                                            class="_6q-tv" crossorigin="anonymous"
-                                                            data-testid="user-avatar" draggable="false"
-                                                            src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/247727416_301630925109289_5896525438795573853_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_ohc=FF5YTU_knBoAX9Jrx3X&amp;edm=AHqBGi8BAAAA&amp;ccb=7-4&amp;oh=00_AT93_kDsDumfXQ6d2C04PrWn9TJYghZwFW4yU__R3C0HHg&amp;oe=61CF4746&amp;_nc_sid=a14057"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E IwRSHYBx95  vwCYk   ">
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  " id="f357473a5011694">
-                                                <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
-                                                        class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
-                                                            title="islamaljaghbeir" href="/islamaljaghbeir/"
-                                                            tabindex="0">islamaljaghbeir</a></span></div>
-                                            </div>
-                                            <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f11277e04d246a8">
-                                                <div class="div_set _7UhW9  PIoXz   MMzan   _0PwGv fDxYl ">Followed by
-                                                    mhmadalnwaiseh + 3 more</div>
-                                            </div>
-                                        </div>
-                                        <div class="div_set  qF0y9  Igw0E   rBNOH  YBx95   ybXk5_4EzTm  soMvl"
-                                            id="f1ed233d39ee20c">
-                                            <button class="sqdOP yWX7d y3zKF " type="button">
-                                                <div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div>
-                                            </button>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                   
                                 </div>
                             </div>
                         </div>

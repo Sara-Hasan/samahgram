@@ -43,8 +43,15 @@ class HomeController extends Controller
         // return $posts;
 
         // dd ($posts[0]);
+        $users=User::whereNotIn('id', $login_user->following->pluck('second_user_id')) // exclude already followed
+        ->where('id', '<>', $login_user->id)->get();
+        $id[] = '';
+        foreach ($users as $user) {
+            
+            $id[] = $user->id;
+        }
 
-        return  view('home', compact('posts', 'login_user', 'following', 'followers'));
+        return  view('home', compact('posts', 'login_user', 'following', 'followers','users'));
     }
     public function show($id)
     {
