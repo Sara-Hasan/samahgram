@@ -55,8 +55,33 @@ class HomeController extends Controller
         $login_following = auth()->user()->following()->where('follow_type', 'following')
             ->where('user_id', $login_id)->get('second_user_id');
 
+        $ing_id = auth()->user()->following()->where('follow_type', 'following')
+            ->where('user_id', $login_id)->get('id');
+            // return $login_following;
+            $login_following_id = [];
+            foreach ($login_following as $user_follow) {
+                // return $user->second_user_id;
+                $login_following_id[] = $user_follow->second_user_id;
+            }
+            // return $ing_id;
+            $array_id=[];
+            foreach ($ing_id as $id) {
+                // return $user->second_user_id;
+                $array_id[] = $id->id;
+            }
+            // return $array_id;
+            $following_id =User::whereIn('id', $login_following_id)->get();
+
         $login_followers = auth()->user()->following()->where('follow_type', 'follower')
             ->where('second_user_id', $login_id)->get('second_user_id');
+
+            $login_follower_id = [];
+            foreach ($login_followers as $user_follower) {
+                // return $user->second_user_id;
+                $login_follower_id[] = $user_follower->second_user_id;
+            }
+            // return $login_following_id;
+         $follower_id =User::whereIn('id', $login_follower_id)->get();
         // user page
         $user_following = Follow::where('follow_type', 'following')
             ->where('user_id', $user_id)->get('second_user_id');
@@ -69,7 +94,7 @@ class HomeController extends Controller
         // return $user_followers ;
 
         if ($login_user == $user) {
-            return view('profile', compact('user', 'login_following', 'login_followers'));
+            return view('profile', compact('user', 'login_following', 'login_followers','following_id','follower_id','array_id'));
         } else
             return view('users_page', compact('user', 'user_following', 'user_followers', 'login_user', 'results'));
     }
