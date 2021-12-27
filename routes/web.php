@@ -93,6 +93,6 @@ Route::get('/post/{id}', [PostController::class, 'show'])->name('post');
 //})->name('admin1');
 Route::resource('/admoon', AdminController::class);
 Route::get('/admooon', [AdminController::class, 'index2'])->name('admooon');
-Route::resource('/admooon2', MoviesController::class);
+//Route::resource('/admooon2', AdminController::class);
 Route::get('/manageadmoon', [AdminController::class, 'index3'])->name('admoonprofile');
 
