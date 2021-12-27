@@ -116,7 +116,6 @@
 
                 <div class="J5g42">
 
-<<<<<<< HEAD
                     <div class="XrOey">
                        <div class="q9xVd">
                           <a href="{{route('home')}}" tabindex="0">
@@ -261,18 +260,6 @@
                                            onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                                        {{ __('Logout') }}
-=======
-                            <div class="XrOey">
-                                <div class="q9xVd">
-                                    <a href="{{ route('home') }}" tabindex="0">
-                                        <svg aria-label="Home" class="_8-yf5 " color="#262626" fill="#262626"
-                                            height="24" role="img" viewBox="0 0 24 24" width="24">
-                                            <path
-                                                d="M9.005 16.545a2.997 2.997 0 012.997-2.997h0A2.997 2.997 0 0115 16.545V22h7V11.543L12 2 2 11.543V22h7.005z"
-                                                fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                stroke-width="2"></path>
-                                        </svg>
->>>>>>> 33889ddb64e2d6578f350200f15ac68736195256
                                     </a>
                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                              @csrf
