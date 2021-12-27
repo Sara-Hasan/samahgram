@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->bigInteger('phone')->unique();
+            $table->string('phone');
             $table->text('user_img')->default('images/a04d849cf591c2f980548b982f461401.jpg');
             $table->string('user_gender');
             $table->date('user_dob');
