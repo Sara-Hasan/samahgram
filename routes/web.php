@@ -3,10 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\AdminController;
->>>>>>> 001f959b4793e84cad0d506eb5e670ef957879c0
 use App\Http\Controllers\TrendingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryController;
