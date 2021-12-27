@@ -218,7 +218,7 @@
                         <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ vwCYk   ">
                             <div class="div_set _7UhW9   xLCgt   qyrsm  _0PwGv uL8Hv ">Suggestions For You</div>
                         </div>
-                        <a class="sqdOP yWX7d _8A5w5  ZIAjV " href="/explore/people/" tabindex="0">
+                        <a class="sqdOP yWX7d _8A5w5  ZIAjV " href="{{route('trending')}}" tabindex="0">
                             <div class="div_set _7UhW9  PIoXz qyrsm KV-D4  uL8Hv ">See All</div>
                         </a>
                     </div>
@@ -238,7 +238,7 @@
                                                     tabindex="-1">
                                                     <canvas class="CfWVH" height="42" width="42"
                                                         style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
-                                                    <a class="_2dbep qNELH kIKUG" href="/saif_ghazawi/" tabindex="0"
+                                                    <a class="_2dbep qNELH kIKUG" href="{{ route('profile',$user->id )}}" tabindex="0"
                                                         style="width: 32px; height: 32px; display: block;"><img
                                                             alt="saif_ghazawi's profile picture" class="_6q-tv"
                                                             crossorigin="anonymous" data-testid="user-avatar"
@@ -251,7 +251,7 @@
                                             <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  " id="f12497ab744395">
                                                 <div class="div_set _7UhW9   xLCgt  MMzan  KV-D4  fDxYl "><span
                                                         class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z"
-                                                            title="saif_ghazawi" href="/saif_ghazawi/"
+                                                            title="saif_ghazawi" href="{{ route('profile',$user->id )}}"
                                                             tabindex="0">{{ $user->name }}</a></span></div>
                                             </div>
                                             {{-- <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  DhRcB" id="f1cde44ba153cb">
@@ -262,7 +262,7 @@
                                         <div class="div_set  qF0y9  Igw0E  rBNOH  YBx95  ybXk5 _4EzTm  soMvl"
                                             id="f2b15f2c8ac22dc">
                                             <button class="sqdOP yWX7d y3zKF " type="button">
-                                                <div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div>
+                                                <a href="{{ route('profile',$user->id )}}"><div class="div_set _7UhW9  PIoXz qyrsm   uL8Hv ">Follow</div></a>
                                             </button>
                                         </div>
                                     </div>
