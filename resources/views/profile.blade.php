@@ -25,7 +25,7 @@
                <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
                   <div class="flex lg:flex-row flex-col"> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif <strong class="lg:pl-2">Posts</strong></div>
                   <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_followers)) {{count($login_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2"><a href="#followers-modal" uk-toggle>Followers</a> </strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2">Following</strong></div>
+                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2"> <a href="#following-modal" uk-toggle>Following</a> </strong></div>
                </div>
             </div>
             <div class="w-20"></div>
@@ -162,5 +162,137 @@
          </div>
       </div>
    </div>
+   <div id="followers-modal" class="uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog followers-modal">
+
+        <div aria-label="Followers" class="pbNvD  fPMEg  HYpXt">
+            <div class="div_set _1XyCr  ">
+               <div>
+                  <div class="div_set eiUFA  ">
+                     <div class="div_set WaOAr"></div>
+                     <h1 class="m82CD   ">Followers</h1>
+                     <div class="div_set WaOAr">
+                        <button class="wpO6b  uk-modal-close-default " type="button">
+                           <div class="div_set QBdPU ">
+                              <svg aria-label="Close" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
+                                 <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="3" y2="21"></line>
+                                 <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="21" y2="3"></line>
+                              </svg>
+                           </div>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="div_set isgrP">
+                  <ul class="jSC57  _6xe7A">
+                     <div class="div_set PZuss">
+                     @php $j=0 @endphp
+                     @foreach($login_follower_id as $follower)
+                        <li class="wo9IH">
+                           <div class="div_set uu6c_">
+                              <div class="div_set t2ksc">
+                                 <div class="div_set Jv7Aj mArmR   pZp3x">
+                                    <div class="div_set RR-M-  SAvC5" aria-disabled="true" role="button" tabindex="-1">
+                                       <canvas class="CfWVH" height="40" width="40" style="position: absolute; top: -5px; left: -5px; width: 40px; height: 40px;"></canvas>
+                                       <a class="_2dbep qNELH kIKUG" href="{{route('profile',$follower->id)}}" tabindex="0" style="width: 30px; height: 30px; display: block;"><img alt="ahmad_150.ok's profile picture" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src="{{$follower->user_img}}"></a>
+                                    </div>
+                                 </div>
+                                 <div class="div_set enpQJ">
+                                    <div class="div_set d7ByH">
+                                       <span class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate  _0imsa " title="ahmad_150.ok" href="{{route('profile',$follower->id)}}" tabindex="0">{{$follower->name}}</a></span>
+                                       <div class="div_set                AC7dP        Igw0E     IwRSH      eGOV_         _4EzTm                                                                                zQLcH                              ">·</div>
+                                       <button class="sqdOP yWX7d    y3zKF     " type="button">
+                                          <div class="div_set _7UhW9  PIoXz qyrsm uL8Hv">Follower</div>
+                                       </button>
+                                    </div>
+                                    <div class="div_set wFPL8 "><a href="{{route('profile',$follower->id)}}">{{$follower->name}}</a></div>
+                                 </div>
+                              </div>
+                              <div class="div_set Pkbci"><button class="sqdOP  L3NKy    _8A5w5    " type="button">Remove</button></div>
+                           </div>
+                        </li>
+                           @endforeach
+   
+                     </div>
+                  </ul>
+                  <div class="div_set oMwYe"></div>
+               </div>
+            </div>
+         </div>
+
+
+    </div>
+</div>
+<div id="following-modal" class="uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog followers-modal">
+
+        <div aria-label="Followers" class="pbNvD  fPMEg  HYpXt">
+            <div class="div_set _1XyCr  ">
+               <div>
+                  <div class="div_set eiUFA  ">
+                     <div class="div_set WaOAr"></div>
+                     <h1 class="m82CD   ">Following</h1>
+                     <div class="div_set WaOAr">
+                        <button class="wpO6b  uk-modal-close-default " type="button">
+                           <div class="div_set QBdPU ">
+                              <svg aria-label="Close" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
+                                 <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="3" y2="21"></line>
+                                 <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="21" y2="3"></line>
+                              </svg>
+                           </div>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="div_set isgrP">
+                  <ul class="jSC57  _6xe7A">
+                     <div class="div_set PZuss">
+                        @php $i=0 @endphp
+                        @foreach($following_id as $following)
+                        <li class="wo9IH">
+                           <div class="div_set uu6c_">
+                              <div class="div_set t2ksc">
+                                 <div class="div_set Jv7Aj mArmR   pZp3x">
+                                    <div class="div_set RR-M-  SAvC5" aria-disabled="true" role="button" tabindex="-1">
+                                       <canvas class="CfWVH" height="40" width="40" style="position: absolute; top: -5px; left: -5px; width: 40px; height: 40px;"></canvas>
+                                       <a class="_2dbep qNELH kIKUG" href="{{route('profile',$following->id)}}" tabindex="0" style="width: 30px; height: 30px; display: block;"><img alt="ahmad_150.ok's profile picture" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src="{{$following->user_img}}"></a>
+                                    </div>
+                                 </div>
+                                 <div class="div_set enpQJ">
+                                    <div class="div_set d7ByH">
+                                       <span class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate  _0imsa " title="ahmad_150.ok" href="{{route('profile',$following->id)}}" tabindex="0">{{$following->name}}</a></span>
+                                       <div class="div_set                AC7dP        Igw0E     IwRSH      eGOV_         _4EzTm zQLcH  ">·</div>
+                                       <button class="sqdOP yWX7d    y3zKF     " type="button">
+                                          <div class="div_set _7UhW9  PIoXz qyrsm uL8Hv">Following</div>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <form action="{{route('follows.destroy',$array_id[$i++])}}" method="post" enctype="multipart/form-data">
+                                 @csrf
+                                 @method('DELETE')
+                                 <input type="submit" class="bg-blue shadow-sm p-21 px-6 rounded"  name="follow" value="Remove">
+                                 <!-- <div class="div_set Pkbci"><button class="sqdOP L3NKy _8A5w5" name="follow" type="submit">Remove</button></div> -->
+                              
+                              <!-- <button type="submit" name="submit" class="btn btn-primary">Submit</button> -->
+                              </form>
+                           </div>
+                        </li>
+                  @endforeach
+                     
+                     
+                     
+                      
+                       
+                     </div>
+                  </ul>
+                  <div class="div_set oMwYe"></div>
+               </div>
+            </div>
+         </div>
+
+
+    </div>
+</div>
  <x-followers/>
 </x-layout>
