@@ -3357,6 +3357,9 @@ button {
     margin-bottom: 5px;
     color: #ed4956;
 }
+.delet {
+    color: #ed4956 !important;
+}
 
 .rBNOH {
     -webkit-box-align: center;
@@ -4448,7 +4451,6 @@ button.wpO6b.uk-modal-close-default {
 
 .MnWb5 {
     position: fixed;
-    top: 78px;
 }
 .m0NAq {
     -webkit-box-align: center;
@@ -4617,11 +4619,8 @@ input[type="file"] {
 @media (min-width: 640px){
 .C3uDN {
     padding-top: 30px;
-    margin-top: 30px;
 }
-._1SP8R {
-    padding-top: 60px;
-}
+
 .bLWKA {
     margin-bottom: 24px;
 }
@@ -5160,4 +5159,10 @@ input[type="file"] {
         flex-shrink: 0;
         margin: 4px;
         margin-right: 13px;
+    }
+    .EtaWk.kk {
+        min-height: auto;
+    }
+    .Mr508 {
+        margin-bottom: 16px;
     }

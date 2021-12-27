@@ -17,8 +17,8 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->text('admin_img')->default('https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png');
             $table->string('password');
+            $table->text('admin_img')->default('https://www.shutterstock.com/search/instagram+avatar');
             $table->timestamps();
         });
     }
