@@ -54,6 +54,10 @@ Route::get('/trending', function () {
     })->name('trending');
 })->name('trending');
 
+
+Route::get('/redirect/facebook', [App\Http\Controllers\SocialController::class, 'redirect'])->name('facebook.login');
+
+Route::get('/callback/facebook',[App\Http\Controllers\SocialController::class, 'callback'] );
 // Route::get('/setting', function () {
 //     return view('setting');
 // })->name('setting');
