@@ -103,7 +103,7 @@ class PostController extends Controller
             abort(404);
         }
         $post->delete();
-        storage::delete("/" . $post->user_img);
+        storage::delete("/storage" . $post->user_img);
         return redirect("profile/" . $post->user->id);
     }
 }

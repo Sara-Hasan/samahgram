@@ -44,6 +44,9 @@ Route::get('/chat', function () {
     return view('chat');
 })->name('chat');
 
+Route::get('/AboutUs', function () {
+    return view('about');
+ })->name('about');
 
  Route::get('/trending', function () {
 Route::get('/trending', function () {
