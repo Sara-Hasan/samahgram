@@ -7,21 +7,21 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Monsterlite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 5 dashboard template">
+          content="wrap-pixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Monsterlite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
           content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Monster Lite Template by WrapPixel</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
+    <title>Samahgram</title>
+{{--    <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />--}}
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href={{asset('admin/assets/images/favicon.png')}}>
     <!-- Custom CSS -->
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href={{asset('admin/assets/css/style.min.css')}} rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -29,13 +29,13 @@
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
-<div class="preloader">
-    <div class="lds-ripple">
-        <div class="lds-pos"></div>
-        <div class="lds-pos"></div>
-    </div>
-</div>
-<!-- ============================================================== -->
+{{--<div class="preloader">--}}
+{{--    <div class="lds-ripple">--}}
+{{--        <div class="lds-pos"></div>--}}
+{{--        <div class="lds-pos"></div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--<!-- ============================================================== -->--}}
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
@@ -49,19 +49,19 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="index.blade.php">
+                <a class="navbar-brand" href="{{route('admooon')}}">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-
+                        <img src={{asset('assets/images/favicon.png')}} alt="homepage" class="dark-logo" style="width:50px;"/>
+{{----}}
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <h1 style="color: #0a53be;font-size: small">Smahgram</h1>
 
                         </span>
                 </a>
@@ -88,10 +88,7 @@
                     <!-- ============================================================== -->
 
                     <li class="nav-item hidden-sm-down">
-                        <form class="app-search ps-3">
-                            <input type="text" class="form-control" placeholder="Search for..."> <a
-                                class="srh-btn"><i class="ti-search"></i></a>
-                        </form>
+
                     </li>
                 </ul>
 
@@ -104,7 +101,7 @@
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe
+                            <img src={{asset('admin/assets/images/users/1.jpg')}} alt="user" class="profile-pic me-2">Markarn Doe
                         </a>
                         <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                     </li>
@@ -126,33 +123,20 @@
                 <ul id="sidebarnav">
                     <!-- User Profile-->
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="index.blade.php" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                                 href="{{route('admooon')}}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                                                                                  aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="pages-profile.blade.php" aria-expanded="false">
+                                                 href="{{route('admoonprofile')}}" aria-expanded="false">
                             <i class="me-3 fa fa-user" aria-hidden="true"></i><span
                                 class="hide-menu">Profile</span></a>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="table-basic.blade.php" aria-expanded="false"><i class="me-3 fa fa-table"
-                                                                                                       aria-hidden="true"></i><span class="hide-menu">Table</span></a></li>
+                                                 href="/admoon" aria-expanded="false"><i class="me-3 fa fa-table"
+                                                                                                       aria-hidden="true"></i><span class="hide-menu">Manage Admins</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="icon-fontawesome.blade.php" aria-expanded="false"><i class="me-3 fa fa-font"
-                                                                                                            aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="map-google.blade.php" aria-expanded="false"><i class="me-3 fa fa-globe"
-                                                                                                      aria-hidden="true"></i><span class="hide-menu">Google Map</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="pages-blank.blade.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                                                                                       aria-hidden="true"></i><span class="hide-menu">Blank</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="pages-error-404.blade.php" aria-expanded="false"><i class="me-3 fa fa-info-circle"
-                                                                                                           aria-hidden="true"></i><span class="hide-menu">Error 404</span></a></li>
-                    <li class="text-center p-20 upgrade-btn">
-                        <a href="https://www.wrappixel.com/templates/monsteradmin/"
-                           class="btn btn-danger text-white mt-4" target="_blank">Upgrade to
-                            Pro</a>
-                    </li>
+                                                 href="/login" aria-expanded="false"><i class="me-3 fa fa-font"
+                                                                                                            aria-hidden="true"></i><span class="hide-menu">Website</span></a></li>
+
                 </ul>
 
             </nav>
@@ -170,28 +154,7 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-            <div class="row align-items-center">
-                <div class="col-md-6 col-12 align-self-center">
-                    <h3 class="page-title mb-0 p-0">Icon Fontawesome</h3>
-                    <div class="d-flex align-items-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Icon Fontawesome</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-6 col-4 align-self-center">
-                    <div class="text-end upgrade-btn">
-                        <a href="https://www.wrappixel.com/templates/monsteradmin/"
-                           class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
-                            Pro</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -203,7 +166,7 @@
             <!-- footer -->
                 <!-- ============================================================== -->
                 <footer class="footer text-center">
-                    © 2021 Monster Admin by <a href="https://www.wrappixel.com/">wrappixel.com</a>
+                    © 2021 Samahgram Admin
                 </footer>
                 <!-- ============================================================== -->
                 <!-- End footer -->
@@ -219,21 +182,21 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src={{asset('admin/assets/plugins/jquery/dist/jquery.min.js')}}></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src={{asset('admin/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}></script>
+    <script src={{asset('admin/js/app-style-switcher.js')}}></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src={{asset('admin/js/waves.js')}}></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src={{asset('admin/js/sidebarmenu.js')}}></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
+    <script src={{asset('admin/js/custom.js')}}></script>
     <!--This page JavaScript -->
     <!--flot chart-->
-    <script src="../assets/plugins/flot/jquery.flot.js"></script>
-    <script src="../assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script src={{asset('admin/assets/plugins/flot/jquery.flot.js')}}></script>
+    <script src={{asset('admin/assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js')}}></script>
+    <script src={{asset('admin/js/pages/dashboards/dashboard1.js')}}></script>
 </body>
 
 </html>
