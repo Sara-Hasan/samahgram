@@ -42,7 +42,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 
 
 /*search*/
-Route::get('/search/', 'App\Http\Controllers\HomeController@search')->name('search')->middleware('auth');
+Route::get('/search/', 'HomeController@search')->name('search')->middleware('auth');
 
 /*countries*/
 //Route::get('/signup', [CountryController::class, 'index'])->middleware('auth')->name('register');

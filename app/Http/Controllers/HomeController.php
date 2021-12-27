@@ -47,7 +47,7 @@ class HomeController extends Controller
         ->where('id', '<>', $login_user->id)->limit(5)->inRandomOrder()->get();
         $id[] = '';
         foreach ($users as $user) {
-            
+
             $id[] = $user->id;
         }
 
@@ -118,10 +118,10 @@ class HomeController extends Controller
         // return $login_user;
         // return $user->posts ;
         $user_relationship_status=['Single','In a relationship','Married','Engaged'];
-         
+
         if ($login_user->id == $user->id) {
             return view('setting', compact('user','user_relationship_status'));
-        } 
+        }
         // $user->posts;
         // return  count($following);
         // return view('profile', compact('user', 'following', 'followers'));
@@ -153,7 +153,7 @@ class HomeController extends Controller
             // $input['user_img'] = $user->user_img;
         }
 
-       
+
         $user->update($data);
         // session()->flash('post_updated_massage','post was updated');
 
@@ -166,15 +166,15 @@ class HomeController extends Controller
         $search = $request->input('search');
 
         // Search in the title and body columns from the posts table
-        $users = User::query()
+        $search = User::query()
             ->where('name', 'LIKE', "%{$search}%")
             ->orWhere('email', 'LIKE', "%{$search}%")
             ->orWhere('phone', 'LIKE', "%{$search}%")
             ->get();
         //dd($users);
         // Return the search view with the resluts compacted
-        return view('components/layout', compact('users'));
+        return view('search', compact('search'));
     }
 
-   
+
 }
