@@ -17,9 +17,7 @@
             <div class="lg:w/8/12 flex-1 flex flex-col lg:items-start items-center">
 
                <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
-                  <h2 class="title_header mb-2"> {{$user->name}}</h2>
-                  <a href="{{route('setting',$user->id)}}" class="bg-blue shadow-sm p-21 px-6 rounded">Edit</a>
-                  <a href="#" class="bg-transparent shadow-sm p-21 px-6 rounded"> Block</a>
+
                </div>
 
                <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
@@ -212,7 +210,7 @@
                            </div>
                         </li>
                            @endforeach
-   
+
                      </div>
                   </ul>
                   <div class="div_set oMwYe"></div>
@@ -273,17 +271,17 @@
                                  @method('DELETE')
                                  <input type="submit" class="bg-blue shadow-sm p-21 px-6 rounded"  name="follow" value="Remove">
                                  <!-- <div class="div_set Pkbci"><button class="sqdOP L3NKy _8A5w5" name="follow" type="submit">Remove</button></div> -->
-                              
+
                               <!-- <button type="submit" name="submit" class="btn btn-primary">Submit</button> -->
                               </form>
                            </div>
                         </li>
                   @endforeach
-                     
-                     
-                     
-                      
-                       
+
+
+
+
+
                      </div>
                   </ul>
                   <div class="div_set oMwYe"></div>

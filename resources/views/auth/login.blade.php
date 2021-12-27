@@ -88,7 +88,7 @@
                                         </div>
                                     </button>
                                 </div>
-                                <div class="K-1uj Z7p_S">
+                                {{-- <div class="K-1uj Z7p_S">
                                     <div class="s311c"></div>
                                     <div class="_0tv-g">or</div>
                                     <div class="s311c"></div>
@@ -96,7 +96,7 @@
                                 <div class=" qF0y9  Igw0E IwRSH eGOV_ _4EzTm bkEs3 CovQj  jKUp7  DhRcB ">
                                     <button class="sqdOP yWX7d  y3zKF " type="button"><span
                                             class=" coreSpriteFacebookIcon AeB99"></span><span class="KPnG0">Log in with
-                                            Facebook</span></button></div>
+                                            Facebook</span></button></div> --}}
                             </div>
 
 

@@ -38,12 +38,12 @@
                    <form class="XFYOY"  method="POST" action="{{ route('register') }}">
                     @csrf
                       <h2 class="vvzhL ">Sign up to see photos and videos from your friends.</h2>
-                      <div class="qF0y9  Igw0E IwRSH eGOV_  _4EzTm bkEs3 CovQj jKUp7 DhRcB"><button class="sqdOP L3NKy y3zKF" type="button"><span class="coreSpriteFacebookIconInverted cneKx"></span>Log in with Facebook</button></div>
+                      {{-- <div class="qF0y9  Igw0E IwRSH eGOV_  _4EzTm bkEs3 CovQj jKUp7 DhRcB"><button class="sqdOP L3NKy y3zKF" type="button"><span class="coreSpriteFacebookIconInverted cneKx"></span>Log in with Facebook</button></div>
                       <div class="K-1uj hKTMS">
                          <div class="s311c"></div>
                          <div class="_0tv-g">or</div>
                          <div class="s311c"></div>
-                      </div>
+                      </div> --}}
                       <div class="WZdjL">
                         <div class="_9GP1n">
                            <label class="f0n8F FATdn "><span class="_9nyy2">Full Name</span><input  aria-required="false" autocapitalize="sentences" autocorrect="off" name="name" type="text" class="_2hvTZ pexuQ zyHYP @error('name') is-invalid @enderror" value="{{ old('name') }}" required></label>

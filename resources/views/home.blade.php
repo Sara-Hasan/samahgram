@@ -3,6 +3,9 @@
     <main class="div_set SCxLW  o64aR " role="main">
         <section class="div_set _1SP8R C3uDN j9XKR  ">
             <div class="div_set cGcGK">
+                @if ($posts !== null)
+
+
                 @foreach($posts as $post)
                 <div>
                     <div>
@@ -19,7 +22,10 @@
                                             </div>
                                             <div class="div_set o-MQd z8cbW ">
                                                 <div class="div_set  RqtMr">
-                                                    <div class="div_set e1e1d"><span class="Jv7Aj mArmR MqpiF  "><a class="sqdOP yWX7d _8A5w5   ZIAjV " href="{{route('profile',$post->user->id)}}" tabindex="0">{{$post->user->name}}</a></span></div>
+                                                    <div class="div_set e1e1d">
+                                                        <span class="Jv7Aj mArmR MqpiF  ">
+                                                        <a class="sqdOP yWX7d _8A5w5 ZIAjV " href="{{route('profile',$post->user->id)}}" tabindex="0">{{$post->user->name}}</a>
+                                                    </span></div>
                                                 </div>
                                                 <div class="div_set M30cS">
                                                     <div></div>
@@ -28,17 +34,6 @@
                                             </div>
                                         </section>
                                         <div class="div_set MEAGs">
-                                            <button class="wpO6b  " type="button">
-                                                <div class="div_set QBdPU ">
-                                                    <div class="div_set  qF0y9  Igw0E   rBNOH  YBx95   _4EzTm  " style="height: 24px; width: 24px;">
-                                                        <svg aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
-                                                            <circle cx="12" cy="12" r="1.5"></circle>
-                                                            <circle cx="6" cy="12" r="1.5"></circle>
-                                                            <circle cx="18" cy="12" r="1.5"></circle>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +67,7 @@
                                                     </button>
 
                                                 </span>
-                                                <form action="{{ route('like.post', $post->id) }}"
+                                                {{-- <form action="{{ route('like.post', $post->id) }}"
                                                     method="post">
                                                     @csrf
                                                     <button
@@ -88,7 +83,7 @@
                                                         class="{{ $post->liked() ? 'block' : 'hidden'  }} px-4 py-2 text-black bg-red-600">
                                                         unlike
                                                     </button>
-                                                </form>
+                                                </form> --}}
                                                 <span class="_15y0l">
                                                     <button class="wpO6b " type="button">
                                                         <div class="div_set QBdPU rrUvL">
@@ -107,11 +102,16 @@
                                             <div class="div_set EtaWk kk">
                                                 <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm  ">
                                                     <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm   pjcA_   ">
-                                                        <div class="div_set   QzzMF Igw0E IwRSH  eGOV_vwCYk   " data-testid="post-comment-root"><span class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate MBL3Z" title="royatv" href="{{route('profile',$post->user->id)}}" tabindex="0">{{$post->user->name}}</a></span>&nbsp;<span class="_8Pl3R"><span>{{$post->post_text}}</span><span class="_2UvmX">...&nbsp;<button class="sXUSN">more</button></span></span>
+                                                        <div class="div_set   QzzMF Igw0E IwRSH  eGOV_vwCYk   " data-testid="post-comment-root">
+                                                        <span class="Jv7Aj mArmR MqpiF  ">
+                                                            <a class="FPmhX notranslate MBL3Z" title="{{$post->user->name}}" href="{{route('profile',$post->user->id)}}" tabindex="0">{{$post->user->name}}</a>
+                                                        <span class="_8Pl3R">{{$post->post_text}}</span>                                                        </span>
+
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm   pjcA_"><a class="r8ZrO" href="{{route('posts.show',$post->id)}}" tabindex="0">View all <span>732</span> comments</a>
+                                                        <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm   pjcA_"><a class="r8ZrO" href="{{route('posts.show',$post->id)}}" tabindex="0">
+                                                            View all <span>{{$post->comments->count() }}</span> comments</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -120,7 +120,11 @@
                                                         hours ago</time></a></div>
                                             <section class="sH9wk  _JgwE ">
                                                 <div class="div_set RxpZH">
-                                                    <form class="X7cDz" method="POST">
+                                                    <form class="X7cDz"  action="/comments" method="POST">
+                                                        @csrf
+
+                                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+
                                                         <button class="wpO6b  " type="button">
                                                             <div class="div_set QBdPU ">
                                                                 <svg aria-label="Emoji" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -129,11 +133,21 @@
                                                                 </svg>
                                                             </div>
                                                         </button>
-                                                        <div class="div_set " style="right: 53px; bottom: 355px;">
-                                                        </div>
-                                                        <textarea aria-label="Add a comment…" data-testid="post-comment-text-area" placeholder="Add a comment…" class="Ypffh" autocomplete="off" autocorrect="off"></textarea>
-                                                        <button class="sqdOP yWX7d y3zKF " data-testid="post-comment-input-button" disabled="" type="submit">Post</button>
+                                                        <div class="div_set " style="right: 53px; bottom: 355px;"> </div>
+                                                        <textarea name="comment_text" aria-label="Add a comment…" data-testid="post-comment-text-area" placeholder="Add a comment…" class="Ypffh" autocomplete="off" autocorrect="off"></textarea>
+                                                        <button class="sqdOP yWX7d y3zKF " data-testid="post-comment-input-button" name="submit" type="submit">Post</button>
                                                     </form>
+
+
+
+
+
+
+
+
+
+
+
                                                 </div>
                                             </section>
                                         </div>
@@ -144,6 +158,16 @@
                     </div>
                 </div>
                 @endforeach
+
+
+                @else
+
+                <h1 class="mt-12 text-center">
+                    <strong>Nothing to show here now
+                        Enjoy your mustache</strong>
+                </h1>
+                @endif
+
             </div>
             <div class="div_set XmSS_"></div>
             <div class="div_set COOzN MnWb5 YT6rB" style="left: 966px;">

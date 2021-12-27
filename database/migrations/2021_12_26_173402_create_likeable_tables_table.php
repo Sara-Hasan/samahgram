@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikeableTables extends Migration
+class CreateLikeableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -38,6 +38,8 @@ class CreateLikeableTables extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('likeable_likes');
+        Schema::dropIfExists('likeable_like_counters');
+
     }
 }
