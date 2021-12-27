@@ -1,51 +1,61 @@
-
-@extends('admin/master')
-@section('admin-content')
-    <!-- ============================================================== -->
+@extends('admin/aster')
+                <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
                     <!-- column -->
-                    <a href='{{route('admoon.create')}}' class="btn btn-primary" style="max-width: 10%;margin-left: 89%;margin-bottom: 1%;">
-                        add
-                    </a>
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Manage Admins</h4>
+                                <h4 class="card-title">Basic Table</h4>
+                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
                                 <div class="table-responsive">
                                     <table class="table user-table no-wrap">
                                         <thead>
                                             <tr>
                                                 <th class="border-top-0">#</th>
-                                                <th class="border-top-0">Admin</th>
-                                                <th class="border-top-0">email</th>
-                                                <th class="border-top-0">action</th>
+                                                <th class="border-top-0">First Name</th>
+                                                <th class="border-top-0">Last Name</th>
+                                                <th class="border-top-0">Username</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($admins as $admin)
                                             <tr>
-                                                <td>{{$admin->id}}</td>
-                                                <td>
-                                                    <span>
-                                                    <img src='{{$admin->admin_img}}' alt="sdfg" style="width:100px;height:100px;border-radius: 50%">
-                                                    {{$admin->name}}
-                                                    </span>
-                                                </td>
-                                                <td>{{$admin->email}}</td>
-                                                <td>
-                                                    <a class="btn btn-info px-4" href="{{ route('admoon.edit',$admin->id) }}">Edit</a>
-                                                </td>
-                                                <td>
-                                                    <form method="post" action="{{route('admoon.destroy',$admin->id)}}">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger px-3">delete</button>
-                                                    </form>
-                                                </td>
+                                                <td>1</td>
+                                                <td>Deshmukh</td>
+                                                <td>Prohaska</td>
+                                                <td>@Genelia</td>
                                             </tr>
-                                        @endforeach
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Deshmukh</td>
+                                                <td>Gaylord</td>
+                                                <td>@Ritesh</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sanghani</td>
+                                                <td>Gusikowski</td>
+                                                <td>@Govinda</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Roshan</td>
+                                                <td>Rogahn</td>
+                                                <td>@Hritik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Joshi</td>
+                                                <td>Hickle</td>
+                                                <td>@Maruti</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Nigam</td>
+                                                <td>Eichmann</td>
+                                                <td>@Sonu</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -67,4 +77,36 @@
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
-@endsection
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                © 2021 Monster Admin by <a href="https://www.wrappixel.com/">wrappixel.com</a>
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

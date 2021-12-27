@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -14,20 +17,25 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        abort(404);
+    }
+    public function likePost($id)
+    {
+        $post = Post::find($id);
+        $post->like();
+        $post->save();
+
+        return redirect()->route('home');
     }
 
-<<<<<<< HEAD
     public function unlikePost($id)
     {
         $post = Post::find($id);
         $post->unlike();
         $post->save();
-
+        
         return redirect()->route('home');
     }
-=======
->>>>>>> aa22b4919323c4ffb46fd8b2f4f45151913fd92f
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +43,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        abort(404);
     }
 
     /**
@@ -46,20 +54,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $input= $request->validate([
-            // 'post_img'=>'mimes:jpeg,png',
-            'post_img'=>'file',
+        $input = $request->validate([
+            'post_img' => 'file',
+            'post_text' => 'string',
         ]);
+        $input['post_text'] = request('post_text');
 
         if (request('post_img')) {
-            $input['post_img']= request('post_img')->store('images');
-            // return $input['post_img'];
+            $input['post_img'] = request('post_img')->store('images');
         }
         auth()->user()->posts()->create($input);
-        // Session::flash('post_create_massage','post was created');
-        session()->flash('post_create_massage','post was created');
+        session()->flash('post_create_massage', 'post was created');
 
-        return redirect('home');
+        return redirect('/profile/' . auth()->user()->id);
     }
 
     /**
@@ -71,6 +78,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
 
+        if ($post == null) {
+            abort(404);
+        }
+        return view('post', compact('post'));
     }
 
     /**
@@ -81,7 +92,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -93,7 +104,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -104,6 +115,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        if ($post == null) {
+            abort(404);
+        }
+        $post->delete();
+        storage::delete("/storage" . $post->user_img);
+        return redirect("profile/" . $post->user->id);
     }
 }
