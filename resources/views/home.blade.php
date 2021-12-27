@@ -419,5 +419,4 @@
         </div>
         <div class="div_set vgS-T"></div>
     </main>
-    <x-story />
 </x-layout>

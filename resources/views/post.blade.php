@@ -109,7 +109,7 @@
                                     </section>
                                     <section class="EDfFK ygqzn">
                                         <div
-                                            class="             qF0y9          Igw0E     IwRSH      eGOV_     ybXk5   vwCYk                                                                                                               ">
+                                            class="qF0y9 Igw0E  IwRSH  eGOV_  ybXk5 vwCYk                                                                                                               ">
                                             <div class="Nm9Fw"><a class="zV_Nj"
                                                     href="/p/CX8hZs3Jn6S/liked_by/" tabindex="0"><span>6,695</span>
                                                     likes</a></div>

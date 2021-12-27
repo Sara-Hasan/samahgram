@@ -70,6 +70,8 @@ Route::resource('/follows', 'App\Http\Controllers\FollowController');
 Route::get('/trending', [TrendingController::class, 'index'])->name('trending');
 
 Route::resource('comments', CommentController::class);
+Route::resource('likes', LikeController::class);
+
 
 /*countries*/
 Route::get('/reg', [CountryController::class, 'index']);
