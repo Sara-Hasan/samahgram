@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         // dd ($posts[0]);
         $users=User::whereNotIn('id', $login_user->following->pluck('second_user_id')) // exclude already followed
-        ->where('id', '<>', $login_user->id)->get();
+        ->where('id', '<>', $login_user->id)->limit(5)->inRandomOrder()->get();
         $id[] = '';
         foreach ($users as $user) {
             
