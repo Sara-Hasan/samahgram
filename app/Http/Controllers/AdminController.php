@@ -18,6 +18,10 @@ use Illuminate\Http\Response;
 
 class AdminController extends Controller
 {
+//    public function dashboard()
+//    {
+//        return view('admin.index');
+//    }
     /**
      * Display a listing of the resource.
      *

@@ -10,14 +10,14 @@
                             <div class="card-body">
                                 <h4 class="card-title">Number of Admins</h4>
                                 <div class="text-end">
-                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{count($admins)}}</h2>
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{(int)count($admins)}}</h2>
                                     <span class="text-muted">max 50 admins</span>
                                 </div>
-                                <span class="text-{{((count($admins)*2)<90? 'info' : 'danger' )}}">{{((count($admins)*2)."%  " )}}used</span>
+                                <span class="text-{{((count($admins)*2)<90? 'info' : 'danger' )}}">{{(int)((count($admins)*2)."%  " )}}used</span>
                                 <div class="progress">
                                     <div class="progress-bar bg-{{((count($admins)*2)<90 ? 'info' : 'danger' )}}" role="progressbar"
                                         style="width:{{(count($admins)*2)}}% ; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100">{{((count($admins)*2)."%  " )}}</div>
+                                        aria-valuemax="100">{{(int)((count($admins)*2)."%  " )}}</div>
                                 </div>
                             </div>
                         </div>
@@ -29,14 +29,14 @@
                             <div class="card-body">
                                 <h4 class="card-title">Number of Users</h4>
                                 <div class="text-end">
-                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{count($users)}}</h2>
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{(int)count($users)}}</h2>
                                     <span class="text-muted"> Our Target Users Number is 10,000</span>
                                 </div>
-                                <span class="text-{{((count($users)/100)<90? 'info' : 'danger' )}}">{{((count($users)/100)."%  " )}}of target</span>
+                                <span class="text-{{((count($users)/100)<90? 'info' : 'danger' )}}">{{(int)((count($users)/100)."%  " )}}of target</span>
                                 <div class="progress">
                                     <div class="progress-bar bg-{{((count($users)/100)<90 ? 'info' : 'danger' )}}" role="progressbar"
                                         style="width: {{(count($users)/100)}}%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100">{{((count($users)/100)."%  " )}}</div>
+                                        aria-valuemax="100">{{(int)((count($users)/100)."%  " )}}</div>
                                 </div>
                             </div>
                         </div>
@@ -71,11 +71,11 @@
                                     <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{$female}}</h2>
                                     <span class="text-muted">Here you can show the percentage of females in our site</span>
                                 </div>
-                                <span class="text-{{(($female/count($users)*100)<($male/count($users)*100) ? 'danger' : 'info' )}}">{{($female/count($users)*100)." %"}} is females</span>
+                                <span class="text-{{(($female/count($users)*100)<($male/count($users)*100) ? 'danger' : 'info' )}}">{{(int)($female/count($users)*100)." %"}} is females</span>
                                 <div class="progress">
                                     <div class="progress-bar bg-{{(($female/count($users)*100)<($male/count($users)*100) ? 'danger' : 'info' )}}" role="progressbar"
                                         style="width:{{($female/count($users)*100)}}% ; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100">{{(($female/count($users)*100)."%  " )}}</div>
+                                        aria-valuemax="100">{{(int)(($female/count($users)*100)."%  " )}}</div>
                                 </div>
                             </div>
                         </div>
@@ -87,14 +87,14 @@
                             <div class="card-body">
                                 <h4 class="card-title">Number of males</h4>
                                 <div class="text-end">
-                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{$male}}</h2>
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{(int)$male}}</h2>
                                     <span class="text-muted">Here you can show the percentage of males in our site</span>
                                 </div>
-                                <span class="text-{{(($male/count($users)*100)<($female/count($users)*100)? 'danger' : 'info' )}}">{{($male/count($users)*100)." %"}} is males</span>
+                                <span class="text-{{(($male/count($users)*100)<($female/count($users)*100)? 'danger' : 'info' )}}">{{(int)($male/count($users)*100)." %"}} is males</span>
                                 <div class="progress">
                                     <div class="progress-bar bg-{{(($male/count($users)*100)<($female/count($users)*100) ? 'danger' : 'info' )}}" role="progressbar"
                                          style="width:{{($male/count($users)*100)}}% ; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                         aria-valuemax="100">{{(($male/count($users)*100)."%  " )}}</div>
+                                         aria-valuemax="100">{{(int)(($male/count($users)*100)."%  " )}}</div>
                                 </div>
                             </div>
                         </div>
@@ -120,14 +120,14 @@
                                                     <div class="card-body">
                                                         <h4 class="card-title"> Number of Posts </h4>
                                                         <div class="text-end">
-                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{count($posts)}}</h2>
+                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{(int)count($posts)}}</h2>
                                                             <span class="text-muted">Target Number of Posts is 1M</span>
                                                         </div>
-                                                        <span class="text-{{((count($posts)/10000)<90? 'danger' : 'info' )}}">{{((count($posts)/1000000)."%  " )}}achieved</span>
+                                                        <span class="text-{{((count($posts)/10000)<90? 'danger' : 'info' )}}">{{(int)((count($posts)/1000000)."%   " )}}achieved</span>
                                                         <div class="progress">
                                                             <div class="progress-bar bg-{{((count($posts)/10000)<90 ? 'danger' : 'info' )}}" role="progressbar"
                                                                  style="width:{{(count($posts)/10000)}}% ; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                                                 aria-valuemax="100">{{((count($posts)/10000)."%  " )}}</div>
+                                                                 aria-valuemax="100">{{(int)((count($posts)/10000)."%  " )}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,14 +139,14 @@
                                                     <div class="card-body">
                                                         <h4 class="card-title">Number of follow actions</h4>
                                                         <div class="text-end">
-                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{count($follows)}}</h2>
+                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{(int)count($follows)}}</h2>
                                                             <span class="text-muted"> Our Target follows Number is 50,000</span>
                                                         </div>
-                                                        <span class="text-{{((count($follows)/500)<90? 'info' : 'danger' )}}">{{((count($follows)/500)."%  " )}}of target</span>
+                                                        <span class="text-{{((count($follows)/500)<90? 'info' : 'danger' )}}">{{(int)((count($follows)/500)."%  " )}}of target</span>
                                                         <div class="progress">
                                                             <div class="progress-bar bg-{{((count($follows)/500)<90 ? 'info' : 'danger' )}}" role="progressbar"
                                                                  style="width: {{(count($follows)/500)}}%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                                                 aria-valuemax="100">{{((count($follows)/500)."%  " )}}</div>
+                                                                 aria-valuemax="100">{{(int)((count($follows)/500)."%  " )}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,14 +160,14 @@
                                                     <div class="card-body">
                                                         <h4 class="card-title"> Number of Comments</h4>
                                                         <div class="text-end">
-                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{count($comments)}}</h2>
+                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> {{(int)count($comments)}}</h2>
                                                             <span class="text-muted">Target Number of Comments is 5M</span>
                                                         </div>
-                                                        <span class="text-{{((count($comments)/50000)<90? 'danger' : 'info' )}}">{{((count($comments)/5000000)."%  " )}}achieved</span>
+                                                        <span class="text-{{((count($comments)/50000)<90? 'danger' : 'info' )}}">{{(int)((count($comments)/5000000)."%   " )}}' achieved'</span>
                                                         <div class="progress">
                                                             <div class="progress-bar bg-{{((count($comments)/50000)<90 ? 'danger' : 'info' )}}" role="progressbar"
                                                                  style="width:{{(count($comments)/50000)}}% ; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                                                 aria-valuemax="100">{{((count($comments)/50000)."%  " )}}</div>
+                                                                 aria-valuemax="100">{{(int)((count($comments)/50000)."%  " )}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,14 +179,14 @@
                                                     <div class="card-body">
                                                         <h4 class="card-title">Number of Likes actions</h4>
                                                         <div class="text-end">
-                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{count($follows)}}</h2>
+                                                            <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> {{(int)count($follows)}}</h2>
                                                             <span class="text-muted"> Our Target follows Number is 50,000</span>
                                                         </div>
-                                                        <span class="text-{{((count($follows)/500)<90? 'info' : 'danger' )}}">{{((count($follows)/500)."%  " )}}of target</span>
+                                                        <span class="text-{{((count($follows)/500)<90? 'info' : 'danger' )}}">{{(int)((count($follows)/500)."%  " )}}of target</span>
                                                         <div class="progress">
                                                             <div class="progress-bar bg-{{((count($follows)/500)<90 ? 'info' : 'danger' )}}" role="progressbar"
                                                                  style="width: {{(count($follows)/500)}}%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                                                 aria-valuemax="100">{{((count($follows)/500)."%  " )}}</div>
+                                                                 aria-valuemax="100">{{(int)((count($follows)/500)."%  " )}}</div>
                                                         </div>
                                                     </div>
                                                 </div>

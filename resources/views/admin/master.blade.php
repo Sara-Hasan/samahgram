@@ -14,7 +14,7 @@
     <title>Samahgram</title>
 {{--    <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />--}}
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href={{asset('admin/assets/images/favicon.png')}}>
+    <link rel="icon" type="image/png" sizes="16x16" href={{asset('assets/images/favicon.png')}}>
     <!-- Custom CSS -->
     <link href={{asset('admin/assets/css/style.min.css')}} rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -101,7 +101,7 @@
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src={{asset('admin/assets/images/users/1.jpg')}} alt="user" class="profile-pic me-2">Markarn Doe
+                            <img src='https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png'   alt="user" class="profile-pic me-2">{{$admins[0]->name}}
                         </a>
                         <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                     </li>
@@ -125,11 +125,7 @@
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                  href="{{route('admooon')}}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                                                                                  aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="{{route('admoonprofile')}}" aria-expanded="false">
-                            <i class="me-3 fa fa-user" aria-hidden="true"></i><span
-                                class="hide-menu">Profile</span></a>
-                    </li>
+
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                  href="/admoon" aria-expanded="false"><i class="me-3 fa fa-table"
                                                                                                        aria-hidden="true"></i><span class="hide-menu">Manage Admins</span></a></li>
