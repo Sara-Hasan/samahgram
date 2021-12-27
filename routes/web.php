@@ -40,14 +40,14 @@ Route::get('/AboutUs', function () {
     return view('about');
 })->name('about');
 
-Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
+Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->middleware('auth')->name('profile');
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
-Route::resource('/posts', PostController::class);
+Route::resource('/posts', PostController::class)->middleware('auth');
 
 Route::resource('/follows', FollowController::class);
 
-Route::get('/trending', [TrendingController::class, 'index'])->name('trending');
+Route::get('/trending', [TrendingController::class, 'index'])->middleware('auth')->name('trending');
 
 Route::resource('comments', CommentController::class);
 Route::resource('likes', LikeController::class);

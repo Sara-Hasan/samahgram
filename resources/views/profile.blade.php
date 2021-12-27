@@ -3,31 +3,42 @@
    <div class="main_content">
       <div class="container pro-container m-auto">
          <!-- profile-cover-->
-         <div class="flex lg:flex-row flex-col items-center pb-7 pt-4 lg:space-x-8">
-            <div class="img_header">
-               <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full m-0.5 mr-2  w-50 h-50 relative overflow-hidden uk-transition-toggle">
-                  <img src="{{$user->user_img}}" class="bg-gray-200 border-4 border-white rounded-full w-full h-full dark:border-gray-900">
-                  <div class="absolute -bottom-3 custom-overly1 flex justify-center pt-4 pb-7 space-x-3 text-2xl text-white uk-transition-slide-bottom-medium w-full">
-                     <a href="#" class="hover:text-white">
-                        <i class="uil-camera"></i>
-                     </a>
+         <div class="v9tJq AAaSh VfzDr">
+         <section class="div_set zw3Ow ">
+            <div class="div_sete eC4Dz">
+               <div class=" div_set _4LQNo">
+                  <div class=" div_set M-jxE">
+                     <button class="IalUJ " title="Add a profile photo"><img alt="Add a profile photo" class="be6sR" src="{{$user->user_img}}"></button>
                   </div>
                </div>
             </div>
-            <div class="lg:w/8/12 flex-1 flex flex-col lg:items-start items-center">
-
-               <div class="conteneur_header capitalize flex font-semibold space-x-3 text-center text-sm my-2">
-
+            <section  class="div_set wW3k-">
+               <div class=" div_set XBGH5">
+                  <h2 class="_7UhW9  fKFbl yUEEX   KV-D4  fDxYl">{{$user->name}}</h2>
+                  <div class=" div_set   qF0y9   Igw0E     IwRSH  eGOV_     ybXk5     ui_ht bPdm3">
+                     <div class=" div_set  qF0y9      Igw0E    IwRSH      eGOV_  vwCYk  ">
+                         <a class="sqdOP  L3NKy    _8A5w5   ZIAjV " href="{{route('setting',$user->id)}}" tabindex="0">Edit Profile</a></div>
+                  </div>
                </div>
-
-               <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
-                  <div class="flex lg:flex-row flex-col"> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif <strong class="lg:pl-2">Posts</strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_followers)) {{count($login_followers)}} @else <span>0</span> @endif<strong class="lg:pl-2"><a href="#followers-modal" uk-toggle>Followers</a> </strong></div>
-                  <div class="lg:pl-4 flex lg:flex-row flex-col">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif<strong class="lg:pl-2"> <a href="#following-modal" uk-toggle>Following</a> </strong></div>
+               <ul class="k9GMp ">
+                  <li class="Y8-fY "><span class="-nal3 "><span class="g47SY "> @if(!empty($user->posts)) {{count($user->posts)}} @else <span>0</span> @endif</span> posts</span></li>
+                  <li class="Y8-fY "><a class="-nal3 " href="#followers-modal"uk-toggle tabindex="0"><span class="g47SY " >@if(!empty($login_followers)) {{count($login_followers)}} @else<span>0</span>   @endif</span> followers</a></li>
+                  <li class="Y8-fY "><a class="-nal3 " href="#following-modal"uk-toggle tabindex="0"><span class="g47SY ">@if(!empty($login_following)) {{count($login_following)}} @else <span>0</span>   @endif</span> following</a></li>
+               </ul>
+               <div class=" div_set QGPIr">
+                  <h1 class="Yk1V7">{{$user->user_bio}}</h1>
+                  <br>
                </div>
-            </div>
-            <div class="w-20"></div>
-         </div>
+            </section>
+         </section>
+        </div>
+
+
+
+
+
+
+
          <h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mt-8"> Posts </h1>
 
 
@@ -56,108 +67,304 @@
             <div id="story-modal" href="" class="uk-modal-container" uk-modal>
                <div class="uk-modal-dialog story-modal">
                   <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
-                  <div class="story-modal-media">
-                     <img src="{{$value->post_img}}" alt="" class="inset-0 h-full w-full object-cover">
-                  </div>
-                  <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
-                     <!-- post header-->
-                     <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
-                        <div class="flex flex-1 items-center space-x-4">
-                           <a href="#">
-                              <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
-                                 <img src={{asset('assets/images/avatars/avatar-2.jpg')}} class="bg-gray-200 border border-white rounded-full w-8 h-8">
-                              </div>
-                           </a>
-                           <span class="block text-lg font-semibold"> Johnson smith </span>
-                        </div>
-                     </div>
-                     <div class="story-content p-4" data-simplebar>
-                        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                           laoreet dolore magna aliquam erat volutpat. </p>
-                        <span class="date pr-2"> 15 m</span>
 
-                        <div class="py-4 ">
-                           <div class="flex ">
-                              <button name="like" class="flex items-center space-x-3 pr-3">
-                                 <div class="flex font-bold items-baseline">
-                                    <svg aria-label="Like" class="_8-yf5 comment " color="#000" fill="#000" height="24" role="img" viewBox="0 0 24 24" width="24">
-                                       <path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z">
-                                       </path>
-                                    </svg>
-                                 </div>
-                              </button>
-                              <label for="comment" class="comment_lable">
-                                 <svg aria-label="Comment" class="_8-yf5 comment" color="#000" fill="#000" height="24" role="img" viewBox="0 0 24 24" width="24">
-                                    <path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
-                                 </svg>
-                              </label>
-                           </div>
-                           <hr class="-mx-4 my-3">
-                           <div class="flex items-center space-x-3">
-                              <button name="others_like">
-                                 <div class="flex items-center">
-                                    <img src={{asset('assets/images/avatars/avatar-1.jpg')}} alt="" class="w-6 h-6 rounded-full border-2 border-white">
-                                    <img src={{asset('assets/images/avatars/avatar-4.jpg')}} alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
-                                    <img src={{asset('assets/images/avatars/avatar-2.jpg')}} alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
-                                 </div>
-                              </button>
-                              <div>
-                                 Liked <a href="#"> <strong> Johnson</strong></a> and <button name="others_like"><strong> 209 Others </strong></button>
-                              </div>
-                           </div>
+
+                    <article class="QBXjJ M9sTE   L_LMM  JyscU  ePUX4 " role="presentation" tabindex="-1">
+                        <div class="div_set qF0y9 Igw0E     IwRSH        YBx95   ybXk5    _4EzTm  "
+                            style="max-height: inherit; max-width: inherit;">
+                            <div class="div_set _97aPb   wKWK0">
+                                <div role="button" class="ZyFrc" tabindex="0">
+                                    <div class="div_set eLAPa kPFhm">
+                                        <div class="div_set KL4Bh" style="padding-bottom: 100%;"><img
+                                                alt="{{ $value->post_text }}" class="FFVAD" crossorigin="anonymous"
+                                                decoding="auto" style="object-fit: cover;" sizes="598px"
+                                                src="{{ $value->post_img }}">
+                                        </div>
+                                        <div class="div_set _9AhH0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div_set  qF0y9 Igw0E  IwRSH   eGOV_ _4EzTm ">
+                                <div class="div_set cv3IO  ">
+                                    <div class="div_set UE9AK ">
+                                        <div class="div_set     qF0y9 Igw0E   rBNOH  CcYR1  ybXk5    _4EzTm  ">
+                                            <section class="div_set  Ppjfr">
+                                                <div class="div_set Jv7Aj mArmR   pZp3x">
+                                                    <div class="div_set RR-M- h5uC0 mrq0Z" aria-disabled="false"
+                                                        role="button" tabindex="0">
+                                                        <canvas class="CfWVH" height="42" width="42"
+                                                            style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
+                                                        <span class="_2dbep " role="link" tabindex="-1"
+                                                            style="width: 32px; height: 32px;"><img
+                                                                alt="{{ $value->user->name }}" class="_6q-tv"
+                                                                crossorigin="anonymous" data-testid="user-avatar"
+                                                                draggable="false"
+                                                                src="{{ $value->user->user_img }}"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="div_set o-MQd z8cbW ">
+                                                    <div class="div_set PQo_0 RqtMr">
+                                                        <div class="div_set e1e1d">
+                                                            <span class="Jv7Aj mArmR MqpiF  "><a
+                                                                    class="sqdOP yWX7d     _8A5w5   ZIAjV "
+                                                                    href="/profile/{{ $value->user->id }}"
+                                                                    tabindex="0">{{ $value->user->name }}</a></span>
+                                                            <div class="qF0y9 Igw0E  IwRSH  eGOV__4EzTm   WKY0a">
+                                                            </div>
+                                                        </div>
+                                                        <div class="div_set bY2yH">
+                                                            <div class="div_set qvG_g"><span
+                                                                    class="RPhNB FLVQW  _7qOna">•</span></div>
+
+                                                            @if (auth()->user()->id == $value->user_id)
+                                                                <form action="{{ route('posts.destroy', $value->id) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button class="sqdOP yWX7d  _8A5w5 delet"
+                                                                        type="submit">Delete
+                                                                    </button>
+                                                                </form>
+                                                            @else
+                                                                <button class="sqdOP yWX7d  _8A5w5" type="button">Following
+                                                                </button>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_set M30cS">
+                                                        <div></div>
+                                                        <div class="div_set JF9hh"></div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="div_set eo2As  ">
+                                        <section class="ltpMr  Slqrh">
+                                            <span class="fr66n">
+                                                <button class="wpO6b  " type="button">
+
+                                                    <div class="div_set QBdPU rrUvL">
+                                                        <span class="">
+                                                            <svg aria-label="Like" class="_8-yf5 " color="#262626"
+                                                                fill="#262626" height="24" role="img" viewBox="0 0 24 24"
+                                                                width="24">
+                                                                <path
+                                                                    d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z">
+                                                                </path>
+                                                            </svg>
+
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </span>
+                                            <span class="_15y0l">
+                                                <label for="comment_text" class="wpO6b  " type="button">
+
+                                                    <div class="div_set QBdPU rrUvL">
+                                                        <svg aria-label="Comment" class="_8-yf5 " color="#262626"
+                                                            fill="#262626" height="24" role="img" viewBox="0 0 24 24"
+                                                            width="24">
+                                                            <path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
+                                                                fill="none" stroke="currentColor" stroke-linejoin="round"
+                                                                stroke-width="2"></path>
+                                                        </svg>
+                                                    </div>
+                                                </label>
+                                            </span>
+
+                                        </section>
+
+                                        <div class="div_set EtaWk">
+                                            <ul class="XQXOT    pXf-y ">
+                                                <div role="button" class="ZyFrc" tabindex="0">
+                                                    <li class="gElp9 rUo9f  PpGvg " role="menuitem">
+                                                        <div class="div_set P9YgZ">
+                                                            <div class="div_set C7I1f X7jCj">
+                                                                <div class="div_set Jv7Aj mArmR   pZp3x">
+                                                                    <div class="div_set RR-M- h5uC0 TKzGu  "
+                                                                        aria-disabled="false" role="button" tabindex="0">
+                                                                        <canvas class="CfWVH" height="42"
+                                                                            width="42"
+                                                                            style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
+                                                                        <span class="_2dbep " role="link"
+                                                                            tabindex="-1"
+                                                                            style="width: 32px; height: 32px;"><img
+                                                                                alt="{{ $value->user->name }}"
+                                                                                class="_6q-tv"
+                                                                                crossorigin="anonymous"
+                                                                                data-testid="user-avatar" draggable="false"
+                                                                                src="{{ $value->user->user_img }}"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class=" div_set C4VMK ">
+                                                                    <h2 class="_6lAjh ">
+                                                                        <div
+                                                                            class="qF0y9 Igw0E     IwRSH      eGOV__4EzTm   ItkAi ">
+                                                                            <span class="Jv7Aj mArmR MqpiF  "><a
+                                                                                    class="sqdOP yWX7d     _8A5w5   ZIAjV "
+                                                                                    href="/profile/{{ $value->user->id }}"
+                                                                                    tabindex="0">{{ $value->user->name }}</a></span>
+                                                                        </div>
+
+                                                                    </h2>
+                                                                    <span
+                                                                        class="">{{ $value->post_text }}</span>
+                                                                    <div
+                                                                        class="    qF0y9 Igw0E     IwRSH      eGOV__4EzTm   pjcA_   aGBdT     ">
+                                                                        <div
+                                                                            class="_7UhW9  PIoXz       MMzan   _0PwGvuL8Hv">
+                                                                            <time class="FH9sR RhOlS Nzb55"
+                                                                                datetime="{{ $value->created_at->diffForHumans() }}"
+                                                                                title="{{ $value->created_at->diffForHumans() }}">
+                                                                                {{ $value->created_at->diffForHumans() }}</time>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                @foreach ($value->comments as $comment)
+                                                    <ul class="Mr508 ">
+                                                        <div role="button" class="ZyFrc" tabindex="0">
+                                                            <li class="gElp9 rUo9f " role="menuitem">
+                                                                <div class="div_set P9YgZ">
+                                                                    <div class="div_set C7I1f ">
+                                                                        <div class="div_set Jv7Aj mArmR   pZp3x">
+                                                                            <div class="div_set RR-M-  TKzGu  "
+                                                                                aria-disabled="true" role="button"
+                                                                                tabindex="-1">
+                                                                                <canvas class="CfWVH" height="42"
+                                                                                    width="42"
+                                                                                    style="position: absolute; top: -5px; left: -5px; width: 42px; height: 42px;"></canvas>
+                                                                                <a class="_2dbep qNELH kIKUG"
+                                                                                    href="/profile/{{ $comment->user_id }}"
+                                                                                    tabindex="0"
+                                                                                    style="width: 32px; height: 32px; display: block;"><img
+                                                                                        alt="{{ $comment->user->name }} profile picture"
+                                                                                        class="_6q-tv"
+                                                                                        crossorigin="anonymous"
+                                                                                        data-testid="user-avatar"
+                                                                                        draggable="false"
+                                                                                        src="{{ $comment->user->user_img }}"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="div_set C4VMK">
+                                                                            <h3 class="_6lAjh ">
+                                                                                <div
+                                                                                    class="    qF0y9 Igw0E     IwRSH      eGOV__4EzTm   ItkAi        ">
+                                                                                    <span class="Jv7Aj mArmR MqpiF  "><a
+                                                                                            class="sqdOP yWX7d     _8A5w5   ZIAjV "
+                                                                                            href="/profile/{{ $comment->user_id }}"
+                                                                                            tabindex="0">{{ $comment->user->name }}</a></span>
+                                                                                </div>
+                                                                            </h3>
+                                                                            <span
+                                                                                class="">{{ $comment->comment_text }}</span>
+                                                                            <div class=" div_set   qF0y9 Igw0E     IwRSH      eGOV__4EzTm   pjcA_   aGBdT     ">
+                                                                                <div class="div_set flex-row _7UhW9  PIoXz       MMzan   _0PwGvuL8Hv">
+                                                                                    <span class="gU-I7"
+                                                                                        tabindex="0"><time
+                                                                                            class="FH9sR RhOlS Nzb55"
+                                                                                            datetime="{{ $comment->created_at->diffForHumans() }}"
+                                                                                            title="{{ $comment->created_at->diffForHumans() }}">{{ $comment->created_at->diffForHumans() }}</time></span>
+                                                                                    @if (auth()->user()->id == $comment->user_id)
+
+                                                                                            <button class="FH9sR">2
+                                                                                                likes</button>
+                                                                                            <form class="inline"
+                                                                                                action="{{ route('comments.destroy', $comment->id) }}"
+                                                                                                method="post">
+                                                                                                @csrf
+                                                                                                @method('DELETE')
+                                                                                                <button
+                                                                                                    class="delet">Delete</button>
+                                                                                            </form>
+                                                                                    @endif
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- <span class="jdtwu">
+                                                                    <div class="div_set _2ic5v">
+                                                                        <button class="wpO6b ZQScA " type="button">
+
+                                                                            <div class="div_set QBdPU rrUvL">
+                                                                                <span class="">
+                                                                                    <svg aria-label="Like"
+                                                                                        class="_8-yf5 "
+                                                                                        color="#262626" fill="#262626"
+                                                                                        height="12" role="img"
+                                                                                        viewBox="0 0 24 24" width="12">
+                                                                                        <path
+                                                                                            d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z">
+                                                                                        </path>
+                                                                                    </svg>
+                                                                                </span>
+                                                                            </div>
+                                                                        </button>
+                                                                    </div>
+                                                                </span> --}}
+                                                        </div>
+                                                        </li>
+                                        </div>
+                                        <li>
+
+                                        </li>
+                                        </ul>
+                                        @endforeach
+
+                                        </ul>
+                                    </div>
+                                    <div class="div_set k_Q0X I0_K8  NnvRN"><span class="c-Yi7"
+                                            tabindex="0"><time class="_1o9PC Nzb55"
+                                                datetime="{{ $value->created_at->diffForHumans() }}"
+                                                title="{{ $value->created_at->diffForHumans() }}">{{ $value->created_at->diffForHumans() }}</time></span>
+                                    </div>
+                                    <section class="sH9wk  _JgwE ">
+                                        <div class="div_set RxpZH">
+
+
+                                            <form class="X7cDz" action="/comments" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="post_id" value="{{ $value->id }}">
+                                                <button class="wpO6b  " type="button">
+                                                    <div class="div_set QBdPU ">
+                                                        <svg aria-label="Emoji" class="_8-yf5 " color="#262626"
+                                                            fill="#262626" height="24" role="img" viewBox="0 0 24 24"
+                                                            width="24">
+                                                            <path
+                                                                d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </button>
+
+                                                <textarea  id="comment_text" name="comment_text" aria-label="Add a comment…"
+                                                    data-testid="post-comment-text-area" placeholder="Add a comment…"
+                                                    class="Ypffh" autocomplete="off" autocorrect="off"
+                                                    style="height: 18px !important;"></textarea>
+
+                                                <button class="sqdOP yWX7d  y3zKF " data-testid="post-comment-input-button"
+                                                    type="submit">Post</button>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
-                        <div class="-mt-1 space-y-1">
-                           <div class="flex flex-1 space-x-2">
-                              <img src={{asset('assets/images/avatars/avatar-4.jpg')}} class="rounded-full w-8 h-8">
-                              <div class="flex flex-col w-full">
-                                 <div class="flex flex-1 space-x-2 justify-between items-start ">
-                                    <span> <strong> Johnson</strong> consectetuer adipiscing elit</span>
-                                    <button name="comment_like" type="button"> <svg aria-label="Like" class="_8-yf5 like" color="#000" fill="#000" height="12" role="img" viewBox="0 0 24 24" width="12">
-                                          <path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path>
-                                       </svg></button>
-                                 </div>
-                                 <div class="comment_component">
-                                    <span class=" pr-2"> 15 m</span>
-                                    <button name="comment_like_views" type="button" class="reply pr-2"><span>1 </span> like </button>
-                                    <button name="reply" type="button" class="reply"> Reply </button>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="ml-8 mt-2 flex flex-1 space-x-2">
-                              <img src={{asset('assets/images/avatars/avatar-4.jpg')}} class="rounded-full w-8 h-8">
-                              <div class="flex flex-col w-full">
-                                 <div class="flex flex-1 mr-3 justify-between items-start">
-                                    <span> <strong> Johnson</strong> consectetuer adipiscing elit</span>
-                                    <button name="comment_like" type="button"> <svg aria-label="Like" class="_8-yf5 like" color="#000" fill="#000" height="12" role="img" viewBox="0 0 24 24" width="12">
-                                          <path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path>
-                                       </svg></button>
-                                 </div>
-                                 <div class="comment_component ">
-                                    <span class=" pr-2"> 15 m</span>
-                                    <button name="comment_like_views" type="button" class="reply pr-2"><span>1 </span> like </button>
-                                    <button name="reply" type="button" class="reply"> Reply </button>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="border-t dark:border-gray-600">
-                        <div class="bg-gray-200 dark:bg-gray-700 p-3 relative">
-                           <input id="comment" type="text" placeholder="Add your Comment.." class="bg-transparent max-h-8 shadow-none">
-                           <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                              <a href="#"> <i class="uil-image"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                </div>
+                </article>
+
                </div>
             </div>
 
             @endforeach
          </div>
-         <div class="flex justify-center mt-6">
-            <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white"> Load more ..</a>
-         </div>
+
       </div>
    </div>
    <div id="followers-modal" class="uk-modal-container" uk-modal>
@@ -269,10 +476,8 @@
                               <form action="{{route('follows.destroy',$array_id[$i++])}}" method="post" enctype="multipart/form-data">
                                  @csrf
                                  @method('DELETE')
-                                 <input type="submit" class="bg-blue shadow-sm p-21 px-6 rounded"  name="follow" value="Remove">
-                                 <!-- <div class="div_set Pkbci"><button class="sqdOP L3NKy _8A5w5" name="follow" type="submit">Remove</button></div> -->
+                                 <input type="submit" class="sqdOP  L3NKy    _8A5w5_bb    "  name="follow" value="Remove">
 
-                              <!-- <button type="submit" name="submit" class="btn btn-primary">Submit</button> -->
                               </form>
                            </div>
                         </li>

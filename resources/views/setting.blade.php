@@ -23,9 +23,9 @@
                                 <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                                     <div class="form-group">
                                         <label for="pwd">User Image:</label>
-                                        <img width="100" height="100" src="{{ $user->user_img }}"
+                                        <img  width="100" height="100" src="{{ $user->user_img }}"
                                             alt="{{ $user->name }}" style=" margin-bottom:20px;">
-                                        <label for="pwd">Change user Image</label>
+                                        <label class="text-blue-400 font-bold cursor-pointer hover:text-blue-500" for="pwd">Change user Image</label>
 
                                         <input type="file" class="form-control-file" id="pwd"
                                             placeholder="Enter password" name="user_img">
@@ -79,7 +79,7 @@
                                             class="sqdOP L3NKy bg-gray-50 text-black"> Cancel
                                         </span>
                                     </a>
-                                    <input type="submit" class="sqdOP L3NKy y3zKF" value="Save">
+                                    <input type="submit" class="sqdOP L3NKy y3zKF kk" value="Save">
                                 </div>
 
 
@@ -88,75 +88,6 @@
                         </div>
                     </div>
 
-                    <div class="grid lg:grid-cols-3 mt-12 gap-8">
-
-                        <div>
-                            <h3 class="text-xl mb-2"> Privacy</h3>
-                            <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
-                        </div>
-                        <div class="bg-white rounded-md lg:shadow-lg shadow lg:p-6 p-4 col-span-2">
-
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h4> Who can follow me ?</h4>
-                                        <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        </div>
-                                    </div>
-                                    <div class="switches-list -mt-8 is-large">
-                                        <div class="switch-container">
-                                            <label class="switch"><input type="checkbox"><span
-                                                    class="switch-button"></span> </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h4> Show my activities ?</h4>
-                                        <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        </div>
-                                    </div>
-                                    <div class="switches-list -mt-8 is-large">
-                                        <div class="switch-container">
-                                            <label class="switch"><input type="checkbox" checked><span
-                                                    class="switch-button"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h4> Search engines?</h4>
-                                        <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        </div>
-                                    </div>
-                                    <div class="switches-list -mt-8 is-large">
-                                        <div class="switch-container">
-                                            <label class="switch"><input type="checkbox"><span
-                                                    class="switch-button"></span> </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h4> Allow Commenting?</h4>
-                                        <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        </div>
-                                    </div>
-                                    <div class="switches-list -mt-8 is-large">
-                                        <div class="switch-container">
-                                            <label class="switch"><input type="checkbox"><span
-                                                    class="switch-button"></span> </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
 
                 <div id="Password" class="grid lg:grid-cols-3 mt-12 gap-8 hidden">
@@ -196,7 +127,7 @@
                                         class="sqdOP L3NKy bg-gray-50 text-black"> Cancel
                                     </span>
                                 </a>
-                                <input type="submit" class="sqdOP L3NKy y3zKF" value="Save">
+                                <input type="submit" class="sqdOP L3NKy y3zKF kk" value="Save">
                             </div>
                         </form>
                     </div>

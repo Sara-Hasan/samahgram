@@ -51,7 +51,7 @@ class CommentController extends Controller
              'user_id' => $user_id,
              'comment_text' => $data['comment_text'],
           ]);
-          return back();
+          return redirect('/posts/'. $post->user->id);
 
     }
 

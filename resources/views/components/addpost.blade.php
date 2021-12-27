@@ -80,10 +80,10 @@
                                                                 class="div_set   qF0y9   Igw0E IwRSH  eGOV_  _4EzTm  yC0tu  ">
                                                                 <span class="_2dbep " role="link" tabindex="-1"
                                                                     style="width: 28px; height: 28px;"><img
-                                                                        alt="abualhaj.designer's profile picture"
+                                                                        alt="{{Auth::user()->name}}"
                                                                         class="_6q-tv" crossorigin="anonymous"
                                                                         data-testid="user-avatar" draggable="false"
-                                                                        src="https://instagram.famm6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/269875872_113749254497056_4793415724076752515_n.jpg?_nc_ht=instagram.famm6-1.fna.fbcdn.net&amp;_nc_cat=104&amp;_nc_ohc=2UpcfidgHQ4AX8nR0ix&amp;tn=la0q6Xo6XNhPjNLU&amp;edm=AIQHJ4wBAAAA&amp;ccb=7-4&amp;oh=00_AT8maH0P8w_Nse-bV7dV1Neob3iL4jCGqzt8oI2Y7d6jhQ&amp;oe=61CF1550&amp;_nc_sid=7b02f1"></span>
+                                                                        src="{{Auth::user()->user_img}}"></span>
                                                             </div>
                                                             <div class="div_set   qF0y9   Igw0E IwRSH YBx95  vwCYk  ">
                                                                 <div class="div_set   qF0y9   Igw0E IwRSH  eGOV_  _4EzTm "
@@ -92,7 +92,7 @@
                                                                         class="div_set _7UhW9   xLCgt  MMzan  KV-D4fDxYl ">
                                                                         <div
                                                                             class="div_set _7UhW9vy6Bb  qyrsm KV-D4   uL8Hv  ">
-                                                                            abualhaj.designer
+                                                                            {{Auth::user()->name}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -107,8 +107,7 @@
                                                         <textarea name="post_text" aria-label="Write a caption..."
                                                             placeholder="Write a caption..." class="lFzco"
                                                             autocomplete="off" autocorrect="off"
-                                                            style="height: 24px !important;">
-                                                    </textarea>
+                                                            style="height: 24px !important;"></textarea>
                                                     </div>
 
 

@@ -33,12 +33,17 @@
         <article class="_4_yKc">
             <div class="yOZjD _80tAB">
                 <div class="V64Sp"><img alt="" class="RP4i1 JtrJi "
-                        src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg"></div>
+                        src="assets/images/logo.png"></div>
             </div>
             <div class="rgFsT">
                 <div class="gr27e">
-                    <h1 class="NXVPg Szr5J coreSpriteLoggedOutWordmark ">Instagram</h1>
-                    <div class="EPjEi">
+                    <div class="Logo mt-8">
+                        <!-- Logo -->
+                        <a href="{{ route('home') }}">
+                            <img src="assets/images/logo.png"
+                                alt="">
+                        </a>
+                    </div>                    <div class="EPjEi">
 
                         <form class="HmktE" id="loginForm"  method="POST" action="{{ route('login') }}">
                             @csrf

@@ -33,7 +33,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->unlike();
         $post->save();
-        
+
         return redirect()->route('home');
     }
     /**

@@ -44,7 +44,7 @@
                     <div class="Logo">
                         <!-- Logo -->
                         <a href="{{ route('home') }}">
-                            <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                            <img src="assets/images/logo.png"
                                 alt="">
                         </a>
                     </div>
@@ -135,7 +135,7 @@
                                 </div>
                             </div>
 
-                            <div class="XrOey">
+                            {{-- <div class="XrOey">
                                 <a aria-label="Direct messaging - 0 new notifications link" class="xWeGp"
                                     href="{{ route('chat') }}" tabindex="0">
                                     <svg aria-label="Direct" class="_8-yf5 " color="#262626" fill="#262626"
@@ -147,7 +147,7 @@
                                             stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon>
                                     </svg>
                                 </a>
-                            </div>
+                            </div> --}}
 
                             <div class="XrOey">
                                 <a href="#post-modal" uk-toggle>
@@ -184,7 +184,7 @@
                                 </a>
                             </div>
 
-                            <div class="XrOey">
+                            {{-- <div class="XrOey">
                                 <a class="_0ZPOP kIKUG " href="#">
                                     <svg aria-label="Activity Feed" class="_8-yf5 " color="#262626"
                                         fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -272,7 +272,7 @@
                                     </li>
                                 </ul>
                                 <a href="#" class="see-all">See all</a>
-                            </div>
+                            </div> --}}
 
 
 
@@ -286,7 +286,7 @@
                                 </span>
                                 <div class="poA5q" style="margin-left: -180px;"></div>
                             </div>
-                            <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                            <div uk-drop="pos: top-right; mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                                 <ul>
                                     <li><a href="{{ route('profile', Auth::user()->id) }}"> Profile </a> </li>
                                     <li><a href="{{ route('setting', Auth::user()->id) }}"> Setting </a> </li>
@@ -294,7 +294,6 @@
 
                                     <li>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -303,7 +302,6 @@
                                                 class="d-none">
                                                 @csrf
                                             </form>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>
