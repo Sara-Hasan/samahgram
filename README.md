@@ -40,7 +40,7 @@ Download xampp , Composer and laravel on your computer to view this project.
 https://drive.google.com/file/d/1j8_yrtFjnztYN6I7eBo9FNZVxWw6GOHz/view
 
 ## Mockup
-
+https://drive.google.com/file/d/1VQxe1V6hYommcwGlpjg7wZQsk79n8Rut/view
 
 ## Trello
 https://trello.com/b/lvEIf02R/samahgram
