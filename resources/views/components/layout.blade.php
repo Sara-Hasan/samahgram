@@ -14,6 +14,7 @@
     <meta name="description" content="Instello - Sharing Photos platform HTML Template">
     <!-- icons
          ================================================== -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href={{ asset('assets/css/icons.css') }}>
     <!-- CSS
          ================================================== -->
@@ -281,7 +282,7 @@
                                 <span class="_2dbep qNELH" role="link" tabindex="0"
                                     style="width: 24px; height: 24px;">
                                     <img alt="" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar"
-                                        draggable="false" src={{ asset('assets/images/avatars/avatar-2.jpg') }}>
+                                        draggable="false" src={{Auth::user()->user_img}}>
                                 </span>
                                 <div class="poA5q" style="margin-left: -180px;"></div>
                             </div>
