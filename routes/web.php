@@ -65,7 +65,7 @@ Route::get('/trending', function () {
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('profile');
 Route::put('/profile/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');
 Route::get('/profile/setting/{id}', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
-Route::resource('/posts', 'App\Http\Controllers\PostController');
+Route::resource('/posts', PostController::class);
 // Route::resource('/follows', 'App\Http\Controllers\FollowController');
 // Route::post('/follows/{id}', [App\Http\Controllers\FollowController::class, 'store'])->name('follow');
 // Route::post('/follows/delete/{id}', [App\Http\Controllers\FollowController::class, 'destroy'])->name('UnFollow');
