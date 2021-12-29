@@ -101,7 +101,7 @@
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src='https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png'   alt="user" class="profile-pic me-2">{{$admins[0]->name}}
+                            <img src='https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png'   alt="user" class="profile-pic 
                         </a>
                         <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                     </li>

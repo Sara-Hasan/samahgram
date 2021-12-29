@@ -47,7 +47,7 @@
             @foreach ($user->posts as $value)
             <div>
                <div class="bg-red-500 max-w-full lg:h-72 h-40 relative overflow-hidden uk-transition-toggle" tabindex="0">
-                  <a id="{{$value->id}}" href="#story-modal" uk-toggle class="flex items-center">
+                  <a id="{{$value->id}}" href="#story-modal{{$value->id}}" uk-toggle class="flex items-center">
 
                      <img src={{$value->post_img}} class="w-full h-full absolute object-cover inset-0">
                      <div class="absolute bg-black bg-opacity-40 bottom-0 flex h-full items-center justify-center text-lg text-white uk-transition-scale-up w-full">
@@ -64,7 +64,7 @@
 
                </div>
             </div>
-            <div id="story-modal" href="" class="uk-modal-container" uk-modal>
+            <div id="story-modal{{$value->id}}" href="" class="uk-modal-container" uk-modal>
                <div class="uk-modal-dialog story-modal">
                   <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
 

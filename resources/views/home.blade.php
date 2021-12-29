@@ -85,13 +85,13 @@
                                                     </button>
                                                 </form> --}}
                                                 <span class="_15y0l">
-                                                    <button class="wpO6b " type="button">
+                                                    <label class="wpO6b " type="button">
                                                         <div class="div_set QBdPU rrUvL">
                                                             <svg aria-label="Comment" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24">
                                                                 <path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
                                                             </svg>
                                                         </div>
-                                                    </button>
+                                                    </م>
                                                 </span>
                                             </section>
                                             <section class="EDfFK ygqzn">
@@ -137,17 +137,6 @@
                                                         <textarea name="comment_text" aria-label="Add a comment…" data-testid="post-comment-text-area" placeholder="Add a comment…" class="Ypffh" autocomplete="off" autocorrect="off"></textarea>
                                                         <button class="sqdOP yWX7d y3zKF " data-testid="post-comment-input-button" name="submit" type="submit">Post</button>
                                                     </form>
-
-
-
-
-
-
-
-
-
-
-
                                                 </div>
                                             </section>
                                         </div>
@@ -170,7 +159,7 @@
 
             </div>
             <div class="div_set XmSS_"></div>
-            <div class="div_set COOzN MnWb5 YT6rB" style="left: 966px;">
+            <div class="div_set COOzN MnWb5 YT6rB" style="left: 1150px;">
                 <div class="div_set m0NAq xrWdL">
                     <div class="div_set  qF0y9  Igw0E IwRSH  eGOV_ _4EzTm   ItkAi   " style="width: 100%;">
                         <div aria-labelledby="f1c71c35275658c f2aa0ffc34ea934 f20d1ca8a74c4d f159aa1bfd7238c" class=" qF0y9  Igw0E   rBNOH eGOV_  ybXk5 _4EzTm  ">

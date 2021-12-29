@@ -4,9 +4,9 @@
     <div class="main_content">
         <div class="container m-auto">
             <div class="flex justify-between items-baseline uk-visible@s">
-                <h1 class="font-extrabold leading-none mb-6 mt-8 lg:text-2xl text-lg text-gray-900 tracking-tight"> Suggestion
+                <h1 class="font-extrabold leading-none mb-6 mt-8 lg:text-2xl text-lg text-gray-900 tracking-tight">
+                    Search result
                 </h1>
-                <a href="#" class="text-blue-400 hover:text-blue-500"> See all</a>
             </div>
 
             <div class="relative" >
@@ -15,7 +15,7 @@
 
 
 
-                    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-small">
+                    <ul class="mt-6 grid lg:grid-cols-3 grid-cols-2 gap-3 hover:text-yellow-700 uk-link-reset">
                         @foreach($search as $user)
                             <li>
                                 <div class="bg-gray-200 max-w-full lg:h-64 h-52 rounded-lg relative overflow-hidden">
@@ -57,10 +57,6 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a class="uk-position-center-left uk-position-small p-3.5 bg-white rounded-full w-10 h-10 flex justify-center items-center -mx-4 mb-6 shadow-md dark:bg-gray-800 dark:text-white"
-                       href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-positsion-small p-3.5 bg-white rounded-full w-10 h-10 flex justify-center items-center -mx-4 shadow-md dark:bg-gray-800 dark:text-white"
-                       href="#" uk-slidenav-next uk-slider-item="next"></a>
                 </div>
             </div>
         </div>
