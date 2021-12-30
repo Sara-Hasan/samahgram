@@ -388,9 +388,14 @@
                      </div>
                   </div>
                </div>
+               @if(empty($follower))
+               <div style="text-align: center; padding:20px; font-weight: bold; font-size: larger;"><h1>No follower</h1></div>
+                                    
+                                    @endif
                <div class="div_set isgrP">
                   <ul class="jSC57  _6xe7A">
                      <div class="div_set PZuss">
+                        
                      @php $j=0 @endphp
                      @foreach($login_follower_id as $follower)
                         <li class="wo9IH">
@@ -402,6 +407,7 @@
                                        <a class="_2dbep qNELH kIKUG" href="{{route('profile',$follower->id)}}" tabindex="0" style="width: 30px; height: 30px; display: block;"><img alt="ahmad_150.ok's profile picture" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src="{{$follower->user_img}}"></a>
                                     </div>
                                  </div>
+                         
                                  <div class="div_set enpQJ">
                                     <div class="div_set d7ByH">
                                        <span class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate  _0imsa " title="ahmad_150.ok" href="{{route('profile',$follower->id)}}" tabindex="0">{{$follower->name}}</a></span>
@@ -412,6 +418,7 @@
                                     </div>
                                     <div class="div_set wFPL8 "><a href="{{route('profile',$follower->id)}}">{{$follower->name}}</a></div>
                                  </div>
+                                 
                               </div>
                               <div class="div_set Pkbci"><button class="sqdOP  L3NKy    _8A5w5    " type="button">Remove</button></div>
                            </div>
@@ -422,6 +429,7 @@
                   </ul>
                   <div class="div_set oMwYe"></div>
                </div>
+               
             </div>
          </div>
 
