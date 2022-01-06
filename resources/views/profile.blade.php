@@ -47,7 +47,7 @@
             @foreach ($user->posts as $value)
             <div>
                <div class="bg-red-500 max-w-full lg:h-72 h-40 relative overflow-hidden uk-transition-toggle" tabindex="0">
-                  <a id="{{$value->id}}" href="#story-modal" uk-toggle class="flex items-center">
+                  <a id="{{$value->id}}" href="#story-modal{{$value->id}}" uk-toggle class="flex items-center">
 
                      <img src={{$value->post_img}} class="w-full h-full absolute object-cover inset-0">
                      <div class="absolute bg-black bg-opacity-40 bottom-0 flex h-full items-center justify-center text-lg text-white uk-transition-scale-up w-full">
@@ -64,7 +64,7 @@
 
                </div>
             </div>
-            <div id="story-modal" href="" class="uk-modal-container" uk-modal>
+            <div id="story-modal{{$value->id}}" href="" class="uk-modal-container" uk-modal>
                <div class="uk-modal-dialog story-modal">
                   <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
 
@@ -388,9 +388,14 @@
                      </div>
                   </div>
                </div>
+               @if(empty($follower))
+               <div style="text-align: center; padding:20px; font-weight: bold; font-size: larger;"><h1>No follower</h1></div>
+                                    
+                                    @endif
                <div class="div_set isgrP">
                   <ul class="jSC57  _6xe7A">
                      <div class="div_set PZuss">
+                        
                      @php $j=0 @endphp
                      @foreach($login_follower_id as $follower)
                         <li class="wo9IH">
@@ -402,6 +407,7 @@
                                        <a class="_2dbep qNELH kIKUG" href="{{route('profile',$follower->id)}}" tabindex="0" style="width: 30px; height: 30px; display: block;"><img alt="ahmad_150.ok's profile picture" class="_6q-tv" crossorigin="anonymous" data-testid="user-avatar" draggable="false" src="{{$follower->user_img}}"></a>
                                     </div>
                                  </div>
+                         
                                  <div class="div_set enpQJ">
                                     <div class="div_set d7ByH">
                                        <span class="Jv7Aj mArmR MqpiF  "><a class="FPmhX notranslate  _0imsa " title="ahmad_150.ok" href="{{route('profile',$follower->id)}}" tabindex="0">{{$follower->name}}</a></span>
@@ -412,6 +418,7 @@
                                     </div>
                                     <div class="div_set wFPL8 "><a href="{{route('profile',$follower->id)}}">{{$follower->name}}</a></div>
                                  </div>
+                                 
                               </div>
                               <div class="div_set Pkbci"><button class="sqdOP  L3NKy    _8A5w5    " type="button">Remove</button></div>
                            </div>
@@ -422,6 +429,7 @@
                   </ul>
                   <div class="div_set oMwYe"></div>
                </div>
+               
             </div>
          </div>
 

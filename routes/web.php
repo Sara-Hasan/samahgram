@@ -68,6 +68,7 @@ Route::get('/trending', [TrendingController::class, 'index'])->middleware('auth'
 Route::resource('comments', CommentController::class);
 Route::resource('likes', LikeController::class);
 
+Route::put('/changePassword', [App\Http\Controllers\HomeController::class, 'changePasswordPost'])->name('changePassword');
 
 /*countries*/
 Route::resource('/signup', CountryController::class,)->name('register', 'index');

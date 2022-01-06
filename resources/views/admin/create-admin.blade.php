@@ -55,6 +55,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="example-email" class="col-md-12">gender</label>
+                            <div class="col-md-12">
+                                <input type="text" 
+                                       class="form-control ps-0 form-control-line" name="gender"
+                                       id="example-email"
+                                       ">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-12 mb-0">Password</label>
                             <div class="col-md-12">
                                 <input type="password"

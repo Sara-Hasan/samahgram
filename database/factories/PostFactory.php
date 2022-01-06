@@ -16,7 +16,7 @@ class PostFactory extends Factory
       
             return [
                 'user_id'=> User::factory()->make(),
-                'post_img'=>'https://source.unsplash.com/random/500x500',
+                'post_img'=>'https://source.unsplash.com/random/500x500?sig'."=".random_int(1,1000),
                 'post_text'=>$this->faker->paragraph(),
             ];
         
