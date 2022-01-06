@@ -118,7 +118,7 @@ class HomeController extends Controller
         // return $login_user;
         // return $user->posts ;
         $user_relationship_status=['Single','In a relationship','Married','Engaged'];
-
+        
         if ($login_user->id == $user->id) {
             return view('setting', compact('user','user_relationship_status'));
         }
@@ -138,6 +138,8 @@ class HomeController extends Controller
                 'email'=> $input['email'],
                 'phone'=>$input['phone'],
                 'user_relationship_status'=> $input['user_relationship_status'],
+                'city'=> $input['city'],
+
                 'user_bio'=>$input['user_bio'],
                 'user_img'=> request('user_img')->store('images')
             ];
@@ -147,6 +149,8 @@ class HomeController extends Controller
                 'email'=> $input['email'],
                 'phone'=>$input['phone'],
                 'user_relationship_status'=> $input['user_relationship_status'],
+                'city'=> $input['city'],
+
                 'user_bio'=>$input['user_bio'],
                 'user_img'=>  $user->user_img
             ];

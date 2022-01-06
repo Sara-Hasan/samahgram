@@ -69,6 +69,11 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="col-span-2">
+                                        <label for=""> City</label>
+                                        <input type="text" name="city" placeholder="Your name.."
+                                            class="JLJ-B zyHYP" value="{{ $user->city }}">
+                                    </div>
                                     @csrf
                                     @method('PUT')
 
